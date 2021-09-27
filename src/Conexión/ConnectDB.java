@@ -1,10 +1,10 @@
-package pruebaConexión;
+package Conexión;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.sql.*;
 
-public class Prueba {
+public class ConnectDB {
 	
 	
 	public static void main(String[] args) throws Exception {
@@ -14,7 +14,7 @@ public class Prueba {
 		ResultSet rs;
 		
 		File archivo=new File("productos.txt");
-		FileWriter escribir=new FileWriter(archivo,true);
+		FileWriter escribir=new FileWriter(archivo);
 
 		String url = "jdbc:postgresql://192.168.65.2:5432/Nolan";
 		String user = "admin";
@@ -25,16 +25,16 @@ public class Prueba {
 		st = con.createStatement();
 
 		rs = st.executeQuery(
-				"SELECT * FROM product_product INNER JOIN product_template ON product_product.default_code=product_template.default_code");
+				"SELECT * FROM product_product INNER JOIN product_template ON product_product.default_code=product_template.default_code ORDER BY product_product.default_code");
 
 		while (rs.next()) {
 			/*System.out.println(rs.getString("default_code") + " " + rs.getString("name") + " "
 					+ rs.getString("list_price") + " €");*/
 			escribir.write(rs.getString("default_code") + " " + rs.getString("name") + " "
-					+ rs.getString("list_price") + " €");
+					+ rs.getString("list_price") + " €\n");
 			
 		}
-
+		System.out.println("Finalizado.");
 		escribir.close();
 		rs.close();
 		st.close();
