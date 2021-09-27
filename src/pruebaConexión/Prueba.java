@@ -1,33 +1,44 @@
 package pruebaConexión;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.sql.*;
 
 public class Prueba {
-
-	public static void main(String[] args) throws Exception{
+	
+	
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		Connection con;
 		Statement st;
 		ResultSet rs;
 		
-		String url="jdbc:postgresql://localhost:5432/db_laura";
-		String user="pepe";
-		String password = "pepe"; // Ingrese aquí su contraseña de inicio de sesión
+		File archivo=new File("productos.txt");
+		FileWriter escribir=new FileWriter(archivo,true);
+
+		String url = "jdbc:postgresql://192.168.65.2:5432/Nolan";
+		String user = "admin";
+		String password = "Admin123"; // Ingrese aquí su contraseña de inicio de sesión
 		Class.forName("org.postgresql.Driver");
- 
- 
-		
-		con=DriverManager.getConnection(url,user,password);
-		st=con.createStatement();
-		
-		rs=st.executeQuery("SELECT 1 AS col_1");
-		
-		rs.next();
-		System.out.println(rs.getInt("col_1"));
-		
+
+		con = DriverManager.getConnection(url, user, password);
+		st = con.createStatement();
+
+		rs = st.executeQuery(
+				"SELECT * FROM product_product INNER JOIN product_template ON product_product.default_code=product_template.default_code");
+
+		while (rs.next()) {
+			/*System.out.println(rs.getString("default_code") + " " + rs.getString("name") + " "
+					+ rs.getString("list_price") + " €");*/
+			escribir.write(rs.getString("default_code") + " " + rs.getString("name") + " "
+					+ rs.getString("list_price") + " €");
+			
+		}
+
+		escribir.close();
 		rs.close();
 		st.close();
 		con.close();
 	}
- 
+
 }
