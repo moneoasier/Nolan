@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 import org.springframework.stereotype.Repository;
@@ -19,18 +20,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class GafaTXT implements GafaDAO{
 	
-	String file="src\\main\\resources\\InventarioGafas.csv";
+	String file="InventarioGafas.csv";
 	public List<Gafa> gafas=new ArrayList<>();
-
-	public GafaTXT(String file, List<Gafa> gafas) {
-		super();
-		this.file = file;
-		this.gafas = gafas;
-	}
-
-	public GafaTXT() {
-		// TODO Auto-generated constructor stub
-	}
 
 	@Override
 	public Collection<Gafa> getGafas() {
@@ -38,7 +29,7 @@ public class GafaTXT implements GafaDAO{
 		return gafas;
 	}
 
-	@Override
+	@PostConstruct
 	public void init() throws IOException, ClassNotFoundException, SQLException {
 		Connection con;
 		Statement st;
@@ -103,7 +94,7 @@ public class GafaTXT implements GafaDAO{
 		PrintWriter outputStream = null;
 
 		try {
-			outputStream = new PrintWriter(new FileWriter(file));
+			outputStream = new PrintWriter(new FileWriter("src\\\\main\\\\resources\\\\"+file));
 
 			for (Gafa g : gafas) {
 				outputStream.println(g.toString());
