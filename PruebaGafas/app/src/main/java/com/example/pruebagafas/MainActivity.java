@@ -4,68 +4,62 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.opencsv.CSVReader;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    ArrayList<Gafa> gafas = new ArrayList<>();
+    LinearLayout lay;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ArrayList<Gafa> gafas= new ArrayList<>();
-        TextView txt=findViewById(R.id.txt);
+        lay=findViewById(R.id.l);
 
-        try {
-            String file ="InventarioGafas.csv";
-            BufferedReader rd = new BufferedReader(new FileReader(file));
-
-            String linea=null;
-            String[] gafa;
-            while ((linea=rd.readLine())!=null){
-                Log.d("gafa","hola");
-                gafa=linea.split(",");
-                gafas.add(new Gafa(gafa[0],gafa[1],Integer.parseInt(gafa[2])));
-
-            }
-            txt.setText(gafas.get(0).toString());
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        readData();
+        showData();
 
     }
-    public final List<String[]> readCsv(Context context) {
-        List<String[]> questionList = new ArrayList<String[]>();
-        AssetManager assetManager = context.getAssets();
+
+    public void readData() {
+
+        InputStream data = getResources().openRawResource(R.raw.gafas);
+        BufferedReader rd = new BufferedReader(new InputStreamReader(data, StandardCharsets.UTF_8));
+        String linea = null;
+        String[] gafa;
 
         try {
-            InputStream csvStream = assetManager.open(CSV_PATH);
-            InputStreamReader csvStreamReader = new InputStreamReader(csvStream);
-            CSVReader csvReader = new CSVReader(csvStreamReader);
-            String[] line;
-
-            // throw away the header
-            csvReader.readNext();
-
-            while ((line = csvReader.readNext()) != null) {
-                questionList.add(line);
+            while ((linea = rd.readLine()) != null) {
+                gafa = linea.split(",");
+                gafas.add(new Gafa(gafa[0], gafa[1], Integer.parseInt(gafa[2])));
             }
         } catch (IOException e) {
             e.printStackTrace();
+
         }
-        return questionList;
+    }
+
+    public void showData(){
+        for (Gafa g : gafas) {
+            Button btn = new Button(this);
+            btn.setText(g.getId());
+            lay.addView(btn);
+        }
     }
 
 }

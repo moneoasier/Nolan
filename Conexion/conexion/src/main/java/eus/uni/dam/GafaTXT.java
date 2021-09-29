@@ -20,7 +20,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class GafaTXT implements GafaDAO{
 	
-	String file="InventarioGafas.csv";
+	String file="gafas.csv";
 	public List<Gafa> gafas=new ArrayList<>();
 
 	@Override
@@ -41,8 +41,9 @@ public class GafaTXT implements GafaDAO{
 		Class.forName("org.postgresql.Driver");
 
 		con = DriverManager.getConnection(url, user, password);
+		
 		st = con.createStatement();
-
+		
 		rs = st.executeQuery(
 				"SELECT * FROM product_product INNER JOIN product_template ON product_product.default_code=product_template.default_code ORDER BY product_product.default_code");
 
@@ -94,7 +95,7 @@ public class GafaTXT implements GafaDAO{
 		PrintWriter outputStream = null;
 
 		try {
-			outputStream = new PrintWriter(new FileWriter("src\\\\main\\\\resources\\\\"+file));
+			outputStream = new PrintWriter(new FileWriter("src\\main\\resources\\"+file));
 
 			for (Gafa g : gafas) {
 				outputStream.println(g.toString());

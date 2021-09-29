@@ -7,14 +7,14 @@ public class Gafa {
 	private String id;
 	private String nombre;
 	private int precio;
-	private List<String> tipo;
-	private String material;
+
+
 
 	public Gafa(String id, String nombre, int precio) {
 		this.id = id;
 		this.nombre = nombre;
 		this.precio = precio;
-		//this.tipo = tipo;
+
 		//this.material = material;
 	}
 
@@ -54,7 +54,7 @@ public class Gafa {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, material, nombre, precio, tipo);
+		return Objects.hash(id, nombre, precio);
 	}
 
 	@Override
