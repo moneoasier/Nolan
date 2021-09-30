@@ -1,16 +1,15 @@
 package com.example.nolanapk;
 
-import static android.graphics.Color.rgb;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,61 +18,43 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity {
 
     Button b1;
     Button b2;
     Button b3;
     Button b4;
-<<<<<<< HEAD
+
 
     TextView pages;
 
     int totalPages;
     int currentPage=1;
 
-=======
->>>>>>> 2898269fdfe2ba36cc2485d80ecaaccf40000814
+
     ArrayList<Gafa> gafas = new ArrayList<>();
     int start=1;
-    ConstraintLayout l;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        b1 = (Button) findViewById(R.id.btn1);
-        b2 = (Button) findViewById(R.id.btn2);
-        b3 = (Button) findViewById(R.id.btn3);
-        b4 = (Button) findViewById(R.id.btn4);
+        b1 = findViewById(R.id.btn1);
+        b2 = findViewById(R.id.btn2);
+        b3 = findViewById(R.id.btn3);
+        b4 = findViewById(R.id.btn4);
 
-        pages=(TextView) findViewById(R.id.npg);
+        pages = findViewById(R.id.npg);
 
-        l = findViewById(R.id.constraint);
         readData();
         showData(start);
 
-<<<<<<< HEAD
     }
-=======
-        b1.setOnClickListener(this);
-        b2.setOnClickListener(this);
-        b3.setOnClickListener(this);
-        b4.setOnClickListener(this);
-
-        /*b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent b = new Intent(MainActivity.this, MainActivity2.class);
-                startActivity(b);
-            }
-        });*/
->>>>>>> 2898269fdfe2ba36cc2485d80ecaaccf40000814
 
     public void nextScreen(View v){
         Intent b = new Intent(MainActivity.this, MainActivity2.class);
 
-        Button selected=(Button) findViewById(v.getId());
+        Button selected= findViewById(v.getId());
         b.putExtra("gafa",findGafa(selected.getText().toString()));
         startActivity(b);
     }
@@ -90,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void btnChange(View v){
         switch (v.getId()){
             case R.id.next:
-                if(!isEmpty(start)) {
+                if(!isEmpty()) {
                     start += 4;
                     showData(start);
                     currentPage++;
@@ -109,24 +90,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         pages.setText(currentPage +" / "+ totalPages);
     }
 
-    public boolean isEmpty(int limit){
+    public boolean isEmpty(){
         return start >= gafas.size();
-    }
-    @Override
-    public void onClick(View v) {
-        Button btn = (Button)findViewById(v.getId()) ;
-        Log.d("a", "Boton: "+btn.getId()+" Name: "+btn.getText());
-
-        /*Intent b = new Intent(MainActivity.this, MainActivity2.class);
-        startActivity(b);*/
-
     }
 
     public void readData() {
 
         InputStream data = getResources().openRawResource(R.raw.gafas);
         BufferedReader rd = new BufferedReader(new InputStreamReader(data, StandardCharsets.UTF_8));
-        String linea = null;
+        String linea;
         String[] gafa;
 
         try {
