@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -17,13 +18,12 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button b1;
     Button b2;
     Button b3;
     Button b4;
-    Button btn;
     ArrayList<Gafa> gafas = new ArrayList<>();
     int start=1;
     ConstraintLayout l;
@@ -39,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
         l=findViewById(R.id.constraint);
         readData();
         showData(start);
+
+        b1.setOnClickListener(this);
+        b2.setOnClickListener(this);
+        b3.setOnClickListener(this);
+        b4.setOnClickListener(this);
 
         /*b.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +77,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+    }
+    @Override
+    public void onClick(View v) {
+        Button btn = (Button)findViewById(v.getId()) ;
+        Log.d("a", "Boton: "+btn.getId()+" Name: "+btn.getText());
+
+        /*Intent b = new Intent(MainActivity.this, MainActivity2.class);
+        startActivity(b);*/
 
     }
 
