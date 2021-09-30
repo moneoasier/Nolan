@@ -1,15 +1,16 @@
 package com.example.nolanapk;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import static android.graphics.Color.rgb;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -25,26 +26,25 @@ public class MainActivity extends AppCompatActivity {
     Button b3;
     Button b4;
 
-
     TextView pages;
 
     int totalPages;
     int currentPage=1;
 
-
     ArrayList<Gafa> gafas = new ArrayList<>();
     int start=1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        b1 = findViewById(R.id.btn1);
-        b2 = findViewById(R.id.btn2);
-        b3 = findViewById(R.id.btn3);
-        b4 = findViewById(R.id.btn4);
+        b1 = (Button) findViewById(R.id.btn1);
+        b2 = (Button) findViewById(R.id.btn2);
+        b3 = (Button) findViewById(R.id.btn3);
+        b4 = (Button) findViewById(R.id.btn4);
 
-        pages = findViewById(R.id.npg);
+        pages=(TextView) findViewById(R.id.npg);
 
         readData();
         showData(start);
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     public void nextScreen(View v){
         Intent b = new Intent(MainActivity.this, MainActivity2.class);
 
-        Button selected= findViewById(v.getId());
+        Button selected=(Button) findViewById(v.getId());
         b.putExtra("gafa",findGafa(selected.getText().toString()));
         startActivity(b);
     }
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
         InputStream data = getResources().openRawResource(R.raw.gafas);
         BufferedReader rd = new BufferedReader(new InputStreamReader(data, StandardCharsets.UTF_8));
-        String linea;
+        String linea = null;
         String[] gafa;
 
         try {
@@ -113,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
         calculatePages();
         pages.setText(currentPage +" / "+ totalPages);
     }
-
     public void calculatePages(){
         if(gafas.size()%4==0){
             totalPages=gafas.size()/4;
@@ -151,7 +150,6 @@ public class MainActivity extends AppCompatActivity {
             b4.setVisibility(View.INVISIBLE);
         }
     }
-
 
 }
 

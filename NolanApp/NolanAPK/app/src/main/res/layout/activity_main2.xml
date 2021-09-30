@@ -58,18 +58,5 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-<<<<<<< HEAD
-=======
-        <TextView
-            android:id="@+id/TName"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Hola"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF" />
-    </RelativeLayout>
->>>>>>> 2898269fdfe2ba36cc2485d80ecaaccf40000814
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

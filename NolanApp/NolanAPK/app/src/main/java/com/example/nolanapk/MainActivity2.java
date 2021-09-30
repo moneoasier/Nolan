@@ -23,9 +23,9 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        id= findViewById(R.id.code);
-        txt= findViewById(R.id.text);
-        precio= findViewById(R.id.precio);
+        id=(TextView) findViewById(R.id.code);
+        txt=(TextView) findViewById(R.id.text);
+        precio=(TextView) findViewById(R.id.precio);
 
         code= getIntent().getStringExtra("gafa");
 
