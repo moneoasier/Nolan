@@ -5,11 +5,12 @@ import static android.graphics.Color.rgb;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -24,6 +25,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button b2;
     Button b3;
     Button b4;
+<<<<<<< HEAD
+
+    TextView pages;
+
+    int totalPages;
+    int currentPage=1;
+
+=======
+>>>>>>> 2898269fdfe2ba36cc2485d80ecaaccf40000814
     ArrayList<Gafa> gafas = new ArrayList<>();
     int start=1;
     ConstraintLayout l;
@@ -36,10 +46,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         b2 = (Button) findViewById(R.id.btn2);
         b3 = (Button) findViewById(R.id.btn3);
         b4 = (Button) findViewById(R.id.btn4);
-        l=findViewById(R.id.constraint);
+
+        pages=(TextView) findViewById(R.id.npg);
+
+        l = findViewById(R.id.constraint);
         readData();
         showData(start);
 
+<<<<<<< HEAD
+    }
+=======
         b1.setOnClickListener(this);
         b2.setOnClickListener(this);
         b3.setOnClickListener(this);
@@ -52,32 +68,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(b);
             }
         });*/
+>>>>>>> 2898269fdfe2ba36cc2485d80ecaaccf40000814
 
-        l.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //method for switch
+    public void nextScreen(View v){
+        Intent b = new Intent(MainActivity.this, MainActivity2.class);
+
+        Button selected=(Button) findViewById(v.getId());
+        b.putExtra("gafa",findGafa(selected.getText().toString()));
+        startActivity(b);
+    }
+
+    public String findGafa(String name){
+        for(Gafa g: gafas){
+            if(g.getNombre().equals(name)){
+                return g.toString();
             }
-        });
+        }
+        return null;
+    }
 
-        findViewById(R.id.next).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                start+=4;
-                showData(start);
-            }
-        });
+    public void btnChange(View v){
+        switch (v.getId()){
+            case R.id.next:
+                if(!isEmpty(start)) {
+                    start += 4;
+                    showData(start);
+                    currentPage++;
+                }
+                break;
 
-        findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            case R.id.back:
                 if(start>1) {
                     start -= 4;
                     showData(start);
+                    currentPage--;
                 }
-            }
-        });
+                break;
 
+        }
+        pages.setText(currentPage +" / "+ totalPages);
+    }
+
+    public boolean isEmpty(int limit){
+        return start >= gafas.size();
     }
     @Override
     public void onClick(View v) {
@@ -105,6 +138,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             e.printStackTrace();
 
         }
+        calculatePages();
+        pages.setText(currentPage +" / "+ totalPages);
+    }
+
+    public void calculatePages(){
+        if(gafas.size()%4==0){
+            totalPages=gafas.size()/4;
+        } else {
+            totalPages=(gafas.size()/4)+1;
+        }
     }
 
     public void showData(int start) {
@@ -116,23 +159,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         start++;
         if (start < gafas.size()) {
+            b2.setVisibility(View.VISIBLE);
             b2.setText(gafas.get(start).getNombre());
         } else {
-            b2.setText("");
+            b2.setVisibility(View.INVISIBLE);
         }
         start++;
         if (start < gafas.size()) {
+            b3.setVisibility(View.VISIBLE);
             b3.setText(gafas.get(start).getNombre());
         } else {
-            b3.setText("");
+            b3.setVisibility(View.INVISIBLE);
         }
         start++;
         if (start < gafas.size()) {
+            b4.setVisibility(View.VISIBLE);
             b4.setText(gafas.get(start).getNombre());
         } else {
-            b4.setText("");
+            b4.setVisibility(View.INVISIBLE);
         }
     }
+
 
 }
 

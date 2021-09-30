@@ -75,7 +75,7 @@ public class Gafa {
     @NonNull
     @Override
     public String toString() {
-        return id + "\n\n" + nombre + "\n\n" + precio;
+        return id + "," + nombre + "," + precio;
     }
 
 }

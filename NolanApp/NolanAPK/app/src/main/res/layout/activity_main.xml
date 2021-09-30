@@ -15,11 +15,13 @@
         android:layout_height="122dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="124dp"
         android:background="@drawable/buton"
+        android:onClick="nextScreen"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btn2"
@@ -27,11 +29,13 @@
         android:layout_height="122dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="124dp"
         android:layout_marginEnd="52dp"
         android:background="@drawable/buton"
+        android:onClick="nextScreen"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btn3"
@@ -39,11 +43,13 @@
         android:layout_height="122dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="98dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="58dp"
         android:background="@drawable/buton"
+        android:onClick="nextScreen"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn1" />
+        app:layout_constraintTop_toBottomOf="@+id/btn1"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btn4"
@@ -51,18 +57,21 @@
         android:layout_height="122dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="98dp"
+        android:layout_marginTop="58dp"
         android:layout_marginEnd="52dp"
         android:background="@drawable/buton"
+        android:onClick="nextScreen"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn2"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/next"
         android:layout_width="122dp"
         android:layout_height="57dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="56dp"
+        android:onClick="btnChange"
         android:text="NEXT"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn4" />
@@ -71,11 +80,27 @@
         android:id="@+id/back"
         android:layout_width="121dp"
         android:layout_height="57dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="40dp"
+        android:onClick="btnChange"
         android:text="PREVIOUS"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn3" />
+
+    <TextView
+        android:id="@+id/npg"
+        android:layout_width="77dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="167dp"
+        android:layout_marginTop="548dp"
+        android:layout_marginEnd="167dp"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
