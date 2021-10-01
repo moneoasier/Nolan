@@ -7,13 +7,15 @@ public class Gafa {
 	private String id;
 	private String nombre;
 	private int precio;
+	private int stock;
 
 
 
-	public Gafa(String id, String nombre, int precio) {
+	public Gafa(String id, String nombre, int precio,int stock) {
 		this.id = id;
 		this.nombre = nombre;
 		this.precio = precio;
+		this.stock=stock;
 
 		//this.material = material;
 	}
@@ -42,26 +44,22 @@ public class Gafa {
 		this.precio = precio;
 	}
 
-	/*
-	 * public List<String> getTipo() { return tipo; }
-	 * 
-	 * public void setTipo(List<String> tipo) { this.tipo = tipo; }
-	 * 
-	 * public String getMaterial() { return material; }
-	 * 
-	 * public void setMaterial(String material) { this.material = material; }
-	 */
+	public int getStock() {
+		return stock;
+	}
 
-
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
 
 	@Override
 	public String toString() {
-		return id.toString() +","+nombre+","+precio;
+		return id.toString() +","+nombre+","+precio+","+stock;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, nombre, precio);
+		return Objects.hash(id, nombre, precio, stock);
 	}
 
 	@Override
@@ -73,7 +71,9 @@ public class Gafa {
 		if (getClass() != obj.getClass())
 			return false;
 		Gafa other = (Gafa) obj;
-		return Objects.equals(id, other.id) && Objects.equals(nombre, other.nombre) && precio == other.precio;
+		return Objects.equals(id, other.id) && Objects.equals(nombre, other.nombre) && precio == other.precio
+				&& stock == other.stock;
 	}
+
 
 }

@@ -45,17 +45,21 @@ public class GafaTXT implements GafaDAO{
 		st = con.createStatement();
 		
 		rs = st.executeQuery(
-				"SELECT * FROM product_product INNER JOIN product_template ON product_product.default_code=product_template.default_code ORDER BY product_product.default_code");
+				"select product_template.default_code, product_template.name, product_template.list_price, sum(quantity - reserved_quantity) from stock_quant\r\n"
+				+ "inner join product_template on product_template.id = stock_quant.product_id \r\n"
+				+ "where location_id = 8\r\n"
+				+ "group by product_template.name, product_template.list_price, product_id, product_template.default_code\r\n"
+				+ "order by product_template.default_code;");
 
 		while (rs.next()) {
-			/*System.out.println(rs.getString("default_code") + " " + rs.getString("name") + " "
-					+ rs.getString("list_price") + " €");*/
+
 			String id=rs.getString("default_code");
 			String name=rs.getString("name");
 			int precio=rs.getInt("list_price");
+			int stock=rs.getInt("sum");
 			//List<String> tipo;
 			//String material=rs.getString("");
-			gafas.add(new Gafa(id,name,precio));
+			gafas.add(new Gafa(id,name,precio,stock));
 		}
 		System.out.println("Finalizado.");
 		
