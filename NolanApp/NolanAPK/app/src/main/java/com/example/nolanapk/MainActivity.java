@@ -69,29 +69,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnChange(View v){
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.next:
-                if(!isEmpty()) {
+                if (!isEmpty()) {
                     start += 4;
                     showData(start);
                     currentPage++;
+                    pages.setText(currentPage +" / "+ totalPages);
                 }
                 break;
 
             case R.id.back:
-                if(start>1) {
+                if (start > 1) {
                     start -= 4;
                     showData(start);
                     currentPage--;
+                    pages.setText(currentPage +" / "+ totalPages);
                 }
                 break;
 
         }
-        pages.setText(currentPage +" / "+ totalPages);
     }
 
     public boolean isEmpty(){
-        return start > gafas.size();
+        return start >= gafas.size()-1;
     }
 
     public void readData() {
