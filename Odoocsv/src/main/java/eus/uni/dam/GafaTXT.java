@@ -99,10 +99,10 @@ public class GafaTXT implements GafaDAO{
 		PrintWriter outputStream = null;
 
 		try {
-			outputStream = new PrintWriter(new FileWriter("src\\main\\resources\\"+file));
+			outputStream = new PrintWriter(new FileWriter("../NolanApp/NolanAPK/app/src/main/res/raw/"+file));
 
 			for (Gafa g : gafas) {
-				outputStream.println(g.toString());
+				outputStream.print(g.toString());
 			}
 
 		} catch (IOException e) {

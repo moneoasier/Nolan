@@ -39,12 +39,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        b1 = (Button) findViewById(R.id.btn1);
-        b2 = (Button) findViewById(R.id.btn2);
-        b3 = (Button) findViewById(R.id.btn3);
-        b4 = (Button) findViewById(R.id.btn4);
-
-        pages=(TextView) findViewById(R.id.npg);
+        b1 = findViewById(R.id.btn1);
+        b2 = findViewById(R.id.btn2);
+        b3 = findViewById(R.id.btn3);
+        b4 = findViewById(R.id.btn4);
+        pages=findViewById(R.id.npg);
 
         readData();
         showData(start);
@@ -71,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     public void btnChange(View v){
         switch (v.getId()) {
             case R.id.next:
-                if (!isEmpty()) {
+                if (goToNextPage()) {
                     start += 4;
                     showData(start);
                     currentPage++;
@@ -91,8 +90,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public boolean isEmpty(){
-        return start >= gafas.size()-1;
+    public boolean goToNextPage(){
+        return currentPage != totalPages;
     }
 
     public void readData() {
