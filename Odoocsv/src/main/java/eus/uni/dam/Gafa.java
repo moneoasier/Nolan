@@ -6,18 +6,15 @@ import java.util.Objects;
 public class Gafa {
 	private String id;
 	private String nombre;
-	private int precio;
+	private double precio;
 	private int stock;
 
-
-
-	public Gafa(String id, String nombre, int precio,int stock) {
+	public Gafa(String id, String nombre, double precio, int stock) {
+		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.precio = precio;
-		this.stock=stock;
-
-		//this.material = material;
+		this.stock = stock;
 	}
 
 	public String getId() {
@@ -36,11 +33,11 @@ public class Gafa {
 		this.nombre = nombre;
 	}
 
-	public int getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(int precio) {
+	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
 

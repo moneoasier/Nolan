@@ -55,7 +55,7 @@ public class GafaTXT implements GafaDAO{
 
 			String id=rs.getString("default_code");
 			String name=rs.getString("name");
-			int precio=rs.getInt("list_price");
+			double precio=rs.getDouble("list_price");
 			int stock=rs.getInt("sum");
 			//List<String> tipo;
 			//String material=rs.getString("");

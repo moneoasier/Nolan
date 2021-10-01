@@ -17,16 +17,17 @@ public class MainActivity2 extends AppCompatActivity {
     TextView id;
     TextView txt;
     TextView precio;
+    TextView stock;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        id=(TextView) findViewById(R.id.code);
-        txt=(TextView) findViewById(R.id.text);
-        precio=(TextView) findViewById(R.id.precio);
-
+        id=findViewById(R.id.code);
+        txt=findViewById(R.id.text);
+        precio=findViewById(R.id.precio);
+        stock=findViewById(R.id.stock);
         code= getIntent().getStringExtra("gafa");
 
         fillData();
@@ -39,6 +40,7 @@ public class MainActivity2 extends AppCompatActivity {
         id.setText(elements[0]);
         txt.setText(elements[1]);
         precio.setText(elements[2]+" €");
+        stock.setText("STOCK: "+elements[3]);
 
     }
 }

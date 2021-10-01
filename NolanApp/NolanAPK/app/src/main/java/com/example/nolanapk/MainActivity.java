@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
     int totalPages;
     int currentPage=1;
+    int start=1;
 
     ArrayList<Gafa> gafas = new ArrayList<>();
-    int start=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean isEmpty(){
-        return start >= gafas.size();
+        return start > gafas.size();
     }
 
     public void readData() {
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             while ((linea = rd.readLine()) != null) {
                 gafa = linea.split(",");
-                gafas.add(new Gafa(gafa[0], gafa[1], Integer.parseInt(gafa[2])));
+                gafas.add(new Gafa(gafa[0], gafa[1], Double.parseDouble(gafa[2]),Integer.parseInt(gafa[3])));
             }
         } catch (IOException e) {
             e.printStackTrace();

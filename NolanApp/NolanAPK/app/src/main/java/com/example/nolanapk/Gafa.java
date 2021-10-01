@@ -1,23 +1,20 @@
 package com.example.nolanapk;
 
-import androidx.annotation.NonNull;
-
 import java.util.List;
 import java.util.Objects;
 
 public class Gafa {
     private String id;
     private String nombre;
-    private int precio;
-    private List<String> tipo;
-    private String material;
+    private double precio;
+    private int stock;
 
-    public Gafa(String id, String nombre, int precio) {
+    public Gafa(String id, String nombre, double precio, int stock) {
+        super();
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
-        //this.tipo = tipo;
-        //this.material = material;
+        this.stock = stock;
     }
 
     public String getId() {
@@ -36,27 +33,30 @@ public class Gafa {
         this.nombre = nombre;
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
-    /*
-     * public List<String> getTipo() { return tipo; }
-     *
-     * public void setTipo(List<String> tipo) { this.tipo = tipo; }
-     *
-     * public String getMaterial() { return material; }
-     *
-     * public void setMaterial(String material) { this.material = material; }
-     */
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    @Override
+    public String toString() {
+        return id.toString() +","+nombre+","+precio+","+stock;
+    }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, material, nombre, precio, tipo);
+        return Objects.hash(id, nombre, precio, stock);
     }
 
     @Override
@@ -68,15 +68,9 @@ public class Gafa {
         if (getClass() != obj.getClass())
             return false;
         Gafa other = (Gafa) obj;
-        return Objects.equals(id, other.id) && Objects.equals(material, other.material)
-                && Objects.equals(nombre, other.nombre) && precio == other.precio && Objects.equals(tipo, other.tipo);
+        return Objects.equals(id, other.id) && Objects.equals(nombre, other.nombre) && precio == other.precio
+                && stock == other.stock;
     }
 
-    @NonNull
-    @Override
-    public String toString() {
-        return id + "," + nombre + "," + precio;
-    }
 
 }
-
