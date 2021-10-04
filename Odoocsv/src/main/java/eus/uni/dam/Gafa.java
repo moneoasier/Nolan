@@ -1,6 +1,5 @@
 package eus.uni.dam;
 
-import java.util.List;
 import java.util.Objects;
 
 public class Gafa {

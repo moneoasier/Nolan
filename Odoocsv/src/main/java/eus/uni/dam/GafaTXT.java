@@ -1,8 +1,10 @@
 package eus.uni.dam;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -19,8 +21,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class GafaTXT implements GafaDAO{
+	String file=new File("gafas.csv").getAbsolutePath();
+
 	
-	String file="gafas.csv";
 	public List<Gafa> gafas=new ArrayList<>();
 
 	@Override
@@ -99,7 +102,7 @@ public class GafaTXT implements GafaDAO{
 		PrintWriter outputStream = null;
 
 		try {
-			outputStream = new PrintWriter(new FileWriter("../NolanApp/NolanAPK/app/src/main/res/raw/"+file));
+			outputStream = new PrintWriter(new FileWriter(file));
 
 			for (Gafa g : gafas) {
 				outputStream.println(g.toString());
