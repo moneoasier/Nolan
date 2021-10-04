@@ -34,13 +34,17 @@
 
         <TextView
             android:id="@+id/text"
-            android:layout_width="287dp"
-            android:layout_height="78dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="64dp"
+            android:layout_width="281dp"
+            android:layout_height="82dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="184dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="29dp"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/stock"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/code" />
 
@@ -48,8 +52,8 @@
             android:id="@+id/precio"
             android:layout_width="229dp"
             android:layout_height="35dp"
-            android:layout_marginStart="37dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginBottom="4dp"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="24sp"
@@ -58,19 +62,34 @@
 
         <TextView
             android:id="@+id/stock"
-            android:layout_width="180dp"
-            android:layout_height="67dp"
+            android:layout_width="182dp"
+            android:layout_height="55dp"
             android:layout_marginStart="61dp"
-            android:layout_marginTop="27dp"
+            android:layout_marginTop="29dp"
             android:layout_marginEnd="61dp"
-            android:layout_marginBottom="88dp"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/precio"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text" />
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="172dp"
+            android:layout_height="112dp"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="54dp"
+            android:layout_marginEnd="65dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/code"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/buton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

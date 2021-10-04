@@ -3,13 +3,19 @@ package com.example.nolanapk;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
 import java.lang.reflect.Array;
+import java.util.Locale;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -18,6 +24,8 @@ public class MainActivity2 extends AppCompatActivity {
     TextView txt;
     TextView precio;
     TextView stock;
+    ImageView picture;
+    String img_value;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +38,8 @@ public class MainActivity2 extends AppCompatActivity {
         stock=findViewById(R.id.stock);
         code= getIntent().getStringExtra("gafa");
 
+        picture = findViewById(R.id.img);
+
         fillData();
     }
 
@@ -41,6 +51,15 @@ public class MainActivity2 extends AppCompatActivity {
         txt.setText(elements[1]);
         precio.setText(elements[2]+" €");
         stock.setText("STOCK: "+elements[3]);
+
+        img_value = "@drawable/"+elements[0].toLowerCase(Locale.ROOT);
+
+        int img_res = getResources().getIdentifier(img_value, null, getPackageName());
+
+        Drawable res = getResources().getDrawable(img_res);
+        picture.setImageDrawable(res);
+
+
 
     }
 }
