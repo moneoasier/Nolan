@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Nolan GafaX</string>
+    <string name="next">NEXT</string>
+    <string name="previous">PREVIOUS</string>
 </resources>

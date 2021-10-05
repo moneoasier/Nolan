@@ -11,56 +11,60 @@
 
     <Button
         android:id="@+id/btn1"
-        android:layout_width="127dp"
-        android:layout_height="122dp"
-        android:layout_alignParentLeft="true"
+        android:layout_width="139dp"
+        android:layout_height="138dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="56dp"
         android:layout_marginTop="124dp"
         android:background="@drawable/buton"
         android:onClick="nextScreen"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btn2"
-        android:layout_width="127dp"
-        android:layout_height="122dp"
-        android:layout_alignParentLeft="true"
+        android:layout_width="140dp"
+        android:layout_height="135dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="124dp"
         android:layout_marginEnd="52dp"
         android:background="@drawable/buton"
         android:onClick="nextScreen"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btn3"
-        android:layout_width="127dp"
-        android:layout_height="122dp"
-        android:layout_alignParentLeft="true"
+        android:layout_width="140dp"
+        android:layout_height="127dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="56dp"
         android:layout_marginTop="58dp"
         android:background="@drawable/buton"
         android:onClick="nextScreen"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn1"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btn4"
-        android:layout_width="127dp"
-        android:layout_height="122dp"
-        android:layout_alignParentLeft="true"
+        android:layout_width="140dp"
+        android:layout_height="128dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="58dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="52dp"
         android:background="@drawable/buton"
         android:onClick="nextScreen"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn2"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
@@ -72,7 +76,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="56dp"
         android:onClick="btnChange"
-        android:text="NEXT"
+        android:text="@string/next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn4" />
 
@@ -83,7 +87,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="40dp"
         android:onClick="btnChange"
-        android:text="PREVIOUS"
+        android:text="@string/previous"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn3" />
 

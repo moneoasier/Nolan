@@ -21,7 +21,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class GafaTXT implements GafaDAO{
-	String file=new File("gafas.csv").getAbsolutePath();
+	String file="gafas.csv";
 
 	
 	public List<Gafa> gafas=new ArrayList<>();
@@ -102,7 +102,7 @@ public class GafaTXT implements GafaDAO{
 		PrintWriter outputStream = null;
 
 		try {
-			outputStream = new PrintWriter(new FileWriter(file));
+			outputStream = new PrintWriter(new FileWriter("..\\NolanApp\\NolanAPK\\app\\src\\main\\res\\raw\\" +file));
 
 			for (Gafa g : gafas) {
 				outputStream.println(g.toString());
