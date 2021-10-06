@@ -25,7 +25,6 @@ public class MainActivity2 extends AppCompatActivity {
     TextView precio;
     TextView stock;
     ImageView picture;
-    String img_value;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,12 +51,8 @@ public class MainActivity2 extends AppCompatActivity {
         precio.setText(elements[2]+" €");
         stock.setText("STOCK: "+elements[3]);
 
-        img_value = "@drawable/"+elements[0].toLowerCase(Locale.ROOT);
-
-        int img_res = getResources().getIdentifier(img_value, null, getPackageName());
-
-        Drawable res = getResources().getDrawable(img_res);
-        picture.setImageDrawable(res);
+        int img_res = getResources().getIdentifier("@drawable/"+elements[0].toLowerCase(), null, getPackageName());
+        picture.setImageResource(img_res);
 
 
 

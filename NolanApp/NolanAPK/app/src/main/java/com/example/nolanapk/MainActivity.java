@@ -2,14 +2,16 @@ package com.example.nolanapk;
 
 import static android.graphics.Color.rgb;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RelativeLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -18,13 +20,14 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button b1;
-    Button b2;
-    Button b3;
-    Button b4;
+    ImageView b1;
+    ImageView b2;
+    ImageView b3;
+    ImageView b4;
 
     TextView pages;
 
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<Gafa> gafas = new ArrayList<>();
 
+    @SuppressLint("CutPasteId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,14 +57,14 @@ public class MainActivity extends AppCompatActivity {
     public void nextScreen(View v){
         Intent b = new Intent(MainActivity.this, MainActivity2.class);
 
-        Button selected=(Button) findViewById(v.getId());
-        b.putExtra("gafa",findGafa(selected.getText().toString()));
+        String valor= v.getTag().toString();
+        b.putExtra("gafa",findGafa(valor));
         startActivity(b);
     }
 
     public String findGafa(String name){
         for(Gafa g: gafas){
-            if(g.getNombre().equals(name)){
+            if(g.getId().toLowerCase().equals(name)){
                 return g.toString();
             }
         }
@@ -124,31 +128,39 @@ public class MainActivity extends AppCompatActivity {
     public void showData(int start) {
         start--;
         if (start < gafas.size()) {
-            b1.setText(gafas.get(start).getNombre());
-        } else {
-            b1.setText("");
+            img(b1,start);
         }
         start++;
         if (start < gafas.size()) {
             b2.setVisibility(View.VISIBLE);
-            b2.setText(gafas.get(start).getNombre());
+            img(b2,start);
         } else {
             b2.setVisibility(View.INVISIBLE);
         }
         start++;
         if (start < gafas.size()) {
-            b3.setVisibility(View.VISIBLE);
-            b3.setText(gafas.get(start).getNombre());
+            b2.setVisibility(View.VISIBLE);
+            img(b3,start);
         } else {
             b3.setVisibility(View.INVISIBLE);
         }
         start++;
         if (start < gafas.size()) {
-            b4.setVisibility(View.VISIBLE);
-            b4.setText(gafas.get(start).getNombre());
+            b2.setVisibility(View.VISIBLE);
+            img(b4,start);
         } else {
             b4.setVisibility(View.INVISIBLE);
         }
+    }
+
+    public void img(ImageView image, int position){
+        String img_value = "@drawable/"+gafas.get(position).getId().toLowerCase();
+        image.setTag(gafas.get(position).getId().toLowerCase());
+        int img_res = getResources().getIdentifier(img_value,null, getPackageName());
+
+        //Drawable res = getResources().getDrawable(img_res);
+        //image.setImageDrawable(res);
+        image.setImageResource(img_res);
     }
 
 }

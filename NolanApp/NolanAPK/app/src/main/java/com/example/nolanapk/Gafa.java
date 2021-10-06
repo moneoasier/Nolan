@@ -51,7 +51,7 @@ public class Gafa {
 
     @Override
     public String toString() {
-        return id.toString() +","+nombre+","+precio+","+stock;
+        return id +","+nombre+","+precio+","+stock;
     }
 
     @Override
