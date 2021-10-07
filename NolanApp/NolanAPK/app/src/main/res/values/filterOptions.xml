@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="filterOptions">
+        <item>All</item>
+        <item>SunnyDay</item>
+        <item>Rarezas Unicas</item>
+        <item>EroticoFesta</item>
+        <item>IncreiBoy</item>
+        <item>Gafax</item>
+    </string-array>
+</resources>

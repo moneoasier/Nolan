@@ -22,9 +22,8 @@ public class MainActivity2 extends AppCompatActivity {
     String code;
     TextView id;
     TextView txt;
-    TextView precio;
-    TextView stock;
     ImageView picture;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +32,6 @@ public class MainActivity2 extends AppCompatActivity {
 
         id=findViewById(R.id.code);
         txt=findViewById(R.id.text);
-        precio=findViewById(R.id.precio);
-        stock=findViewById(R.id.stock);
         code= getIntent().getStringExtra("gafa");
 
         picture = findViewById(R.id.img);
@@ -45,11 +42,9 @@ public class MainActivity2 extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void fillData(){
         String[] elements=code.split(",");
-
-        id.setText(elements[0]);
-        txt.setText(elements[1]);
-        precio.setText(elements[2]+" €");
-        stock.setText("STOCK: "+elements[3]);
+        id.setText(elements[0]+" - "+elements[4]);
+        txt.setText(elements[1]+"\n\n"+"Stock: "+elements[3]+
+                " - Price: "+elements[2]+" €");
 
         int img_res = getResources().getIdentifier("@drawable/"+elements[0].toLowerCase(), null, getPackageName());
         picture.setImageResource(img_res);

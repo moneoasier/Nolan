@@ -6,5 +6,7 @@
     <string name="log_in">LOG IN</string>
     <string name="password">password</string>
     <string name="todo">TODO</string>
+    <string name="filter">FILTER</string>
+    <string name="search">SEARCH</string>
 
 </resources>

@@ -48,11 +48,12 @@ public class GafaTXT implements GafaDAO{
 		st = con.createStatement();
 		
 		rs = st.executeQuery(
-				"select product_template.default_code, product_template.name, product_template.list_price, sum(quantity - reserved_quantity) from stock_quant\r\n"
-				+ "inner join product_template on product_template.id = stock_quant.product_id \r\n"
-				+ "where location_id = 8\r\n"
-				+ "group by product_template.name, product_template.list_price, product_id, product_template.default_code\r\n"
-				+ "order by product_template.default_code;");
+				"select product_template.default_code, product_template.name, product_template.list_price, sum(quantity - reserved_quantity), product_category.name as category from stock_quant "
+				+"inner join product_template on product_template.id = stock_quant.product_id "
+				+"inner join product_category on product_category.id = product_template.categ_id "
+				+"where location_id = 8 "
+				+"group by product_template.name, product_template.list_price, product_id, product_template.default_code, product_category.name "
+				+"order by product_template.default_code ");
 
 		while (rs.next()) {
 
@@ -60,9 +61,9 @@ public class GafaTXT implements GafaDAO{
 			String name=rs.getString("name");
 			double precio=rs.getDouble("list_price");
 			int stock=rs.getInt("sum");
-			//List<String> tipo;
-			//String material=rs.getString("");
-			gafas.add(new Gafa(id,name,precio,stock));
+			String category=rs.getString("category");
+		
+			gafas.add(new Gafa(id,name,precio,stock,category));
 		}
 		System.out.println("Finalizado.");
 		

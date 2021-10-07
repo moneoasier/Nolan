@@ -7,13 +7,15 @@ public class Gafa {
 	private String nombre;
 	private double precio;
 	private int stock;
+	private String category;
 
-	public Gafa(String id, String nombre, double precio, int stock) {
+	public Gafa(String id, String nombre, double precio, int stock,String category) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.precio = precio;
 		this.stock = stock;
+		this.category=category;
 	}
 
 	public String getId() {
@@ -48,14 +50,22 @@ public class Gafa {
 		this.stock = stock;
 	}
 
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
 	@Override
 	public String toString() {
-		return id.toString() +","+nombre+","+precio+","+stock;
+		return id.toString() +","+nombre+","+precio+","+stock+","+category;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, nombre, precio, stock);
+		return Objects.hash(category, id, nombre, precio, stock);
 	}
 
 	@Override
@@ -67,9 +77,12 @@ public class Gafa {
 		if (getClass() != obj.getClass())
 			return false;
 		Gafa other = (Gafa) obj;
-		return Objects.equals(id, other.id) && Objects.equals(nombre, other.nombre) && precio == other.precio
-				&& stock == other.stock;
+		return Objects.equals(category, other.category) && Objects.equals(id, other.id)
+				&& Objects.equals(nombre, other.nombre)
+				&& Double.doubleToLongBits(precio) == Double.doubleToLongBits(other.precio) && stock == other.stock;
 	}
+
+	
 
 
 }
