@@ -2,6 +2,9 @@ package com.example.nolanapk;
 
 import java.util.Objects;
 
+/**
+ * Parametros Clase Gafax
+ */
 public class Gafa {
     private String id;
     private String nombre;
@@ -9,6 +12,9 @@ public class Gafa {
     private int stock;
     private String category;
 
+    /**
+     * Constructor
+     */
     public Gafa(String id, String nombre, double precio, int stock,String category) {
         this.id = id;
         this.nombre = nombre;
@@ -17,6 +23,9 @@ public class Gafa {
         this.category=category;
     }
 
+    /**
+     * Metodos Setters/Getters
+     */
     public String getId() {
         return id;
     }
@@ -57,6 +66,9 @@ public class Gafa {
         this.category = category;
     }
 
+    /**
+     * Metodos ToString/Equals
+     */
     @Override
     public String toString() {
         return id +","+nombre+","+precio+","+stock+","+category;

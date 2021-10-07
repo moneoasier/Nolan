@@ -16,10 +16,12 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
 public class MainActivity3 extends AppCompatActivity {
+
     EditText contra;
     EditText user;
     String userTxt;
     String contraTxt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,11 +29,19 @@ public class MainActivity3 extends AppCompatActivity {
 
     }
 
+    /**
+     * OnClick Login Button --> nextScreen()
+     */
     public void nextScreen(View v) {
         contra = (EditText) findViewById(R.id.password);
         user = (EditText) findViewById(R.id.username);
+
         userTxt=user.getText().toString();
         contraTxt=contra.getText().toString();
+
+        /**
+         * Erabiltzaile edo Pasahitza betetzen ez direnean abisu batzuk agertuko dira
+         */
         if (contraTxt.equals("") && userTxt.equals("")) {
             Toast.makeText(MainActivity3.this, "Empty fields", Toast.LENGTH_SHORT).show();
         } else if (contraTxt.equals("")) {
@@ -39,6 +49,9 @@ public class MainActivity3 extends AppCompatActivity {
         } else if (userTxt.equals("")) {
             Toast.makeText(MainActivity3.this, "Enter a username", Toast.LENGTH_SHORT).show();
         } else {
+            /**
+             * correctUser() Metodoari deitu eta datuak ondo badaude hurrengo Activity-ra eramango gaitu
+             */
             if (correctUser()) {
                 Intent b = new Intent(MainActivity3.this, MainActivity.class);
                 startActivity(b);
@@ -47,6 +60,9 @@ public class MainActivity3 extends AppCompatActivity {
 
     }
 
+    /**
+     * Metodo honetan CSV bat irakurriz Erabiltzailea eta Pasahitza ondo dagoen komprobatzen da
+     */
     public boolean correctUser() {
         InputStream data = getResources().openRawResource(R.raw.users);
         BufferedReader rd = new BufferedReader(new InputStreamReader(data, StandardCharsets.UTF_8));
