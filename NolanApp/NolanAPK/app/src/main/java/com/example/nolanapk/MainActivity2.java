@@ -38,7 +38,9 @@ public class MainActivity2 extends AppCompatActivity {
 
         fillData();
     }
-
+    /**
+     * Metodo honek produktuen informazioa ipintzen du: argazkia, izena, Stock-ean dagoen kantitatea eta prezioa
+     */
     @SuppressLint("SetTextI18n")
     public void fillData(){
         String[] elements=code.split(",");
