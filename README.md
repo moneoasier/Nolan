@@ -14,6 +14,12 @@ Proiektuak 5 java fitxategi ditu:
       - erregistroBerria metodoari deitzen dio objektu bakoitzeko id-a pasatuz, eta ArrayList<String>-eko elementuekin konparatzen du dagoeneko hor dagoen jakiteko
       - erregistroBerria false bada, writeTxt() metodoari deitzen dio, honek record.txt-an mezu bat gordetzen du produktu berri bat sortu dela adierazten.
       - Destroy gertatu baino lehen, hau da, objektu hau deuseztatu baino lehen, bi fitxategi sortuko ditu produktuak gordetzeko, bat produktuen datu guztiekin, eta beste bat bakoitzaren id-arekin.
+
+Laburtuz, java aplikazioa exekutatzean 3 fitxategi sortuko dira: 
+      - gafas.csv --> produktuen datu guztiekin
+      - gafasId.csv --> produktuen id-ak
+      - record.txt --> gehitu diren produktuen erregistroa
+
 # Abiaraztea
 gjhjgj
 # Klase diagrama
