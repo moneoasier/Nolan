@@ -29,5 +29,7 @@ Hau lortzeko, proiektuak 5 java fitxategi ditu:
 # Iturriak
 https://springframework.guru/spring-framework-annotations/ <br>
 https://youtu.be/GIyIWpC5YIw <br>
+https://youtu.be/qDTUYkaXAEc<br>
 http://tutorials.jenkov.com/maven/maven-build-fat-jar.html <br>
 https://es.stackoverflow.com/questions/38085/leer-fichero-formato-csv-en-java <br>
+https://stackoverflow.com/questions/37487119/operationalerror-could-not-connect-to-server-connection-refused-after-odoo<br>
