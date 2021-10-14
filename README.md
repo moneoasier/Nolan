@@ -2,7 +2,7 @@
 
 # Helburua
 Java proiektu honen helburua Odoo zerbitzari batetik datuak irakurtzea eta csv fitxategi batetan gordetzea da. 
-Proiektuak 5 java fitxategi ditu:
+Hau lortzeko, proiektuak 5 java fitxategi ditu:
 1. ConexionApplication.java --> fitxategi exekutagarria da, hemen AppConfig clasea hartzen da eta barruan dagoen guztua abiarazten da.
 2. AppConfig.java --> java Klase honek spring paketeak irakurtzen ditu eta elementu guztiak egiaztatzen ditu.
 3. Gafa.java --> Gafa klasea definitzen du, Odoo datu basearen produktu bakoitzaren datuak klase honetako objektu batetan bihurtuko dira.
