@@ -21,9 +21,10 @@ Proiektuak 5 java fitxategi ditu:
       - record.txt --> gehitu diren produktuen erregistroa
 
 # Abiaraztea
-gjhjgj
+1. Cmd-a ireki behar da, cd + "jar fitxategia duen helbidea kopiatu eta itsatsi"
+2. java -jar Odoocsv-0.0.1-SNAPSHOT.jar
 # Klase diagrama
-fgjgfhjghj
+![image](https://user-images.githubusercontent.com/75114015/137277736-acf04bf9-c665-423a-a0ff-13ac081dc432.png)
 # Iturriak
 https://springframework.guru/spring-framework-annotations/ <br>
 https://youtu.be/GIyIWpC5YIw <br>
