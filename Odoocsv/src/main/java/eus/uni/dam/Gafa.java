@@ -2,13 +2,17 @@ package eus.uni.dam;
 
 import java.util.Objects;
 
+
+//Gafa klasea
 public class Gafa {
+	//Klasearen parametroak
 	private String id;
 	private String nombre;
 	private double precio;
 	private int stock;
 	private String category;
-
+	
+	//Klasearen konstruktorea
 	public Gafa(String id, String nombre, double precio, int stock,String category) {
 		super();
 		this.id = id;
@@ -17,6 +21,7 @@ public class Gafa {
 		this.stock = stock;
 		this.category=category;
 	}
+	//Get eta Set metodoak
 
 	public String getId() {
 		return id;
@@ -57,17 +62,20 @@ public class Gafa {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-
+	
+	//toString metodoa
 	@Override
 	public String toString() {
 		return id.toString() +","+nombre+","+precio+","+stock+","+category;
 	}
-
+	
+	//hashCode metodoa, objetuen estruktura konparatzen du
 	@Override
 	public int hashCode() {
 		return Objects.hash(category, id, nombre, precio, stock);
 	}
-
+	
+	//equals metodoa, metodo honek bi objetu konparatzen ditu datu berdinak dituzten jakiteko
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

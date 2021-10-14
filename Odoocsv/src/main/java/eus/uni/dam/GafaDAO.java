@@ -6,6 +6,7 @@ import java.util.Collection;
 
 public interface GafaDAO {
 
+	
 	public Collection<Gafa> getGafas();
 
 	public void init() throws IOException, ClassNotFoundException, SQLException;

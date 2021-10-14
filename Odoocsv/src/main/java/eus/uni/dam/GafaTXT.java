@@ -25,18 +25,21 @@ import javax.annotation.PreDestroy;
 import org.springframework.stereotype.Repository;
 
 @Repository
+//GafaTXT klasea, honek .csv baten informazioa gordetzen du
 public class GafaTXT implements GafaDAO {
+	//Klasearen parametroak
 	String file = "gafas.csv";
-
 	public List<String> anteriorGafas = new ArrayList<>();
 	public List<Gafa> actualGafas = new ArrayList<>();
-
+	
+	//List<Gafa> iztultzen duen metodoa
 	@Override
 	public Collection<Gafa> getGafas() {
 		// TODO Auto-generated method stub
 		return actualGafas;
 	}
-
+	
+	//Klasearen konstruktorea, hasiera ematen diona. Hemen konexioa eta sql sententzia dago
 	@PostConstruct
 	public void init() throws IOException, ClassNotFoundException, SQLException {
 		Connection con;
@@ -107,7 +110,8 @@ public class GafaTXT implements GafaDAO {
 		// TODO Auto-generated method stub
 
 	}
-
+	
+	//Metodo honek konexioa bukatzen du eta informazioa csv-an gordetzen du
 	@PreDestroy
 	public void destroy() {
 
@@ -136,7 +140,8 @@ public class GafaTXT implements GafaDAO {
 		}
 
 	}
-
+	
+	//.txt batean informazioa gorde
 	public void writeTxt(String id) throws IOException {
 
 		FileWriter txt = null;
@@ -161,6 +166,7 @@ public class GafaTXT implements GafaDAO {
 		}
 	}
 
+	
 	public void initPreviousList() {
 		InputStream data;
 		try {
@@ -181,6 +187,7 @@ public class GafaTXT implements GafaDAO {
 
 	}
 	
+	//csv-an informazio berria sartzen duen metodoa
 	public boolean erregistroBerria(String id) {
 		
 		for(String anteriorGafa:anteriorGafas) {
