@@ -7,4 +7,5 @@ gjhjgj
 # Klase diagrama
 fgjgfhjghj
 # Iturriak
-ghjghjhgj
+https://springframework.guru/spring-framework-annotations/
+https://youtu.be/GIyIWpC5YIw
