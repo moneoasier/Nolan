@@ -9,6 +9,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -28,7 +30,6 @@ import org.springframework.stereotype.Repository;
 //GafaTXT klasea, honek .csv baten informazioa gordetzen du
 public class GafaTXT implements GafaDAO {
 	//Klasearen parametroak
-	String file = "gafas.csv";
 	public List<String> anteriorGafas = new ArrayList<>();
 	public List<Gafa> actualGafas = new ArrayList<>();
 	
@@ -117,10 +118,13 @@ public class GafaTXT implements GafaDAO {
 
 		PrintWriter gafasRaw = null;
 		PrintWriter gafasTarget = null;
+		String rutaRaw=new File("gafas.csv").getAbsolutePath();
+		String rutaTarget=new File("gafasId.csv").getAbsolutePath();
 
 		try {
-			gafasRaw = new PrintWriter(new FileWriter("..\\NolanApp\\NolanAPK\\app\\src\\main\\res\\raw\\" + file));
-			gafasTarget = new PrintWriter(new FileWriter("..\\Odoocsv\\target\\" + file));
+			//gafasRaw = new PrintWriter(new FileWriter("..\\NolanApp\\NolanAPK\\app\\src\\main\\res\\raw\\" + file));
+			gafasRaw = new PrintWriter(new FileWriter(rutaRaw));
+			gafasTarget = new PrintWriter(new FileWriter(rutaTarget));
 
 			for (Gafa g : actualGafas) {
 				gafasRaw.println(g.toString());
@@ -135,7 +139,7 @@ public class GafaTXT implements GafaDAO {
 			if (gafasRaw != null) {
 				gafasRaw.close();
 				gafasTarget.close();
-				System.out.println("Datuak gorde dira " + file + " fitxategian.");
+				System.out.println("Datuak gorde dira gafas.csv eta gafasId.csv fitxategietan.");
 			}
 		}
 
@@ -147,11 +151,11 @@ public class GafaTXT implements GafaDAO {
 		FileWriter txt = null;
 		LocalDate date=LocalDate.now();
 		try {
-			File file=new File("..\\Odoocsv\\target\\record.txt");
-			if(!file.exists()) {
-				file.createNewFile();
+			File recFile=new File("record.txt");
+			if(!recFile.exists()) {
+				recFile.createNewFile();
 			}
-			txt = new FileWriter(file.getAbsoluteFile(), true);
+			txt = new FileWriter(recFile, true);
 			txt.append(date.toString()+": "+id+" erregistratu da.\n");
 				
 		} catch (IOException e) {
@@ -169,11 +173,11 @@ public class GafaTXT implements GafaDAO {
 	
 	public void initPreviousList() {
 		InputStream data;
+
 		try {
-			data = new FileInputStream("..\\Odoocsv\\target\\" + file);
+			data = new FileInputStream(new File("gafasId.csv").getAbsolutePath());
 			BufferedReader rd = new BufferedReader(new InputStreamReader(data, StandardCharsets.UTF_8));
 			String linea;
-			String[] gafa;
 			while ((linea = rd.readLine()) != null) {
 				anteriorGafas.add(linea);
 			}
@@ -190,11 +194,10 @@ public class GafaTXT implements GafaDAO {
 	//csv-an informazio berria sartzen duen metodoa
 	public boolean erregistroBerria(String id) {
 		
-		for(String anteriorGafa:anteriorGafas) {
-			if(anteriorGafa.equals(id)) {
-				return true;
-			}
+		if(anteriorGafas.contains(id)) {
+			return true;
 		}
+	
 		return false;
 	}
 	
