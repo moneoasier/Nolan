@@ -13,7 +13,7 @@ public class ConexionApplication {
 	public static void main(String[] args) throws Exception, IOException, SQLException {
 		ApplicationContext appContext=new AnnotationConfigApplicationContext(AppConfig.class);
 		
-		//GafaDAO gafaDao=appContext.getBean(GafaTXT.class);
+		GafaDAO gafaDao=appContext.getBean(GafaTXT.class);
 		
 		((AnnotationConfigApplicationContext) appContext).close();
 		

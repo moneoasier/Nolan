@@ -32,6 +32,7 @@ public class GafaTXT implements GafaDAO {
 	//Klasearen parametroak
 	public List<String> anteriorGafas = new ArrayList<>();
 	public List<Gafa> actualGafas = new ArrayList<>();
+	public boolean conect = true;
 	
 	//List<Gafa> iztultzen duen metodoa
 	@Override
@@ -42,7 +43,7 @@ public class GafaTXT implements GafaDAO {
 	
 	//Klasearen konstruktorea, hasiera ematen diona. Hemen konexioa eta sql sententzia dago
 	@PostConstruct
-	public void init() throws IOException, ClassNotFoundException, SQLException {
+	public void init()  {
 		Connection con;
 		Statement st;
 		ResultSet rs;
@@ -50,11 +51,15 @@ public class GafaTXT implements GafaDAO {
 		String url = "jdbc:postgresql://192.168.65.2:5432/Nolan";
 		String user = "admin";
 		String password = "Admin123";
-		Class.forName("org.postgresql.Driver");
+		try {
+			Class.forName("org.postgresql.Driver");
+		
 
 		initPreviousList();
 
+
 		con = DriverManager.getConnection(url, user, password);
+		
 
 		st = con.createStatement();
 
@@ -84,6 +89,12 @@ public class GafaTXT implements GafaDAO {
 		rs.close();
 		st.close();
 		con.close();
+		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			conect=false;
+			System.out.println("Ezin izan da konektatu.");
+		}
 		
 		
 	}
@@ -115,31 +126,33 @@ public class GafaTXT implements GafaDAO {
 	//Metodo honek konexioa bukatzen du eta informazioa csv-an gordetzen du
 	@PreDestroy
 	public void destroy() {
-
-		PrintWriter gafasRaw = null;
-		PrintWriter gafasTarget = null;
-		String rutaRaw=new File("gafas.csv").getAbsolutePath();
-		String rutaTarget=new File("gafasId.csv").getAbsolutePath();
-
-		try {
-			//gafasRaw = new PrintWriter(new FileWriter("..\\NolanApp\\NolanAPK\\app\\src\\main\\res\\raw\\" + file));
-			gafasRaw = new PrintWriter(new FileWriter(rutaRaw));
-			gafasTarget = new PrintWriter(new FileWriter(rutaTarget));
-
-			for (Gafa g : actualGafas) {
-				gafasRaw.println(g.toString());
-				gafasTarget.println(g.getId());
-			}
-
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-
-			if (gafasRaw != null) {
-				gafasRaw.close();
-				gafasTarget.close();
-				System.out.println("Datuak gorde dira gafas.csv eta gafasId.csv fitxategietan.");
+		if(conect) {
+			PrintWriter gafasRaw = null;
+			PrintWriter gafasTarget = null;
+			String rutaRaw=new File("gafas.csv").getAbsolutePath();
+			String rutaTarget=new File("gafasId.csv").getAbsolutePath();
+	
+			try {
+				//gafasRaw = new PrintWriter(new FileWriter("..\\NolanApp\\NolanAPK\\app\\src\\main\\res\\raw\\" + file));
+				gafasRaw = new PrintWriter(new FileWriter(rutaRaw));
+				gafasTarget = new PrintWriter(new FileWriter(rutaTarget));
+	
+				for (Gafa g : actualGafas) {
+					gafasRaw.println(g.toString());
+					gafasTarget.println(g.getId());
+				}
+	
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				System.out.println("Datuak ezin izan dira gorde.");
+				e.printStackTrace();
+			} finally {
+	
+				if (gafasRaw != null) {
+					gafasRaw.close();
+					gafasTarget.close();
+					System.out.println("Datuak gorde dira gafas.csv eta gafasId.csv fitxategietan.");
+				}
 			}
 		}
 
