@@ -1,9 +1,12 @@
 package com.example.nolanapk;
 
+import static com.example.nolanapk.Connexion.users;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +17,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
 public class MainActivity3 extends AppCompatActivity {
 
@@ -21,12 +28,14 @@ public class MainActivity3 extends AppCompatActivity {
     EditText user;
     String userTxt;
     String contraTxt;
+    Connexion con;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
-
+        con = new Connexion();
     }
 
     /**
@@ -64,15 +73,24 @@ public class MainActivity3 extends AppCompatActivity {
      * Metodo honetan CSV bat irakurriz Erabiltzailea eta Pasahitza ondo dagoen komprobatzen da
      */
     public boolean correctUser() {
-        InputStream data = getResources().openRawResource(R.raw.users);
-        BufferedReader rd = new BufferedReader(new InputStreamReader(data, StandardCharsets.UTF_8));
-        String linea = null;
-        String[] users;
+        Statement st;
+        ResultSet rd = null;
+        String linea;
+        /** InputStream data = getResources().openRawResource(R.raw.users);
+         BufferedReader rd = new BufferedReader(new InputStreamReader(data, StandardCharsets.UTF_8));
+         String linea = null;
+         String[] users;*/
         try {
-            while ((linea = rd.readLine()) != null) {
-                users = linea.split(",");
-                if (users[0].equals(userTxt)) {
-                    if (users[1].equals(contraTxt)) {
+            st = (Statement) con.getExtraConnection().createStatement().executeQuery("SELECT * FROM app_users");
+            rd=st.getResultSet();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        try {
+            while (rd.next()) {
+                if (rd.getString("email").equals(userTxt)) {
+                    if (rd.getString("password").equals(contraTxt)) {
                         return true;
                     } else {
                         Toast.makeText(MainActivity3.this, "Password incorrect", Toast.LENGTH_SHORT).show();
@@ -82,9 +100,8 @@ public class MainActivity3 extends AppCompatActivity {
 
                 }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
 
         Toast.makeText(MainActivity3.this, "User not found", Toast.LENGTH_SHORT).show();
