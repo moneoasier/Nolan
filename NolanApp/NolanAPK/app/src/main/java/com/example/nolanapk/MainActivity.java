@@ -39,8 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
     String selection="All";
 
-    ArrayList<Gafa> allGafas = new ArrayList<>();
-    ArrayList<Gafa> gafaFiltro = new ArrayList<>();
+    ArrayList<Gafa> allGafas;
+    ArrayList<Gafa> gafaFiltro;
+    public static ArrayList<Gafa> compra;
 
     @SuppressLint("CutPasteId")
 
@@ -58,7 +59,9 @@ public class MainActivity extends AppCompatActivity {
         search=findViewById(R.id.search);
 
         spin=findViewById(R.id.filter);
-
+        allGafas=new ArrayList<>();
+        gafaFiltro=new ArrayList<>();
+        compra=new ArrayList<>();
         //Metodo hauei deitzen zaie aplikazioa abiaraztean
         readData();
         showData(start,allGafas);

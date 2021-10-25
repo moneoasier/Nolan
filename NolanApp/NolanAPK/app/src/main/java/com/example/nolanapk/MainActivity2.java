@@ -1,21 +1,12 @@
 package com.example.nolanapk;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.Bundle;
-import android.text.Layout;
-import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.lang.reflect.Array;
-import java.util.Locale;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -23,7 +14,7 @@ public class MainActivity2 extends AppCompatActivity {
     TextView id;
     TextView txt;
     ImageView picture;
-
+    String[] elements;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +24,7 @@ public class MainActivity2 extends AppCompatActivity {
         id=findViewById(R.id.code);
         txt=findViewById(R.id.text);
         code= getIntent().getStringExtra("gafa");
+        elements=code.split(",");
 
         picture = findViewById(R.id.img);
 
@@ -43,7 +35,7 @@ public class MainActivity2 extends AppCompatActivity {
      */
     @SuppressLint("SetTextI18n")
     public void fillData(){
-        String[] elements=code.split(",");
+
         id.setText(elements[0]+" - "+elements[4]);
         txt.setText(elements[1]+"\n\n"+"Stock: "+elements[3]+
                 " - Price: "+elements[2]+" €");
@@ -51,7 +43,11 @@ public class MainActivity2 extends AppCompatActivity {
         int img_res = getResources().getIdentifier("@drawable/"+elements[0].toLowerCase(), null, getPackageName());
         picture.setImageResource(img_res);
 
+    }
 
+    public void addProduct(View v) {
+        MainActivity.compra.add(new Gafa(elements[0],elements[1],Double.parseDouble(elements[2]),Integer.parseInt(elements[3]),elements[4]));
 
     }
+
 }

@@ -1,11 +1,8 @@
 package com.example.nolanapk;
-
 import java.util.Objects;
 
-/**
- * Parametros Clase Gafax
- */
 public class Gafa {
+
     private String id;
     private String nombre;
     private double precio;
@@ -92,8 +89,5 @@ public class Gafa {
                 && Objects.equals(nombre, other.nombre)
                 && Double.doubleToLongBits(precio) == Double.doubleToLongBits(other.precio) && stock == other.stock;
     }
-
-
-
 
 }
