@@ -7,6 +7,7 @@ C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\Nolan
 C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.csproj.CoreCompileInputs.cache
 C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.exe
 C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.pdb
+<<<<<<< Updated upstream
 C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\bin\Debug\NolanStatics.exe.config
 C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\bin\Debug\NolanStatics.exe
 C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\bin\Debug\NolanStatics.pdb
@@ -16,3 +17,10 @@ C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanSta
 C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.csproj.CoreCompileInputs.cache
 C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.exe
 C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.pdb
+=======
+C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\bin\Debug\AgendaDLL.dll
+C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\bin\Debug\AgendaDLL.pdb
+C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\bin\Debug\AgendaDLL.dll.config
+C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.Form1.resources
+C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.csproj.CopyComplete
+>>>>>>> Stashed changes

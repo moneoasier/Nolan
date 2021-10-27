@@ -16,5 +16,12 @@ namespace NolanStatics
         {
             InitializeComponent();
         }
+
+        private void btnExit(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+       
     }
 }
