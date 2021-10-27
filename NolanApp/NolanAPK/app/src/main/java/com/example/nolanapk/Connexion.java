@@ -64,10 +64,10 @@ public class Connexion {
                     ResultSet rd;
 
                     st=connection.createStatement();
-                    rd=st.executeQuery("SELECT email, password, active FROM app_users;");
+                    rd=st.executeQuery("SELECT email, password, active, id FROM app_users;");
 
                     while(rd.next()){
-                        users.add(new User(rd.getString("email"),rd.getString("password"),rd.getBoolean("active")));
+                        users.add(new User(rd.getString("email"),rd.getString("password"),rd.getBoolean("active"),rd.getInt("id")));
                         //System.out.println("Añadido");
                     }
 
