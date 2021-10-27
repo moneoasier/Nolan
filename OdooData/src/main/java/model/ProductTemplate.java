@@ -21,16 +21,8 @@ public class ProductTemplate implements Serializable {
 
 	private Boolean active;
 
-	@Column(name="available_threshold")
-	private double availableThreshold;
-
-	@Column(name="can_image_1024_be_zoomed")
-	private Boolean canImage1024BeZoomed;
-
 	@Column(name="categ_id")
 	private Integer categId;
-
-	private Integer color;
 
 	@Column(name="company_id")
 	private Integer companyId;
@@ -194,36 +186,12 @@ public class ProductTemplate implements Serializable {
 		this.active = active;
 	}
 
-	public double getAvailableThreshold() {
-		return this.availableThreshold;
-	}
-
-	public void setAvailableThreshold(double availableThreshold) {
-		this.availableThreshold = availableThreshold;
-	}
-
-	public Boolean getCanImage1024BeZoomed() {
-		return this.canImage1024BeZoomed;
-	}
-
-	public void setCanImage1024BeZoomed(Boolean canImage1024BeZoomed) {
-		this.canImage1024BeZoomed = canImage1024BeZoomed;
-	}
-
 	public Integer getCategId() {
 		return this.categId;
 	}
 
 	public void setCategId(Integer categId) {
 		this.categId = categId;
-	}
-
-	public Integer getColor() {
-		return this.color;
-	}
-
-	public void setColor(Integer color) {
-		this.color = color;
 	}
 
 	public Integer getCompanyId() {
