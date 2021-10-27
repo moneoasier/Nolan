@@ -7,3 +7,12 @@ C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\Nolan
 C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.csproj.CoreCompileInputs.cache
 C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.exe
 C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.pdb
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\bin\Debug\NolanStatics.exe.config
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\bin\Debug\NolanStatics.exe
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\bin\Debug\NolanStatics.pdb
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.csproj.AssemblyReference.cache
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.Properties.Resources.resources
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.csproj.GenerateResource.cache
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.csproj.CoreCompileInputs.cache
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.exe
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.pdb

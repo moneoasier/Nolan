@@ -2,6 +2,7 @@ package nolan;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -11,7 +12,6 @@ import java.util.Objects;
  */
 @Entity
 @Table(name="product_category")
-@NamedQuery(name="ProductCategory.findAll", query="SELECT p FROM Categoria p")
 public class Categoria implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -19,6 +19,10 @@ public class Categoria implements Serializable {
 	private Integer id;
 
 	private String name;
+
+	//bi-directional many-to-one association to ProductTemplate
+	@OneToMany(mappedBy="productCategory")
+	private List<Producto> productTemplates;
 
 	public Categoria() {
 	}
@@ -31,13 +35,34 @@ public class Categoria implements Serializable {
 		this.id = id;
 	}
 
-
 	public String getName() {
 		return this.name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public List<Producto> getProductTemplates() {
+		return this.productTemplates;
+	}
+
+	public void setProductTemplates(List<Producto> productTemplates) {
+		this.productTemplates = productTemplates;
+	}
+
+	public Producto addProductTemplate(Producto productTemplate) {
+		getProductTemplates().add(productTemplate);
+		productTemplate.setProductCategory(this);
+
+		return productTemplate;
+	}
+
+	public Producto removeProductTemplate(Producto productTemplate) {
+		getProductTemplates().remove(productTemplate);
+		productTemplate.setProductCategory(null);
+
+		return productTemplate;
 	}
 
 	@Override
@@ -61,7 +86,7 @@ public class Categoria implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Categoria [id=" + id + ", name=" + name + "]";
+		return name;
 	}
 	
 

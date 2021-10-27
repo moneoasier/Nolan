@@ -21,9 +21,6 @@ public class ProductTemplate implements Serializable {
 
 	private Boolean active;
 
-	@Column(name="categ_id")
-	private Integer categId;
-
 	@Column(name="company_id")
 	private Integer companyId;
 
@@ -167,6 +164,11 @@ public class ProductTemplate implements Serializable {
 	@Column(name="write_uid")
 	private Integer writeUid;
 
+	//bi-directional many-to-one association to ProductCategory
+	@ManyToOne
+	@JoinColumn(name="categ_id")
+	private ProductCategory productCategory;
+
 	public ProductTemplate() {
 	}
 
@@ -184,14 +186,6 @@ public class ProductTemplate implements Serializable {
 
 	public void setActive(Boolean active) {
 		this.active = active;
-	}
-
-	public Integer getCategId() {
-		return this.categId;
-	}
-
-	public void setCategId(Integer categId) {
-		this.categId = categId;
 	}
 
 	public Integer getCompanyId() {
@@ -592,6 +586,14 @@ public class ProductTemplate implements Serializable {
 
 	public void setWriteUid(Integer writeUid) {
 		this.writeUid = writeUid;
+	}
+
+	public ProductCategory getProductCategory() {
+		return this.productCategory;
+	}
+
+	public void setProductCategory(ProductCategory productCategory) {
+		this.productCategory = productCategory;
 	}
 
 }
