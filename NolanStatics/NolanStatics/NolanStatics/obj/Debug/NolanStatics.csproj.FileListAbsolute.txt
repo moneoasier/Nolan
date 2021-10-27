@@ -1,0 +1,9 @@
+C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\bin\Debug\NolanStatics.exe.config
+C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\bin\Debug\NolanStatics.exe
+C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\bin\Debug\NolanStatics.pdb
+C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.csprojAssemblyReference.cache
+C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.Properties.Resources.resources
+C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.csproj.GenerateResource.cache
+C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.csproj.CoreCompileInputs.cache
+C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.exe
+C:\Klasea\Erronka 1\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.pdb
