@@ -3,6 +3,7 @@ package model;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 
 /**
@@ -31,6 +32,10 @@ public class ProductCategory implements Serializable {
 
 	@Column(name="write_uid")
 	private Integer writeUid;
+
+	//bi-directional many-to-one association to ProductTemplate
+	@OneToMany(mappedBy="productCategory")
+	private List<ProductTemplate> productTemplates;
 
 	public ProductCategory() {
 	}
@@ -81,6 +86,28 @@ public class ProductCategory implements Serializable {
 
 	public void setWriteUid(Integer writeUid) {
 		this.writeUid = writeUid;
+	}
+
+	public List<ProductTemplate> getProductTemplates() {
+		return this.productTemplates;
+	}
+
+	public void setProductTemplates(List<ProductTemplate> productTemplates) {
+		this.productTemplates = productTemplates;
+	}
+
+	public ProductTemplate addProductTemplate(ProductTemplate productTemplate) {
+		getProductTemplates().add(productTemplate);
+		productTemplate.setProductCategory(this);
+
+		return productTemplate;
+	}
+
+	public ProductTemplate removeProductTemplate(ProductTemplate productTemplate) {
+		getProductTemplates().remove(productTemplate);
+		productTemplate.setProductCategory(null);
+
+		return productTemplate;
 	}
 
 }

@@ -28,8 +28,8 @@ public class DbConfig {
      * xml bidez edo beste sistema batez definitu beharrik gabe.  
      *
      */
-    @Bean("dataSourceIn")
-    public DataSource dataSourceIn() {
+    @Bean
+    public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(env.getProperty("dbin.driver"));
         dataSource.setUrl(env.getProperty("dbin.url"));
@@ -38,7 +38,7 @@ public class DbConfig {
         return dataSource;
     }
     
-    @Bean("dataSourceOut")
+  /*  @Bean("dataSourceOut")
     public DataSource dataSourceOut() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(env.getProperty("db.driver"));
@@ -46,7 +46,7 @@ public class DbConfig {
         dataSource.setUsername(env.getProperty("db.username"));
         dataSource.setPassword(env.getProperty("db.password"));
         return dataSource;
-    }
+    }*/
 
     /**
      *
@@ -57,7 +57,7 @@ public class DbConfig {
         LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
 
         //Le asignamos el dataSource que acabamos de definir.
-        entityManagerFactory.setDataSource(dataSourceIn());
+        entityManagerFactory.setDataSource(dataSource);
 
         // Le indicamos la ruta donde tiene que buscar las clases anotadas
         entityManagerFactory.setPackagesToScan(env.getProperty("entitymanagerin.packagesToScan"));
@@ -104,6 +104,9 @@ public class DbConfig {
     
     @Autowired
     private Environment env;
+    
+    @Autowired
+    private DataSource dataSource;
 
     @Autowired
     private LocalContainerEntityManagerFactoryBean entityManagerFactory;
