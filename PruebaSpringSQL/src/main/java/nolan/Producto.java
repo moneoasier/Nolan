@@ -2,9 +2,9 @@ package nolan;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.util.Objects;
 
 
@@ -14,15 +14,14 @@ import java.util.Objects;
  */
 @Entity
 @Table(name="product_template")
+
 public class Producto implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	private Integer id;
 
-	private Boolean active;
-
-	@Column(name="create_date")
+	@Column(name="create_date", columnDefinition = "VARCHAR")
 	private Timestamp createDate;
 	
 	@Column(name="list_price")
@@ -50,17 +49,6 @@ public class Producto implements Serializable {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-
-	public Boolean getActive() {
-		return active;
-	}
-
-
-	public void setActive(Boolean active) {
-		this.active = active;
-	}
-
 
 	public Timestamp getCreateDate() {
 		return createDate;
@@ -113,7 +101,7 @@ public class Producto implements Serializable {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(active, createDate, listPrice, defaultCode, id, name, productCategory);
+		return Objects.hash(createDate, defaultCode, id, listPrice, name, productCategory);
 	}
 
 
@@ -126,18 +114,21 @@ public class Producto implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Producto other = (Producto) obj;
-		return Objects.equals(active, other.active) && Objects.equals(createDate, other.createDate)
+		return Objects.equals(createDate, other.createDate)
 				&& Objects.equals(defaultCode, other.defaultCode) && Objects.equals(id, other.id)
-				&& Objects.equals(name, other.name) && Objects.equals(productCategory, other.productCategory)
-				&& Objects.equals(listPrice, other.listPrice);
+				&& Objects.equals(listPrice, other.listPrice) && Objects.equals(name, other.name)
+				&& Objects.equals(productCategory, other.productCategory);
 	}
 
 
 	@Override
 	public String toString() {
-		return "Producto [id=" + id + ", active=" + active + ", listPrice= " + listPrice+", createDate=" + createDate + ", defaultCode="
-				+ defaultCode + ", name=" + name + ", productCategory=" + productCategory + "]";
+		return "Producto [id=" + id + ", createDate=" + createDate + ", listPrice=" + listPrice
+				+ ", defaultCode=" + defaultCode + ", name=" + name + ", productCategory=" + productCategory + "]";
 	}
+
+
+	
 
 
 }

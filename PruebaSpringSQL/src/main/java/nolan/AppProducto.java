@@ -22,15 +22,21 @@ public class AppProducto {
 		  List<Producto> products = dao.getProducts(); 
 		  List<Categoria> categories=dao.getCategories();
 		  
-		  for (Producto p:products) { System.out.println(p); }
-		 
-		 
+		  ApplicationContext appContext2 = new AnnotationConfigApplicationContext(ExportConfig.class);
+		  ProductoDAO dout = appContext2.getBean(ProductoDAO.class);
+		  
+		  
 		  for(Categoria c:categories) {
-			  System.out.println(c);
+		  dout.create(c);
+		  }
+		 
+		  for (Producto p:products) { 
+			  dout.create(p);
 		  }
 
-		((AnnotationConfigApplicationContext) appContext).close();
-
+		  
+		  ((AnnotationConfigApplicationContext) appContext).close();
+		  ((AnnotationConfigApplicationContext) appContext2).close();
 	}
 
 }

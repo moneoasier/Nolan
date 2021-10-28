@@ -42,5 +42,13 @@ public class ProductoDAO {
         return entityManager.find(Categoria.class, id);
     }
     
+    public void create(Categoria cat) {
+        entityManager.persist(cat);
+        return;
+    }
     
+    public void create(Producto prod) {
+        entityManager.persist(prod);
+        return;
+    }
 }
