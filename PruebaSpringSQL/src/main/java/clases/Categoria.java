@@ -1,4 +1,4 @@
-package nolan;
+package clases;
 
 import java.io.Serializable;
 import javax.persistence.*;

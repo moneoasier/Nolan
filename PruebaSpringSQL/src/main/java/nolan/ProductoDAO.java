@@ -8,6 +8,9 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
+import clases.Categoria;
+import clases.Producto;
+
 @Repository
 @Transactional  //Método bakoitza hasi aurretik transakzio bat hasiko da, metodoa bukatutakoan, transakzioa bukatu 
 public class ProductoDAO {

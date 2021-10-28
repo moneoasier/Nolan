@@ -1,10 +1,11 @@
-package nolan;
+package clases;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 import javax.persistence.*;
+
 import java.util.Objects;
 
 

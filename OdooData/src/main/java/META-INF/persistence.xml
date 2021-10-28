@@ -3,5 +3,9 @@
 	<persistence-unit name="OdooData">
 		<class>model.ProductCategory</class>
 		<class>model.ProductTemplate</class>
+		<class>model.ResPartner</class>
+		<class>model.ResUser</class>
+		<class>model.SaleOrder</class>
+		<class>model.SaleOrderLine</class>
 	</persistence-unit>
 </persistence>
