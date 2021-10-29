@@ -32,13 +32,13 @@ public class DataApp {
 		ManagementDAO dout = appContext2.getBean(ManagementDAO.class);
 
 
-		for(Categoria c:categories) { dout.create(c); }
-		for (Producto p:products) { dout.create(p); }
-		for(Partner p:partners) {dout.create(p);}
-		for (User u:users) { dout.create(u); }
-		for ( Employee e: employees) {dout.create(e);}
-		for(Order o:orders) { dout.create(o);}
-		for(OrderLine ol:orderlines) {dout.create(ol);}
+		for(Categoria c:categories) { dout.update(c); }
+		for (Producto p:products) { dout.update(p); }
+		for(Partner p:partners) {dout.update(p);}
+		for (User u:users) { dout.update(u); }
+		for ( Employee e: employees) {dout.update(e);}
+		for(Order o:orders) { dout.update(o);}
+		for(OrderLine ol:orderlines) {dout.update(ol);}
 
 		((AnnotationConfigApplicationContext) appContext).close();
 		((AnnotationConfigApplicationContext) appContext2).close();

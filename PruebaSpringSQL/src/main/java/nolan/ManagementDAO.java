@@ -33,6 +33,9 @@ public class ManagementDAO {
     public Producto getProdById(long id) {
         return entityManager.find(Producto.class, id);
     }
+    public void update(Producto prod) {
+    	entityManager.merge(prod);
+    }
     
     @SuppressWarnings("unchecked")
 	public List<Categoria> getCategories() {
@@ -47,6 +50,10 @@ public class ManagementDAO {
     public void create(Categoria cat) {
         entityManager.persist(cat);
         return;
+    }
+    
+    public void update(Categoria cat) {
+    	entityManager.merge(cat);
     }
     
     public void create(Producto prod) {
@@ -64,6 +71,9 @@ public class ManagementDAO {
         entityManager.persist(emp);
         return;
     }
+    public void update(Employee emp) {
+    	entityManager.merge(emp);
+    }
     
     
     @SuppressWarnings("unchecked")
@@ -75,6 +85,10 @@ public class ManagementDAO {
     }
     public void create(User usr) {
         entityManager.persist(usr);
+        return;
+    }
+    public void update(User usr) {
+        entityManager.merge(usr);
         return;
     }
     
@@ -89,7 +103,10 @@ public class ManagementDAO {
         entityManager.persist(par);
         return;
     }
-    
+    public void update(Partner par) {
+        entityManager.merge(par);
+        return;
+    }
     @SuppressWarnings("unchecked")
     public List<Order> getOrders() {
         return entityManager.createQuery("from Order").getResultList();
@@ -99,6 +116,10 @@ public class ManagementDAO {
     }
     public void create(Order ord) {
         entityManager.persist(ord);
+        return;
+    }
+    public void update(Order ord) {
+        entityManager.merge(ord);
         return;
     }
     
@@ -111,6 +132,11 @@ public class ManagementDAO {
     }
     public void create(OrderLine ordln) {
         entityManager.persist(ordln);
+        return;
+    }
+    
+    public void update(OrderLine ordln) {
+        entityManager.merge(ordln);
         return;
     }
     
