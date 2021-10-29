@@ -89,8 +89,8 @@ public class ExportConfig {
     }
 
     @Bean
-    public ProductoDAO getPeliculaDao() {
-    	return new ProductoDAO();
+    public ManagementDAO getPeliculaDao() {
+    	return new ManagementDAO();
     }
     
     @Autowired

@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @PropertySource("classpath:/application.properties")  
 @EnableTransactionManagement
-public class DbConfig {
+public class ImportConfig {
 
     /**
      * Definición del DataSource para la conexión a nuestra base de datos.
@@ -89,8 +89,8 @@ public class DbConfig {
     }
 
     @Bean
-    public ProductoDAO getPeliculaDao() {
-    	return new ProductoDAO();
+    public ManagementDAO getPeliculaDao() {
+    	return new ManagementDAO();
     }
     
     @Autowired

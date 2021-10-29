@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @Transactional  //Método bakoitza hasi aurretik transakzio bat hasiko da, metodoa bukatutakoan, transakzioa bukatu 
-public class ProductoDAO {
+public class ManagementDAO {
 
     // A través de la anotación @PersistenceContext, se inyectará automáticamente
     // un EntityManager producido desde el entityManagerFactory definido en la clase

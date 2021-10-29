@@ -7,12 +7,12 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @SpringBootApplication
-public class AppProducto {
+public class DataApp {
 
 	public static void main(String[] args) {
-		ApplicationContext appContext = new AnnotationConfigApplicationContext(DbConfig.class);
+		ApplicationContext appContext = new AnnotationConfigApplicationContext(ImportConfig.class);
 
-		ProductoDAO dao = appContext.getBean(ProductoDAO.class);
+		ManagementDAO dao = appContext.getBean(ManagementDAO.class);
 		/* edo horrela:
 		 * @Autowired
 		 * PeliculaDao peliDao;
@@ -29,7 +29,7 @@ public class AppProducto {
 		List<OrderLine> orderlines=dao.getOrderlines();
 		
 		ApplicationContext appContext2 = new AnnotationConfigApplicationContext(ExportConfig.class);
-		ProductoDAO dout = appContext2.getBean(ProductoDAO.class);
+		ManagementDAO dout = appContext2.getBean(ManagementDAO.class);
 
 
 		for(Categoria c:categories) { dout.create(c); }
