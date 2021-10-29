@@ -9,7 +9,12 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import clases.Categoria;
+import clases.Employee;
+import clases.Order;
+import clases.OrderLine;
+import clases.Partner;
 import clases.Producto;
+import clases.User;
 
 @Repository
 @Transactional  //Método bakoitza hasi aurretik transakzio bat hasiko da, metodoa bukatutakoan, transakzioa bukatu 
@@ -29,6 +34,7 @@ public class ProductoDAO {
         return entityManager.createQuery("from Producto").getResultList();
     }
 
+
     /**
      * Devuelve un producto en base a su Id
      */
@@ -45,6 +51,7 @@ public class ProductoDAO {
         return entityManager.find(Categoria.class, id);
     }
     
+    
     public void create(Categoria cat) {
         entityManager.persist(cat);
         return;
@@ -54,4 +61,65 @@ public class ProductoDAO {
         entityManager.persist(prod);
         return;
     }
+    @SuppressWarnings("unchecked")
+    public List<Employee> getEmployees() {
+        return entityManager.createQuery("from Employee").getResultList();
+    }
+    public Employee getEmpById(long id) {
+        return entityManager.find(Employee.class, id);
+    }
+    public void create(Employee emp) {
+        entityManager.persist(emp);
+        return;
+    }
+    
+    
+    @SuppressWarnings("unchecked")
+    public List<User> getUsers() {
+        return entityManager.createQuery("from User").getResultList();
+    }
+    public User getUsrById(long id) {
+        return entityManager.find(User.class, id);
+    }
+    public void create(User usr) {
+        entityManager.persist(usr);
+        return;
+    }
+    
+    @SuppressWarnings("unchecked")
+    public List<Partner> getPartners() {
+        return entityManager.createQuery("from Partner").getResultList();
+    }
+    public Partner getParById(long id) {
+        return entityManager.find(Partner.class, id);
+    }
+    public void create(Partner par) {
+        entityManager.persist(par);
+        return;
+    }
+    
+    @SuppressWarnings("unchecked")
+    public List<Order> getOrders() {
+        return entityManager.createQuery("from Order").getResultList();
+    }
+    public Order getOrdById(long id) {
+        return entityManager.find(Order.class, id);
+    }
+    public void create(Order ord) {
+        entityManager.persist(ord);
+        return;
+    }
+    
+    @SuppressWarnings("unchecked")
+    public List<OrderLine> getOrderlines() {
+        return entityManager.createQuery("from OrderLine").getResultList();
+    }
+    public OrderLine getOrlndById(long id) {
+        return entityManager.find(OrderLine.class, id);
+    }
+    public void create(OrderLine ordln) {
+        entityManager.persist(ordln);
+        return;
+    }
+    
 }

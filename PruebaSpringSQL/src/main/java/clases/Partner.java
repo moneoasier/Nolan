@@ -2,10 +2,10 @@ package clases;
 
 	import java.io.Serializable;
 	import javax.persistence.*;
-	import java.math.BigDecimal;
 	import java.util.Date;
 	import java.sql.Timestamp;
 	import java.util.List;
+import java.util.Objects;
 
 
 	/**
@@ -21,165 +21,26 @@ package clases;
 		@Id
 		private Integer id;
 
-		private Boolean active;
-
-		@Column(name="additional_info")
-		private String additionalInfo;
-
-		@Column(name="calendar_last_notif_ack")
-		private Timestamp calendarLastNotifAck;
-
 		private String city;
-
-		private Integer color;
-
-		private String comment;
-
-		@Column(name="commercial_company_name")
-		private String commercialCompanyName;
-
-		@Column(name="company_id")
-		private Integer companyId;
-
-		@Column(name="company_name")
-		private String companyName;
-
-		@Column(name="country_id")
-		private Integer countryId;
 
 		@Column(name="create_date")
 		private Timestamp createDate;
 
-		@Column(name="credit_limit")
-		private double creditLimit;
-
-		@Column(name="customer_rank")
-		private Integer customerRank;
-
 		@Temporal(TemporalType.DATE)
 		private Date date;
 
-		@Column(name="debit_limit")
-		private BigDecimal debitLimit;
-
-		@Column(name="display_name")
-		private String displayName;
-
-		private String email;
-
-		@Column(name="email_normalized")
-		private String emailNormalized;
-
-		private Boolean employee;
-
-		private String function;
-
-		@Column(name="industry_id")
-		private Integer industryId;
-
-		@Column(name="invoice_warn")
-		private String invoiceWarn;
-
-		@Column(name="invoice_warn_msg")
-		private String invoiceWarnMsg;
-
-		@Column(name="is_company")
-		private Boolean isCompany;
-
-		@Column(name="is_published")
-		private Boolean isPublished;
-
-		private String lang;
-
-		@Column(name="last_time_entries_checked")
-		private Timestamp lastTimeEntriesChecked;
-
-		@Column(name="message_bounce")
-		private Integer messageBounce;
-
-		@Column(name="message_main_attachment_id")
-		private Integer messageMainAttachmentId;
-
-		private String mobile;
 
 		private String name;
-
-		@Column(name="partner_gid")
-		private Integer partnerGid;
-
-		@Column(name="partner_latitude")
-		private BigDecimal partnerLatitude;
-
-		@Column(name="partner_longitude")
-		private BigDecimal partnerLongitude;
-
-		@Column(name="partner_share")
-		private Boolean partnerShare;
-
-		private String phone;
-
-		@Column(name="phone_sanitized")
-		private String phoneSanitized;
-
-		@Column(name="picking_warn")
-		private String pickingWarn;
-
-		@Column(name="picking_warn_msg")
-		private String pickingWarnMsg;
-
-		@Column(name="purchase_warn")
-		private String purchaseWarn;
-
-		@Column(name="purchase_warn_msg")
-		private String purchaseWarnMsg;
-
-		private String ref;
-
-		@Column(name="sale_warn")
-		private String saleWarn;
-
-		@Column(name="sale_warn_msg")
-		private String saleWarnMsg;
-
-		@Column(name="signup_expiration")
-		private Timestamp signupExpiration;
-
-		@Column(name="signup_token")
-		private String signupToken;
 
 		@Column(name="signup_type")
 		private String signupType;
 
-		@Column(name="state_id")
-		private Integer stateId;
-
-		private String street;
-
-		private String street2;
-
-		@Column(name="supplier_rank")
-		private Integer supplierRank;
-
-		@Column(name="team_id")
-		private Integer teamId;
-
-		private Integer title;
-
 		private String type;
 
-		private String tz;
 
-		private String vat;
+		
 
-		private String website;
 
-		@Column(name="website_id")
-		private Integer websiteId;
-
-		@Column(name="write_date")
-		private Timestamp writeDate;
-
-		private String zip;
 
 		//bi-directional many-to-one association to ResPartner
 		@ManyToOne
@@ -244,5 +105,216 @@ package clases;
 
 		public Partner() {
 		}
+
+		public Integer getId() {
+			return id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
+		}
+
+		public String getCity() {
+			return city;
+		}
+
+		public void setCity(String city) {
+			this.city = city;
+		}
+
+		public Timestamp getCreateDate() {
+			return createDate;
+		}
+
+		public void setCreateDate(Timestamp createDate) {
+			this.createDate = createDate;
+		}
+
+		public Date getDate() {
+			return date;
+		}
+
+		public void setDate(Date date) {
+			this.date = date;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getSignupType() {
+			return signupType;
+		}
+
+		public void setSignupType(String signupType) {
+			this.signupType = signupType;
+		}
+
+		public String getType() {
+			return type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public Partner getResPartner1() {
+			return resPartner1;
+		}
+
+		public void setResPartner1(Partner resPartner1) {
+			this.resPartner1 = resPartner1;
+		}
+
+		public List<Partner> getResPartners1() {
+			return resPartners1;
+		}
+
+		public void setResPartners1(List<Partner> resPartners1) {
+			this.resPartners1 = resPartners1;
+		}
+
+		public Partner getResPartner2() {
+			return resPartner2;
+		}
+
+		public void setResPartner2(Partner resPartner2) {
+			this.resPartner2 = resPartner2;
+		}
+
+		public List<Partner> getResPartners2() {
+			return resPartners2;
+		}
+
+		public void setResPartners2(List<Partner> resPartners2) {
+			this.resPartners2 = resPartners2;
+		}
+
+		public User getResUser1() {
+			return resUser1;
+		}
+
+		public void setResUser1(User resUser1) {
+			this.resUser1 = resUser1;
+		}
+
+		public User getResUser2() {
+			return resUser2;
+		}
+
+		public void setResUser2(User resUser2) {
+			this.resUser2 = resUser2;
+		}
+
+		public User getResUser3() {
+			return resUser3;
+		}
+
+		public void setResUser3(User resUser3) {
+			this.resUser3 = resUser3;
+		}
+
+		public List<User> getResUsers() {
+			return resUsers;
+		}
+
+		public void setResUsers(List<User> resUsers) {
+			this.resUsers = resUsers;
+		}
+
+		public List<Order> getSaleOrders1() {
+			return saleOrders1;
+		}
+
+		public void setSaleOrders1(List<Order> saleOrders1) {
+			this.saleOrders1 = saleOrders1;
+		}
+
+		public List<Order> getSaleOrders2() {
+			return saleOrders2;
+		}
+
+		public void setSaleOrders2(List<Order> saleOrders2) {
+			this.saleOrders2 = saleOrders2;
+		}
+
+		public List<Order> getSaleOrders3() {
+			return saleOrders3;
+		}
+
+		public void setSaleOrders3(List<Order> saleOrders3) {
+			this.saleOrders3 = saleOrders3;
+		}
+
+		public List<OrderLine> getSaleOrderLines() {
+			return saleOrderLines;
+		}
+
+		public void setSaleOrderLines(List<OrderLine> saleOrderLines) {
+			this.saleOrderLines = saleOrderLines;
+		}
+
+		public List<Employee> getHrEmployees1() {
+			return hrEmployees1;
+		}
+
+		public void setHrEmployees1(List<Employee> hrEmployees1) {
+			this.hrEmployees1 = hrEmployees1;
+		}
+
+		public List<Employee> getHrEmployees2() {
+			return hrEmployees2;
+		}
+
+		public void setHrEmployees2(List<Employee> hrEmployees2) {
+			this.hrEmployees2 = hrEmployees2;
+		}
+
+		@Override
+		public int hashCode() {
+			return Objects.hash(city, createDate, date, hrEmployees1, hrEmployees2, id, name, resPartner1, resPartner2,
+					resPartners1, resPartners2, resUser1, resUser2, resUser3, resUsers, saleOrderLines, saleOrders1,
+					saleOrders2, saleOrders3, signupType, type);
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Partner other = (Partner) obj;
+			return Objects.equals(city, other.city) && Objects.equals(createDate, other.createDate)
+					&& Objects.equals(date, other.date) && Objects.equals(hrEmployees1, other.hrEmployees1)
+					&& Objects.equals(hrEmployees2, other.hrEmployees2) && Objects.equals(id, other.id)
+					&& Objects.equals(name, other.name) && Objects.equals(resPartner1, other.resPartner1)
+					&& Objects.equals(resPartner2, other.resPartner2)
+					&& Objects.equals(resPartners1, other.resPartners1)
+					&& Objects.equals(resPartners2, other.resPartners2) && Objects.equals(resUser1, other.resUser1)
+					&& Objects.equals(resUser2, other.resUser2) && Objects.equals(resUser3, other.resUser3)
+					&& Objects.equals(resUsers, other.resUsers) && Objects.equals(saleOrderLines, other.saleOrderLines)
+					&& Objects.equals(saleOrders1, other.saleOrders1) && Objects.equals(saleOrders2, other.saleOrders2)
+					&& Objects.equals(saleOrders3, other.saleOrders3) && Objects.equals(signupType, other.signupType)
+					&& Objects.equals(type, other.type);
+		}
+
+		@Override
+		public String toString() {
+			return "Partner [id=" + id + ", city=" + city + ", createDate=" + createDate + ", date=" + date + ", name="
+					+ name + ", signupType=" + signupType + ", type=" + type + ", resPartner1=" + resPartner1
+					+ ", resPartners1=" + resPartners1 + ", resPartner2=" + resPartner2 + ", resPartners2="
+					+ resPartners2 + ", resUser1=" + resUser1 + ", resUser2=" + resUser2 + ", resUser3=" + resUser3
+					+ ", resUsers=" + resUsers + ", saleOrders1=" + saleOrders1 + ", saleOrders2=" + saleOrders2
+					+ ", saleOrders3=" + saleOrders3 + ", saleOrderLines=" + saleOrderLines + ", hrEmployees1="
+					+ hrEmployees1 + ", hrEmployees2=" + hrEmployees2 + "]";
+		}
+		
+		
 
 	}

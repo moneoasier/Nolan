@@ -4,6 +4,7 @@ package clases;
 	import javax.persistence.*;
 	import java.sql.Timestamp;
 	import java.util.List;
+import java.util.Objects;
 
 
 	/**
@@ -19,51 +20,10 @@ package clases;
 		@Id
 		private Integer id;
 
-		@Column(name="action_id")
-		private Integer actionId;
-
-		private Boolean active;
-
-		@Column(name="company_id")
-		private Integer companyId;
-
 		@Column(name="create_date")
 		private Timestamp createDate;
 
 		private String login;
-
-		@Column(name="notification_type")
-		private String notificationType;
-
-		@Column(name="odoobot_failed")
-		private Boolean odoobotFailed;
-
-		@Column(name="odoobot_state")
-		private String odoobotState;
-
-		private String password;
-
-		@Column(name="sale_team_id")
-		private Integer saleTeamId;
-
-		private Boolean share;
-
-		private String signature;
-
-		@Column(name="target_sales_done")
-		private Integer targetSalesDone;
-
-		@Column(name="target_sales_invoiced")
-		private Integer targetSalesInvoiced;
-
-		@Column(name="target_sales_won")
-		private Integer targetSalesWon;
-
-		@Column(name="totp_secret")
-		private String totpSecret;
-
-		@Column(name="website_id")
-		private Integer websiteId;
 
 		@Column(name="write_date")
 		private Timestamp writeDate;
@@ -128,6 +88,191 @@ package clases;
 		private List<OrderLine> saleOrderLines3;
 
 		public User() {
+		}
+
+		public Integer getId() {
+			return id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
+		}
+
+		public Timestamp getCreateDate() {
+			return createDate;
+		}
+
+		public void setCreateDate(Timestamp createDate) {
+			this.createDate = createDate;
+		}
+
+		public String getLogin() {
+			return login;
+		}
+
+		public void setLogin(String login) {
+			this.login = login;
+		}
+
+		public Timestamp getWriteDate() {
+			return writeDate;
+		}
+
+		public void setWriteDate(Timestamp writeDate) {
+			this.writeDate = writeDate;
+		}
+
+		public List<Partner> getResPartners1() {
+			return resPartners1;
+		}
+
+		public void setResPartners1(List<Partner> resPartners1) {
+			this.resPartners1 = resPartners1;
+		}
+
+		public List<Partner> getResPartners2() {
+			return resPartners2;
+		}
+
+		public void setResPartners2(List<Partner> resPartners2) {
+			this.resPartners2 = resPartners2;
+		}
+
+		public List<Partner> getResPartners3() {
+			return resPartners3;
+		}
+
+		public void setResPartners3(List<Partner> resPartners3) {
+			this.resPartners3 = resPartners3;
+		}
+
+		public Partner getResPartner() {
+			return resPartner;
+		}
+
+		public void setResPartner(Partner resPartner) {
+			this.resPartner = resPartner;
+		}
+
+		public User getResUser1() {
+			return resUser1;
+		}
+
+		public void setResUser1(User resUser1) {
+			this.resUser1 = resUser1;
+		}
+
+		public List<User> getResUsers1() {
+			return resUsers1;
+		}
+
+		public void setResUsers1(List<User> resUsers1) {
+			this.resUsers1 = resUsers1;
+		}
+
+		public User getResUser2() {
+			return resUser2;
+		}
+
+		public void setResUser2(User resUser2) {
+			this.resUser2 = resUser2;
+		}
+
+		public List<User> getResUsers2() {
+			return resUsers2;
+		}
+
+		public void setResUsers2(List<User> resUsers2) {
+			this.resUsers2 = resUsers2;
+		}
+
+		public List<Order> getSaleOrders1() {
+			return saleOrders1;
+		}
+
+		public void setSaleOrders1(List<Order> saleOrders1) {
+			this.saleOrders1 = saleOrders1;
+		}
+
+		public List<Order> getSaleOrders2() {
+			return saleOrders2;
+		}
+
+		public void setSaleOrders2(List<Order> saleOrders2) {
+			this.saleOrders2 = saleOrders2;
+		}
+
+		public List<Order> getSaleOrders3() {
+			return saleOrders3;
+		}
+
+		public void setSaleOrders3(List<Order> saleOrders3) {
+			this.saleOrders3 = saleOrders3;
+		}
+
+		public List<OrderLine> getSaleOrderLines1() {
+			return saleOrderLines1;
+		}
+
+		public void setSaleOrderLines1(List<OrderLine> saleOrderLines1) {
+			this.saleOrderLines1 = saleOrderLines1;
+		}
+
+		public List<OrderLine> getSaleOrderLines2() {
+			return saleOrderLines2;
+		}
+
+		public void setSaleOrderLines2(List<OrderLine> saleOrderLines2) {
+			this.saleOrderLines2 = saleOrderLines2;
+		}
+
+		public List<OrderLine> getSaleOrderLines3() {
+			return saleOrderLines3;
+		}
+
+		public void setSaleOrderLines3(List<OrderLine> saleOrderLines3) {
+			this.saleOrderLines3 = saleOrderLines3;
+		}
+
+		@Override
+		public int hashCode() {
+			return Objects.hash(createDate, id, login, resPartner, resPartners1, resPartners2, resPartners3, resUser1,
+					resUser2, resUsers1, resUsers2, saleOrderLines1, saleOrderLines2, saleOrderLines3, saleOrders1,
+					saleOrders2, saleOrders3, writeDate);
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			User other = (User) obj;
+			return Objects.equals(createDate, other.createDate) && Objects.equals(id, other.id)
+					&& Objects.equals(login, other.login) && Objects.equals(resPartner, other.resPartner)
+					&& Objects.equals(resPartners1, other.resPartners1)
+					&& Objects.equals(resPartners2, other.resPartners2)
+					&& Objects.equals(resPartners3, other.resPartners3) && Objects.equals(resUser1, other.resUser1)
+					&& Objects.equals(resUser2, other.resUser2) && Objects.equals(resUsers1, other.resUsers1)
+					&& Objects.equals(resUsers2, other.resUsers2)
+					&& Objects.equals(saleOrderLines1, other.saleOrderLines1)
+					&& Objects.equals(saleOrderLines2, other.saleOrderLines2)
+					&& Objects.equals(saleOrderLines3, other.saleOrderLines3)
+					&& Objects.equals(saleOrders1, other.saleOrders1) && Objects.equals(saleOrders2, other.saleOrders2)
+					&& Objects.equals(saleOrders3, other.saleOrders3) && Objects.equals(writeDate, other.writeDate);
+		}
+
+		@Override
+		public String toString() {
+			return "User [id=" + id + ", createDate=" + createDate + ", login=" + login + ", writeDate=" + writeDate
+					+ ", resPartners1=" + resPartners1 + ", resPartners2=" + resPartners2 + ", resPartners3="
+					+ resPartners3 + ", resPartner=" + resPartner + ", resUser1=" + resUser1 + ", resUsers1="
+					+ resUsers1 + ", resUser2=" + resUser2 + ", resUsers2=" + resUsers2 + ", saleOrders1=" + saleOrders1
+					+ ", saleOrders2=" + saleOrders2 + ", saleOrders3=" + saleOrders3 + ", saleOrderLines1="
+					+ saleOrderLines1 + ", saleOrderLines2=" + saleOrderLines2 + ", saleOrderLines3=" + saleOrderLines3
+					+ "]";
 		}
 
 
