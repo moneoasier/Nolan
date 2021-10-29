@@ -1,12 +1,6 @@
 package com.example.demo;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-
-
-
-	import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilderFactory;
 	import javax.xml.parsers.DocumentBuilder;
 	import javax.xml.transform.Transformer;
 	import javax.xml.transform.TransformerFactory;
