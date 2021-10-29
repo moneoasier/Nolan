@@ -1,0 +1,7 @@
+1) Número de ventas que se han hecho
+2) Número de productos que vendemos
+3) Número de trabajadores que tenemos 
+4) Número de compradores que tenemos
+5) Total de ganancias
+6) Compras de cada comprador
+7) Ventas por cada trabajador
