@@ -8,14 +8,6 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
-import clases.Categoria;
-import clases.Employee;
-import clases.Order;
-import clases.OrderLine;
-import clases.Partner;
-import clases.Producto;
-import clases.User;
-
 @Repository
 @Transactional  //Método bakoitza hasi aurretik transakzio bat hasiko da, metodoa bukatutakoan, transakzioa bukatu 
 public class ProductoDAO {
@@ -31,7 +23,7 @@ public class ProductoDAO {
      */
     @SuppressWarnings("unchecked")
     public List<Producto> getProducts() {
-        return entityManager.createQuery("from clases.Producto").getResultList();
+        return entityManager.createQuery("from Producto").getResultList();
     }
 
 
@@ -44,7 +36,7 @@ public class ProductoDAO {
     
     @SuppressWarnings("unchecked")
 	public List<Categoria> getCategories() {
-    	return entityManager.createQuery("from clases.Categoria").getResultList();
+    	return entityManager.createQuery("from Categoria").getResultList();
     }
 
     public Categoria getCatById(long id) {
@@ -63,7 +55,7 @@ public class ProductoDAO {
     }
     @SuppressWarnings("unchecked")
     public List<Employee> getEmployees() {
-        return entityManager.createQuery("from clases.Employee").getResultList();
+        return entityManager.createQuery("from Employee").getResultList();
     }
     public Employee getEmpById(long id) {
         return entityManager.find(Employee.class, id);
@@ -76,7 +68,7 @@ public class ProductoDAO {
     
     @SuppressWarnings("unchecked")
     public List<User> getUsers() {
-        return entityManager.createQuery("from clases.User").getResultList();
+        return entityManager.createQuery("from User").getResultList();
     }
     public User getUsrById(long id) {
         return entityManager.find(User.class, id);
@@ -88,7 +80,7 @@ public class ProductoDAO {
     
     @SuppressWarnings("unchecked")
     public List<Partner> getPartners() {
-        return entityManager.createQuery("from clases.Partner").getResultList();
+        return entityManager.createQuery("from Partner").getResultList();
     }
     public Partner getParById(long id) {
         return entityManager.find(Partner.class, id);
@@ -100,7 +92,7 @@ public class ProductoDAO {
     
     @SuppressWarnings("unchecked")
     public List<Order> getOrders() {
-        return entityManager.createQuery("from clases.Order").getResultList();
+        return entityManager.createQuery("from Order").getResultList();
     }
     public Order getOrdById(long id) {
         return entityManager.find(Order.class, id);
@@ -112,7 +104,7 @@ public class ProductoDAO {
     
     @SuppressWarnings("unchecked")
     public List<OrderLine> getOrderlines() {
-        return entityManager.createQuery("from clases.OrderLine").getResultList();
+        return entityManager.createQuery("from OrderLine").getResultList();
     }
     public OrderLine getOrlndById(long id) {
         return entityManager.find(OrderLine.class, id);
