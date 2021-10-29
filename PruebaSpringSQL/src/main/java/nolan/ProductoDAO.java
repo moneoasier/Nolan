@@ -31,7 +31,7 @@ public class ProductoDAO {
      */
     @SuppressWarnings("unchecked")
     public List<Producto> getProducts() {
-        return entityManager.createQuery("from Producto").getResultList();
+        return entityManager.createQuery("from clases.Producto").getResultList();
     }
 
 
@@ -44,7 +44,7 @@ public class ProductoDAO {
     
     @SuppressWarnings("unchecked")
 	public List<Categoria> getCategories() {
-    	return entityManager.createQuery("from Categoria").getResultList();
+    	return entityManager.createQuery("from clases.Categoria").getResultList();
     }
 
     public Categoria getCatById(long id) {
@@ -63,7 +63,7 @@ public class ProductoDAO {
     }
     @SuppressWarnings("unchecked")
     public List<Employee> getEmployees() {
-        return entityManager.createQuery("from Employee").getResultList();
+        return entityManager.createQuery("from clases.Employee").getResultList();
     }
     public Employee getEmpById(long id) {
         return entityManager.find(Employee.class, id);
@@ -76,7 +76,7 @@ public class ProductoDAO {
     
     @SuppressWarnings("unchecked")
     public List<User> getUsers() {
-        return entityManager.createQuery("from User").getResultList();
+        return entityManager.createQuery("from clases.User").getResultList();
     }
     public User getUsrById(long id) {
         return entityManager.find(User.class, id);
@@ -88,7 +88,7 @@ public class ProductoDAO {
     
     @SuppressWarnings("unchecked")
     public List<Partner> getPartners() {
-        return entityManager.createQuery("from Partner").getResultList();
+        return entityManager.createQuery("from clases.Partner").getResultList();
     }
     public Partner getParById(long id) {
         return entityManager.find(Partner.class, id);
@@ -100,7 +100,7 @@ public class ProductoDAO {
     
     @SuppressWarnings("unchecked")
     public List<Order> getOrders() {
-        return entityManager.createQuery("from Order").getResultList();
+        return entityManager.createQuery("from clases.Order").getResultList();
     }
     public Order getOrdById(long id) {
         return entityManager.find(Order.class, id);
@@ -112,7 +112,7 @@ public class ProductoDAO {
     
     @SuppressWarnings("unchecked")
     public List<OrderLine> getOrderlines() {
-        return entityManager.createQuery("from OrderLine").getResultList();
+        return entityManager.createQuery("from clases.OrderLine").getResultList();
     }
     public OrderLine getOrlndById(long id) {
         return entityManager.find(OrderLine.class, id);

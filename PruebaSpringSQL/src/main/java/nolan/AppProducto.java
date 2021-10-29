@@ -8,6 +8,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import clases.Categoria;
 import clases.Producto;
+import clases.User;
 
 @SpringBootApplication
 public class AppProducto {
@@ -22,21 +23,22 @@ public class AppProducto {
 		 */	
 		  	  
 		  //Pelikulen taulako datuak berreskuratu 
-		  List<Producto> products = dao.getProducts(); 
-		  List<Categoria> categories=dao.getCategories();
+			/*
+			 * List<Producto> products = dao.getProducts(); List<Categoria>
+			 * categories=dao.getCategories();
+			 */
+		  List<User> users = dao.getUsers();
 		  
 		  ApplicationContext appContext2 = new AnnotationConfigApplicationContext(ExportConfig.class);
 		  ProductoDAO dout = appContext2.getBean(ProductoDAO.class);
 		  
 		  
-		  for(Categoria c:categories) {
-		  dout.create(c);
-		  }
-		 
-		  for (Producto p:products) { 
-			  dout.create(p);
-		  }
-
+			/*
+			 * for(Categoria c:categories) { dout.create(c); }
+			 * 
+			 * for (Producto p:products) { dout.create(p); }
+			 */
+		  for (User u:users) { dout.create(u); }
 		  
 		  ((AnnotationConfigApplicationContext) appContext).close();
 		  ((AnnotationConfigApplicationContext) appContext2).close();
