@@ -1,4 +1,4 @@
-package nolan;
+package xml;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
@@ -33,7 +33,7 @@ public class Option {
 
 	@Override
 	public String toString() {
-		return "Option [tipo=" + tipo + ", option=" + choice + "]";
+		return choice;
 	}
 	
 	
