@@ -46,7 +46,7 @@ public class Data {
 			this.setOptions(options);
 			this.setDate(new Date());
 			mar.marshal(this, new File("options.xml"));
-			System.out.println("DATA SAVED");
+			
 		} catch (JAXBException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

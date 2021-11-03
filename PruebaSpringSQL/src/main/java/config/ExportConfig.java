@@ -1,4 +1,4 @@
-package nolan;
+package config;
 
 import java.util.Properties;
 import javax.sql.DataSource;
@@ -14,10 +14,12 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import nolan.ManagementDAO;
+
 @Configuration
 @PropertySource("classpath:/application.properties")  
 @EnableTransactionManagement
-public class ImportConfig {
+public class ExportConfig {
 
     /**
      * Definición del DataSource para la conexión a nuestra base de datos.
@@ -28,16 +30,16 @@ public class ImportConfig {
      * xml bidez edo beste sistema batez definitu beharrik gabe.  
      *
      */
-    @Bean
-    public DataSource dataSource() {
+
+   @Bean
+    public DataSource dataSourceOut() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(env.getProperty("dbin.driver"));
-        dataSource.setUrl(env.getProperty("dbin.url"));
-        dataSource.setUsername(env.getProperty("dbin.username"));
-        dataSource.setPassword(env.getProperty("dbin.password"));
+        dataSource.setDriverClassName(env.getProperty("db.driver"));
+        dataSource.setUrl(env.getProperty("db.url"));
+        dataSource.setUsername(env.getProperty("db.username"));
+        dataSource.setPassword(env.getProperty("db.password"));
         return dataSource;
     }
-   
 
     /**
      *
@@ -48,10 +50,10 @@ public class ImportConfig {
         LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
 
         //Le asignamos el dataSource que acabamos de definir.
-        entityManagerFactory.setDataSource(dataSource);
+        entityManagerFactory.setDataSource(dataSourceOut);
 
         // Le indicamos la ruta donde tiene que buscar las clases anotadas
-        entityManagerFactory.setPackagesToScan(env.getProperty("entitymanagerin.packagesToScan"));
+        entityManagerFactory.setPackagesToScan(env.getProperty("entitymanager.packagesToScan"));
 
         // Implementación de JPA a usar: Hibernate
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
@@ -59,9 +61,9 @@ public class ImportConfig {
 
         // Propiedades de Hiberante
         Properties additionalProperties = new Properties();
-        additionalProperties.put("hibernate.dialect", env.getProperty("hibernatein.dialect"));
-        additionalProperties.put("hibernate.show_sql", env.getProperty("hibernatein.show_sql"));
-        additionalProperties.put("hibernate.hbm2ddl.auto", env.getProperty("hibernatein.hbm2ddl.auto"));
+        additionalProperties.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
+        additionalProperties.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
+        additionalProperties.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
         entityManagerFactory.setJpaProperties(additionalProperties);
 
         return entityManagerFactory;
@@ -97,7 +99,7 @@ public class ImportConfig {
     private Environment env;
     
     @Autowired
-    private DataSource dataSource;
+    private DataSource dataSourceOut;
 
     @Autowired
     private LocalContainerEntityManagerFactoryBean entityManagerFactory;
