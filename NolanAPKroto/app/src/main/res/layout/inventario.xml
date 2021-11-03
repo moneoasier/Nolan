@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondonolan"
-    tools:context=".MainActivity">
+    tools:context=".Inventario">
 
 
     <TextView
@@ -161,6 +161,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="28dp"
+        android:onClick="btnBuy"
         android:text="BUY"
         app:layout_constraintBottom_toTopOf="@+id/search"
         app:layout_constraintEnd_toEndOf="parent"

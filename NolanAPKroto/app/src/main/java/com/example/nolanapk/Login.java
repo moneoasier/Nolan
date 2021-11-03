@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity3 extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     EditText contra;
     EditText user;
@@ -16,14 +16,17 @@ public class MainActivity3 extends AppCompatActivity {
     String contraTxt;
     Connexion con;
     boolean connectOk;
+    public static int user_id;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.login);
         con = new Connexion();
         connectOk=con.isStatus();
+
+
     }
 
     /*
@@ -40,22 +43,22 @@ public class MainActivity3 extends AppCompatActivity {
           Erabiltzaile edo Pasahitza betetzen ez direnean abisu batzuk agertuko dira
          */
         if (contraTxt.equals("") && userTxt.equals("")) {
-            Toast.makeText(MainActivity3.this, "Empty fields", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Login.this, "Empty fields", Toast.LENGTH_SHORT).show();
         } else if (contraTxt.equals("")) {
-            Toast.makeText(MainActivity3.this, "Enter a password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Login.this, "Enter a password", Toast.LENGTH_SHORT).show();
         } else if (userTxt.equals("")) {
-            Toast.makeText(MainActivity3.this, "Enter a username", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Login.this, "Enter a username", Toast.LENGTH_SHORT).show();
         } else {
             /*
               correctUser() Metodoari deitu eta datuak ondo badaude hurrengo Activity-ra eramango gaitu
              */
                 if (connectOk){
                     if (correctUser()) {
-                        Intent b = new Intent(MainActivity3.this, MainActivity.class);
+                        Intent b = new Intent(Login.this, Inventario.class);
                         startActivity(b);
                     }
                 } else {
-                    Toast.makeText(MainActivity3.this, "Conexion failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Conexion failed", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -70,18 +73,19 @@ public class MainActivity3 extends AppCompatActivity {
 
         if(u!=null){
             if(u.getPassword().equals(contraTxt) && u.isActive()) {
+                user_id = u.getId();
                 return true;
             } else if(u.getPassword().equals(contraTxt) && !u.isActive()) {
-                Toast.makeText(MainActivity3.this, "Disabled user", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login.this, "Disabled user", Toast.LENGTH_SHORT).show();
                 return false;
             } else {
-                Toast.makeText(MainActivity3.this, "Incorrect password", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login.this, "Incorrect password", Toast.LENGTH_SHORT).show();
                 contra.setText("");
                 return false;
             }
         }
 
-        Toast.makeText(MainActivity3.this, "User not found", Toast.LENGTH_SHORT).show();
+        Toast.makeText(Login.this, "User not found", Toast.LENGTH_SHORT).show();
         contra.setText("");
         user.setText("");
 
