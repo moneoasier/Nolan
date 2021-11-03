@@ -70,16 +70,7 @@ public class Partner {
 
     @Override
     public String toString() {
-        return "Partner{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", street='" + street + '\'' +
-                ", zip='" + zip + '\'' +
-                ", city='" + city + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                ", company=" + company +
-                '}';
+        return name;
     }
 
 }

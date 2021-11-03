@@ -8,6 +8,7 @@ public class Gafa {
     private double precio;
     private int stock;
     private String category;
+    private int cantidad;
 
     /**
      * Constructor
@@ -63,12 +64,18 @@ public class Gafa {
         this.category = category;
     }
 
+    public int getCantidad() { return cantidad;
+    }
+
+    public void setCantidad(int cantidad) { this.cantidad = cantidad;
+    }
+
     /**
      * Metodos ToString/Equals
      */
     @Override
     public String toString() {
-        return id +","+nombre+","+precio+","+stock+","+category;
+        return id +","+nombre+","+precio+","+stock+","+category+","+cantidad;
     }
 
     @Override

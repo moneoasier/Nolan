@@ -5,9 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondonolan"
-    tools:context=".MainActivity2">
+    tools:context=".Detalles">
 
     <!-- Polygon 2 -->
+
+    <Button
+        android:id="@+id/btnCompra2"
+        android:layout_width="65dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="301dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="28dp"
+        android:onClick="btnBuy"
+        android:text="BUY"
+        app:layout_constraintBottom_toTopOf="@+id/search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView2"
@@ -89,12 +106,24 @@
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="162dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="81dp"
         android:onClick="addProduct"
         android:text="ADD PRODUCT"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datos" />
+
+    <EditText
+        android:id="@+id/Qty_txt"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="89dp"
+        android:layout_marginTop="17dp"
+        android:background="@color/fondo_cosa"
+        android:ems="10"
+        android:hint="Quantity"
+        android:inputType="number"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/datos" />
 

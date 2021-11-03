@@ -19,7 +19,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class Inventario extends AppCompatActivity {
 
     //Aldagai globalen deklarazioa
     ImageView b1;
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.inventario);
     //Aplikazioa abiaraztean aldagaiei emandako balioak
         b1 = findViewById(R.id.btn1);
         b2 = findViewById(R.id.btn2);
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     //Metodo honek MainActivity2 irekitzen du ImageView bat klikatzean
     public void nextScreen(View v){
 
-        Intent b = new Intent(MainActivity.this, MainActivity2.class);
+        Intent b = new Intent(Inventario.this, Detalles.class);
 
         String valor= v.getTag().toString();
         //Balio bat gordetzen du MainActivity2-ra pasatzeko
@@ -227,6 +227,11 @@ public class MainActivity extends AppCompatActivity {
         }
         currentPage=1;
         pages.setText(currentPage +" / "+ totalPages);
+    }
+
+    public void btnBuy(View v){
+        Intent b = new Intent(Inventario.this, Purchase.class);
+        startActivity(b);
     }
 
 }
