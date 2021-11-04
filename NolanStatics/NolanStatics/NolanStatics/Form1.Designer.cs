@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelSalm = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Salmentak = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelLang = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelErosle = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelProd = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -60,7 +60,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.labelIrab = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -98,7 +98,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.labelSalm);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.Salmentak);
             this.panel1.Location = new System.Drawing.Point(561, 46);
@@ -106,16 +106,16 @@
             this.panel1.Size = new System.Drawing.Size(144, 71);
             this.panel1.TabIndex = 4;
             // 
-            // label5
+            // labelSalm
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(67, 35);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "100";
+            this.labelSalm.AutoSize = true;
+            this.labelSalm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSalm.ForeColor = System.Drawing.Color.White;
+            this.labelSalm.Location = new System.Drawing.Point(67, 35);
+            this.labelSalm.Name = "labelSalm";
+            this.labelSalm.Size = new System.Drawing.Size(18, 20);
+            this.labelSalm.TabIndex = 8;
+            this.labelSalm.Text = "0";
             // 
             // pictureBox1
             // 
@@ -151,7 +151,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.labelLang);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(561, 123);
@@ -159,16 +159,16 @@
             this.panel2.Size = new System.Drawing.Size(144, 71);
             this.panel2.TabIndex = 5;
             // 
-            // label7
+            // labelLang
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(67, 31);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(36, 20);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "100";
+            this.labelLang.AutoSize = true;
+            this.labelLang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLang.ForeColor = System.Drawing.Color.White;
+            this.labelLang.Location = new System.Drawing.Point(67, 31);
+            this.labelLang.Name = "labelLang";
+            this.labelLang.Size = new System.Drawing.Size(18, 20);
+            this.labelLang.TabIndex = 9;
+            this.labelLang.Text = "0";
             // 
             // pictureBox2
             // 
@@ -194,7 +194,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.labelErosle);
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(861, 46);
@@ -202,16 +202,16 @@
             this.panel3.Size = new System.Drawing.Size(144, 71);
             this.panel3.TabIndex = 7;
             // 
-            // label8
+            // labelErosle
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(67, 31);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(36, 20);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "100";
+            this.labelErosle.AutoSize = true;
+            this.labelErosle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelErosle.ForeColor = System.Drawing.Color.White;
+            this.labelErosle.Location = new System.Drawing.Point(67, 31);
+            this.labelErosle.Name = "labelErosle";
+            this.labelErosle.Size = new System.Drawing.Size(18, 20);
+            this.labelErosle.TabIndex = 9;
+            this.labelErosle.Text = "0";
             // 
             // pictureBox3
             // 
@@ -237,7 +237,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.labelProd);
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Location = new System.Drawing.Point(711, 46);
@@ -245,16 +245,16 @@
             this.panel4.Size = new System.Drawing.Size(144, 71);
             this.panel4.TabIndex = 6;
             // 
-            // label6
+            // labelProd
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(67, 35);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 20);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "100";
+            this.labelProd.AutoSize = true;
+            this.labelProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProd.ForeColor = System.Drawing.Color.White;
+            this.labelProd.Location = new System.Drawing.Point(67, 35);
+            this.labelProd.Name = "labelProd";
+            this.labelProd.Size = new System.Drawing.Size(18, 20);
+            this.labelProd.TabIndex = 9;
+            this.labelProd.Text = "0";
             // 
             // pictureBox4
             // 
@@ -280,35 +280,35 @@
             // chart2
             // 
             this.chart2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            chartArea1.Area3DStyle.Enable3D = true;
-            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            chartArea1.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea1);
-            legend1.BackColor = System.Drawing.Color.Transparent;
-            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend1.ForeColor = System.Drawing.Color.White;
-            legend1.IsTextAutoFit = false;
-            legend1.Name = "Legend1";
-            legend1.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chart2.Legends.Add(legend1);
+            chartArea3.Area3DStyle.Enable3D = true;
+            chartArea3.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            chartArea3.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea3);
+            legend3.BackColor = System.Drawing.Color.Transparent;
+            legend3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend3.ForeColor = System.Drawing.Color.White;
+            legend3.IsTextAutoFit = false;
+            legend3.Name = "Legend1";
+            legend3.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chart2.Legends.Add(legend3);
             this.chart2.Location = new System.Drawing.Point(0, 25);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart2.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart2.Series.Add(series3);
             this.chart2.Size = new System.Drawing.Size(402, 359);
             this.chart2.TabIndex = 4;
             this.chart2.Text = "chart2";
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.ForeColor = System.Drawing.Color.White;
-            title1.Name = "Title1";
-            title1.Text = "SALMENTAK LANGILE BAKOITZEKO";
-            this.chart2.Titles.Add(title1);
+            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title3.ForeColor = System.Drawing.Color.White;
+            title3.Name = "Title1";
+            title3.Text = "SALMENTAK LANGILE BAKOITZEKO";
+            this.chart2.Titles.Add(title3);
             // 
             // panel6
             // 
@@ -331,40 +331,40 @@
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            chartArea2.Area3DStyle.Enable3D = true;
-            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.BackColor = System.Drawing.Color.Transparent;
-            legend2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend2.ForeColor = System.Drawing.Color.White;
-            legend2.IsTextAutoFit = false;
-            legend2.Name = "Legend1";
-            legend2.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chart1.Legends.Add(legend2);
+            chartArea4.Area3DStyle.Enable3D = true;
+            chartArea4.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea4.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.BackColor = System.Drawing.Color.Transparent;
+            legend4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend4.ForeColor = System.Drawing.Color.White;
+            legend4.IsTextAutoFit = false;
+            legend4.Name = "Legend1";
+            legend4.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chart1.Legends.Add(legend4);
             this.chart1.Location = new System.Drawing.Point(0, 25);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(402, 359);
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
-            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title2.ForeColor = System.Drawing.Color.White;
-            title2.Name = "Title1";
-            title2.Text = "SALMENTA EROSLE BAKOITZEKO";
-            this.chart1.Titles.Add(title2);
+            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title4.ForeColor = System.Drawing.Color.White;
+            title4.Name = "Title1";
+            title4.Text = "SALMENTA EROSLE BAKOITZEKO";
+            this.chart1.Titles.Add(title4);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.labelIrab);
             this.panel5.Controls.Add(this.pictureBox5);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Location = new System.Drawing.Point(861, 123);
@@ -372,16 +372,16 @@
             this.panel5.Size = new System.Drawing.Size(144, 71);
             this.panel5.TabIndex = 11;
             // 
-            // label9
+            // labelIrab
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(67, 35);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 20);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "100€";
+            this.labelIrab.AutoSize = true;
+            this.labelIrab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIrab.ForeColor = System.Drawing.Color.White;
+            this.labelIrab.Location = new System.Drawing.Point(67, 35);
+            this.labelIrab.Name = "labelIrab";
+            this.labelIrab.Size = new System.Drawing.Size(18, 20);
+            this.labelIrab.TabIndex = 9;
+            this.labelIrab.Text = "0";
             // 
             // pictureBox5
             // 
@@ -422,9 +422,9 @@
             this.labelCat.ForeColor = System.Drawing.Color.White;
             this.labelCat.Location = new System.Drawing.Point(67, 35);
             this.labelCat.Name = "labelCat";
-            this.labelCat.Size = new System.Drawing.Size(36, 20);
+            this.labelCat.Size = new System.Drawing.Size(18, 20);
             this.labelCat.TabIndex = 9;
-            this.labelCat.Text = "100";
+            this.labelCat.Text = "0";
             // 
             // pictureBox6
             // 
@@ -467,6 +467,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -500,17 +501,17 @@
         private System.Windows.Forms.Label Salmentak;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelSalm;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelLang;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelErosle;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelProd;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
@@ -518,7 +519,7 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelIrab;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel8;
