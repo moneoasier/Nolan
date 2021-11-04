@@ -2,6 +2,7 @@ package nolan;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -45,6 +46,10 @@ public class Order implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="create_uid")
 	private User resUser;
+	
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User resUser2;
 
 	public Order() {
 	}
@@ -121,9 +126,34 @@ public class Order implements Serializable {
 		this.resUser = resUser1;
 	}
 
+	public Partner getResPartner() {
+		return resPartner;
+	}
+
+	public void setResPartner(Partner resPartner) {
+		this.resPartner = resPartner;
+	}
+
+	public User getResUser() {
+		return resUser;
+	}
+
+	public void setResUser(User resUser) {
+		this.resUser = resUser;
+	}
+
+	public User getResUser2() {
+		return resUser2;
+	}
+
+	public void setResUser2(User resUser2) {
+		this.resUser2 = resUser2;
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(amountTax, amountTotal, dateOrder, id, name, procurementGroupId, resPartner, state);
+		return Objects.hash(amountTax, amountTotal, dateOrder, id, name, procurementGroupId, resPartner, resUser,
+				resUser2, state);
 	}
 
 	@Override
@@ -138,15 +168,16 @@ public class Order implements Serializable {
 		return Objects.equals(amountTax, other.amountTax) && Objects.equals(amountTotal, other.amountTotal)
 				&& Objects.equals(dateOrder, other.dateOrder) && Objects.equals(id, other.id)
 				&& Objects.equals(name, other.name) && Objects.equals(procurementGroupId, other.procurementGroupId)
-				&& Objects.equals(resPartner, other.resPartner) 
-				&& Objects.equals(state, other.state);
+				&& Objects.equals(resPartner, other.resPartner) && Objects.equals(resUser, other.resUser)
+				&& Objects.equals(resUser2, other.resUser2) && Objects.equals(state, other.state);
 	}
 
 	@Override
 	public String toString() {
 		return "Order [id=" + id + ", amountTax=" + amountTax + ", amountTotal=" + amountTotal + ", dateOrder="
 				+ dateOrder + ", name=" + name + ", procurementGroupId=" + procurementGroupId + ", state=" + state
-				+ ", resPartner1=" + resPartner + "]";
+				+ ", resPartner=" + resPartner + ", resUser=" + resUser + ", resUser2=" + resUser2 + "]";
 	}
+
 	
 }

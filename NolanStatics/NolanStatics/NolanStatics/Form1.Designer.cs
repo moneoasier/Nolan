@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelSalm = new System.Windows.Forms.Label();
@@ -55,10 +53,9 @@
             this.labelProd = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.sal_eros = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel5 = new System.Windows.Forms.Panel();
             this.labelIrab = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -67,6 +64,9 @@
             this.labelCat = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.nolanDataSet = new NolanStatics.NolanDataSet();
+            this.nolanDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sal_lan = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -75,14 +75,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sal_eros)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nolanDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nolanDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sal_lan)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -277,43 +279,10 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Prod. Kop.";
             // 
-            // chart2
-            // 
-            this.chart2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            chartArea3.Area3DStyle.Enable3D = true;
-            chartArea3.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            chartArea3.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea3);
-            legend3.BackColor = System.Drawing.Color.Transparent;
-            legend3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend3.ForeColor = System.Drawing.Color.White;
-            legend3.IsTextAutoFit = false;
-            legend3.Name = "Legend1";
-            legend3.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chart2.Legends.Add(legend3);
-            this.chart2.Location = new System.Drawing.Point(0, 25);
-            this.chart2.Name = "chart2";
-            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart2.Series.Add(series3);
-            this.chart2.Size = new System.Drawing.Size(402, 359);
-            this.chart2.TabIndex = 4;
-            this.chart2.Text = "chart2";
-            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title3.ForeColor = System.Drawing.Color.White;
-            title3.Name = "Title1";
-            title3.Text = "SALMENTAK LANGILE BAKOITZEKO";
-            this.chart2.Titles.Add(title3);
-            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel6.Controls.Add(this.chart2);
+            this.panel6.Controls.Add(this.sal_lan);
             this.panel6.Location = new System.Drawing.Point(561, 200);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(444, 384);
@@ -322,44 +291,35 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel7.Controls.Add(this.chart1);
+            this.panel7.Controls.Add(this.sal_eros);
             this.panel7.Location = new System.Drawing.Point(99, 200);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(456, 384);
             this.panel7.TabIndex = 10;
             // 
-            // chart1
+            // sal_eros
             // 
-            this.chart1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            chartArea4.Area3DStyle.Enable3D = true;
-            chartArea4.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea4.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.BackColor = System.Drawing.Color.Transparent;
-            legend4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend4.ForeColor = System.Drawing.Color.White;
-            legend4.IsTextAutoFit = false;
-            legend4.Name = "Legend1";
-            legend4.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chart1.Legends.Add(legend4);
-            this.chart1.Location = new System.Drawing.Point(0, 25);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart1.Series.Add(series4);
-            this.chart1.Size = new System.Drawing.Size(402, 359);
-            this.chart1.TabIndex = 4;
-            this.chart1.Text = "chart1";
-            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title4.ForeColor = System.Drawing.Color.White;
-            title4.Name = "Title1";
-            title4.Text = "SALMENTA EROSLE BAKOITZEKO";
-            this.chart1.Titles.Add(title4);
+            this.sal_eros.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            chartArea2.Area3DStyle.Enable3D = true;
+            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            chartArea2.Name = "ChartArea1";
+            this.sal_eros.ChartAreas.Add(chartArea2);
+            this.sal_eros.Location = new System.Drawing.Point(33, 25);
+            this.sal_eros.Name = "sal_eros";
+            this.sal_eros.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series1.Name = "Series1";
+            this.sal_eros.Series.Add(series1);
+            this.sal_eros.Size = new System.Drawing.Size(371, 359);
+            this.sal_eros.TabIndex = 4;
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.ForeColor = System.Drawing.Color.White;
+            title1.Name = "Title1";
+            title1.Text = "SALMENTA EROSLE BAKOITZEKO";
+            this.sal_eros.Titles.Add(title1);
             // 
             // panel5
             // 
@@ -447,6 +407,33 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Kategoriak";
             // 
+            // nolanDataSet
+            // 
+            this.nolanDataSet.DataSetName = "NolanDataSet";
+            this.nolanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // nolanDataSetBindingSource
+            // 
+            this.nolanDataSetBindingSource.DataSource = this.nolanDataSet;
+            this.nolanDataSetBindingSource.Position = 0;
+            // 
+            // sal_lan
+            // 
+            this.sal_lan.BackColor = System.Drawing.Color.DimGray;
+            chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.Area3DStyle.IsRightAngleAxes = false;
+            chartArea1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            chartArea1.Name = "ChartArea1";
+            this.sal_lan.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            legend1.Name = "Legend1";
+            this.sal_lan.Legends.Add(legend1);
+            this.sal_lan.Location = new System.Drawing.Point(85, 42);
+            this.sal_lan.Name = "sal_lan";
+            this.sal_lan.Size = new System.Drawing.Size(300, 300);
+            this.sal_lan.TabIndex = 0;
+            this.sal_lan.Text = "chart1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,16 +467,18 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sal_eros)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nolanDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nolanDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sal_lan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -514,10 +503,9 @@
         private System.Windows.Forms.Label labelProd;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart sal_eros;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label labelIrab;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -526,6 +514,9 @@
         private System.Windows.Forms.Label labelCat;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label12;
+        private NolanDataSet nolanDataSet;
+        private System.Windows.Forms.BindingSource nolanDataSetBindingSource;
+        private System.Windows.Forms.DataVisualization.Charting.Chart sal_lan;
     }
 }
 

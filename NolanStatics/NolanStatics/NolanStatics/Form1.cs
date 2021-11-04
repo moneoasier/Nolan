@@ -8,12 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace NolanStatics
 {
     public partial class Form1 : Form
     {
         NolanDataSet nolanDBDataSet = new NolanDataSet();
+
         public Form1()
         {
 
@@ -30,9 +32,9 @@ namespace NolanStatics
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-                
-
+            // TODO: esta línea de código carga datos en la tabla 'nolanDataSet.res_users' Puede moverla o quitarla según sea necesario.
+            // this.res_usersTableAdapter.Fill(this.nolanDataSet.res_users);
+            selectWorkers();
             countKat();
             countLang();
             countIrab();
@@ -40,8 +42,8 @@ namespace NolanStatics
             countProd();
             countSalm();
             dataChart1();
-            dataChart2();
-
+           // dataChart2();
+            
         
             
         }
@@ -49,30 +51,26 @@ namespace NolanStatics
         {
             NolanDataSetTableAdapters.sale_orderTableAdapter sale_orderTableAdapter = new NolanDataSetTableAdapters.sale_orderTableAdapter();
 
-
-
             sale_orderTableAdapter.Fill(this.nolanDBDataSet.sale_order);
 
-            chart1.DataSource = this.nolanDBDataSet.sale_order.GroupBy(b => b.partner_id).ToDictionary(g => g.Key, g => g.Count());
+            sal_eros.DataSource = this.nolanDBDataSet.sale_order.GroupBy(b => b.partner_id).ToDictionary(g => g.Key, g => g.Count());
 
-            chart1.Series[0].YValueMembers = "Value";
-            chart1.Series[0].XValueMember = "Key";
-            chart1.DataBind();
+            sal_eros.Series[0].YValueMembers = "Value";
+            sal_eros.Series[0].XValueMember = "Key";
+            sal_eros.DataBind();
         }
         public void dataChart2()
         {
+            NolanDataSetTableAdapters.sale_orderTableAdapter sale_orderTableAdapter = new NolanDataSetTableAdapters.sale_orderTableAdapter();
 
-            /*
-                        SalmentaDBDataSetTableAdapters.SalmentaTableAdapter salmentaTableAdapter = new SalmentaDBDataSetTableAdapters.SalmentaTableAdapter();
+            sale_orderTableAdapter.Fill(this.nolanDBDataSet.sale_order);
 
-                        salmentaTableAdapter.Fill(this.salmentaDBDataSet.Salmenta);
+            sal_lan.DataSource = this.nolanDBDataSet.sale_order.GroupBy(b => b.user_id).ToDictionary(g => g.Key, g => g.Count());
 
-                        chart2.DataSource = this.salmentaDBDataSet.Salmenta.GroupBy(b => b.NanBezeroa).ToDictionary(g => g.Key, g => g.Sum(b => b.Zenbatekoa));
-
-                        chart2.Series[0].YValueMembers = "Value";
-                        chart2.Series[0].XValueMember = "Key";
-                        chart2.DataBind();
-                        */
+            sal_lan.Series[0].YValueMembers = "Value";
+            sal_lan.Series[0].XValueMember = "Key";
+            sal_lan.DataBind();
+    
         }
         public void countKat()
         {
@@ -131,9 +129,7 @@ namespace NolanStatics
                 while (lector.Read())
                 {
 
-
                     labelIrab.Text = lector.GetValue(0).ToString()+"€";
-
                 }
             }
             catch
@@ -153,7 +149,7 @@ namespace NolanStatics
                 while (lector.Read())
                 {
 
-                    
+               
                     labelErosle.Text = lector.GetValue(0).ToString();
 
                 }
@@ -199,7 +195,6 @@ namespace NolanStatics
                 while (lector.Read())
                 {
 
-
                     labelSalm.Text = lector.GetValue(0).ToString();
 
                 }
@@ -209,5 +204,34 @@ namespace NolanStatics
                 Console.WriteLine("Error SQL");
             }
         }
+        
+        public void selectWorkers()
+        {
+            conexionbd conexion = new conexionbd();
+            conexion.abrir();
+
+            string sententzia = "Select user_id ,count(user_id) as 'salmentak' from dbo.sale_order group by user_id;";
+
+            try
+            {
+                SqlCommand comando = new SqlCommand(sententzia, conexion.conectarbd);
+                SqlDataReader lector = comando.ExecuteReader();
+                while (lector.Read())
+                {
+
+                    Series serie = sal_lan.Series.Add((lector.GetValue(0).ToString()));
+                    serie.Label = lector.GetValue(1).ToString();
+                    serie.Points.Add(int.Parse(lector.GetValue(1).ToString()));
+
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Error SQL");
+            }
+
+        }
+        
+
     }
 }

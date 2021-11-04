@@ -1451,6 +1451,8 @@ namespace NolanStatics {
             
             private global::System.Data.DataColumn columntype;
             
+            private global::System.Data.DataColumn columnsignup_type;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public res_partnerDataTable() {
@@ -1526,6 +1528,14 @@ namespace NolanStatics {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn signup_typeColumn {
+                get {
+                    return this.columnsignup_type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1561,14 +1571,15 @@ namespace NolanStatics {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public res_partnerRow Addres_partnerRow(int id, string city, string create_date, string name, string type) {
+            public res_partnerRow Addres_partnerRow(int id, string city, string create_date, string name, string type, string signup_type) {
                 res_partnerRow rowres_partnerRow = ((res_partnerRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
                         city,
                         create_date,
                         name,
-                        type};
+                        type,
+                        signup_type};
                 rowres_partnerRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowres_partnerRow);
                 return rowres_partnerRow;
@@ -1603,6 +1614,7 @@ namespace NolanStatics {
                 this.columncreate_date = base.Columns["create_date"];
                 this.columnname = base.Columns["name"];
                 this.columntype = base.Columns["type"];
+                this.columnsignup_type = base.Columns["signup_type"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1618,6 +1630,8 @@ namespace NolanStatics {
                 base.Columns.Add(this.columnname);
                 this.columntype = new global::System.Data.DataColumn("type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntype);
+                this.columnsignup_type = new global::System.Data.DataColumn("signup_type", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsignup_type);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AllowDBNull = false;
@@ -1626,6 +1640,7 @@ namespace NolanStatics {
                 this.columncreate_date.MaxLength = 50;
                 this.columnname.MaxLength = 50;
                 this.columntype.MaxLength = 50;
+                this.columnsignup_type.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2095,6 +2110,8 @@ namespace NolanStatics {
             
             private global::System.Data.DataColumn columncreate_uid;
             
+            private global::System.Data.DataColumn columnuser_id;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public sale_orderDataTable() {
@@ -2202,6 +2219,14 @@ namespace NolanStatics {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn user_idColumn {
+                get {
+                    return this.columnuser_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2237,7 +2262,7 @@ namespace NolanStatics {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sale_orderRow Addsale_orderRow(int id, int amount_tax, int amount_total, string date_order, string name, int procurement_group_id, string state, string partner_id, string create_uid) {
+            public sale_orderRow Addsale_orderRow(int id, int amount_tax, int amount_total, string date_order, string name, int procurement_group_id, string state, string partner_id, string create_uid, string user_id) {
                 sale_orderRow rowsale_orderRow = ((sale_orderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -2248,7 +2273,8 @@ namespace NolanStatics {
                         procurement_group_id,
                         state,
                         partner_id,
-                        create_uid};
+                        create_uid,
+                        user_id};
                 rowsale_orderRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsale_orderRow);
                 return rowsale_orderRow;
@@ -2287,6 +2313,7 @@ namespace NolanStatics {
                 this.columnstate = base.Columns["state"];
                 this.columnpartner_id = base.Columns["partner_id"];
                 this.columncreate_uid = base.Columns["create_uid"];
+                this.columnuser_id = base.Columns["user_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2310,6 +2337,8 @@ namespace NolanStatics {
                 base.Columns.Add(this.columnpartner_id);
                 this.columncreate_uid = new global::System.Data.DataColumn("create_uid", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncreate_uid);
+                this.columnuser_id = new global::System.Data.DataColumn("user_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuser_id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AllowDBNull = false;
@@ -2319,6 +2348,7 @@ namespace NolanStatics {
                 this.columnstate.MaxLength = 50;
                 this.columnpartner_id.MaxLength = 50;
                 this.columncreate_uid.MaxLength = 50;
+                this.columnuser_id.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3309,6 +3339,22 @@ namespace NolanStatics {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string signup_type {
+                get {
+                    try {
+                        return ((string)(this[this.tableres_partner.signup_typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'signup_type\' de la tabla \'res_partner\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableres_partner.signup_typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IscityNull() {
                 return this.IsNull(this.tableres_partner.cityColumn);
             }
@@ -3353,6 +3399,18 @@ namespace NolanStatics {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SettypeNull() {
                 this[this.tableres_partner.typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Issignup_typeNull() {
+                return this.IsNull(this.tableres_partner.signup_typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setsignup_typeNull() {
+                this[this.tableres_partner.signup_typeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3650,6 +3708,22 @@ namespace NolanStatics {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string user_id {
+                get {
+                    try {
+                        return ((string)(this[this.tablesale_order.user_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'user_id\' de la tabla \'sale_order\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesale_order.user_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isamount_taxNull() {
                 return this.IsNull(this.tablesale_order.amount_taxColumn);
             }
@@ -3742,6 +3816,18 @@ namespace NolanStatics {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setcreate_uidNull() {
                 this[this.tablesale_order.create_uidColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isuser_idNull() {
+                return this.IsNull(this.tablesale_order.user_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setuser_idNull() {
+                this[this.tablesale_order.user_idColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5629,10 +5715,11 @@ SELECT id, create_date, list_price, default_code, name, categ_id FROM product_te
             tableMapping.ColumnMappings.Add("create_date", "create_date");
             tableMapping.ColumnMappings.Add("name", "name");
             tableMapping.ColumnMappings.Add("type", "type");
+            tableMapping.ColumnMappings.Add("signup_type", "signup_type");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[res_partner] WHERE (([id] = @Original_id) AND ((@IsNull_city = 1 AND [city] IS NULL) OR ([city] = @Original_city)) AND ((@IsNull_create_date = 1 AND [create_date] IS NULL) OR ([create_date] = @Original_create_date)) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_type = 1 AND [type] IS NULL) OR ([type] = @Original_type)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[res_partner] WHERE (([id] = @Original_id) AND ((@IsNull_city = 1 AND [city] IS NULL) OR ([city] = @Original_city)) AND ((@IsNull_create_date = 1 AND [create_date] IS NULL) OR ([create_date] = @Original_create_date)) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_type = 1 AND [type] IS NULL) OR ([type] = @Original_type)) AND ((@IsNull_signup_type = 1 AND [signup_type] IS NULL) OR ([signup_type] = @Original_signup_type)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_city", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "city", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -5643,27 +5730,32 @@ SELECT id, create_date, list_price, default_code, name, categ_id FROM product_te
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_signup_type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "signup_type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_signup_type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "signup_type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[res_partner] ([id], [city], [create_date], [name], [type]) VAL" +
-                "UES (@id, @city, @create_date, @name, @type);\r\nSELECT id, city, create_date, nam" +
-                "e, type FROM res_partner WHERE (id = @id)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[res_partner] ([id], [city], [create_date], [name], [type], [si" +
+                "gnup_type]) VALUES (@id, @city, @create_date, @name, @type, @signup_type);\r\nSELE" +
+                "CT id, city, create_date, name, type, signup_type FROM res_partner WHERE (id = @" +
+                "id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@city", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "city", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@create_date", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "create_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@signup_type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "signup_type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[res_partner] SET [id] = @id, [city] = @city, [create_date] = @create_date, [name] = @name, [type] = @type WHERE (([id] = @Original_id) AND ((@IsNull_city = 1 AND [city] IS NULL) OR ([city] = @Original_city)) AND ((@IsNull_create_date = 1 AND [create_date] IS NULL) OR ([create_date] = @Original_create_date)) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_type = 1 AND [type] IS NULL) OR ([type] = @Original_type)));
-SELECT id, city, create_date, name, type FROM res_partner WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[res_partner] SET [id] = @id, [city] = @city, [create_date] = @create_date, [name] = @name, [type] = @type, [signup_type] = @signup_type WHERE (([id] = @Original_id) AND ((@IsNull_city = 1 AND [city] IS NULL) OR ([city] = @Original_city)) AND ((@IsNull_create_date = 1 AND [create_date] IS NULL) OR ([create_date] = @Original_create_date)) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_type = 1 AND [type] IS NULL) OR ([type] = @Original_type)) AND ((@IsNull_signup_type = 1 AND [signup_type] IS NULL) OR ([signup_type] = @Original_signup_type)));
+SELECT id, city, create_date, name, type, signup_type FROM res_partner WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@city", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "city", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@create_date", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "create_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@signup_type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "signup_type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_city", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "city", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_city", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "city", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -5673,6 +5765,8 @@ SELECT id, city, create_date, name, type FROM res_partner WHERE (id = @id)";
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_signup_type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "signup_type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_signup_type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "signup_type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5688,7 +5782,7 @@ SELECT id, city, create_date, name, type FROM res_partner WHERE (id = @id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, city, create_date, name, type FROM dbo.res_partner";
+            this._commandCollection[0].CommandText = "SELECT id, city, create_date, name, type, signup_type FROM dbo.res_partner";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5749,7 +5843,7 @@ SELECT id, city, create_date, name, type FROM res_partner WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, string Original_city, string Original_create_date, string Original_name, string Original_type) {
+        public virtual int Delete(int Original_id, string Original_city, string Original_create_date, string Original_name, string Original_type, string Original_signup_type) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
             if ((Original_city == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -5783,6 +5877,14 @@ SELECT id, city, create_date, name, type FROM res_partner WHERE (id = @id)";
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_type));
             }
+            if ((Original_signup_type == null)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_signup_type));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5803,7 +5905,7 @@ SELECT id, city, create_date, name, type FROM res_partner WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int id, string city, string create_date, string name, string type) {
+        public virtual int Insert(int id, string city, string create_date, string name, string type, string signup_type) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id));
             if ((city == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -5829,6 +5931,12 @@ SELECT id, city, create_date, name, type FROM res_partner WHERE (id = @id)";
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(type));
             }
+            if ((signup_type == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(signup_type));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5849,7 +5957,7 @@ SELECT id, city, create_date, name, type FROM res_partner WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int id, string city, string create_date, string name, string type, int Original_id, string Original_city, string Original_create_date, string Original_name, string Original_type) {
+        public virtual int Update(int id, string city, string create_date, string name, string type, string signup_type, int Original_id, string Original_city, string Original_create_date, string Original_name, string Original_type, string Original_signup_type) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(id));
             if ((city == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -5875,38 +5983,52 @@ SELECT id, city, create_date, name, type FROM res_partner WHERE (id = @id)";
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(type));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_id));
-            if ((Original_city == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            if ((signup_type == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_city));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(signup_type));
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_id));
+            if ((Original_city == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_city));
             }
             if ((Original_create_date == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_create_date));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_create_date));
             }
             if ((Original_name == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_name));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_name));
             }
             if ((Original_type == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_type));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_type));
+            }
+            if ((Original_signup_type == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_signup_type));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5928,8 +6050,8 @@ SELECT id, city, create_date, name, type FROM res_partner WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string city, string create_date, string name, string type, int Original_id, string Original_city, string Original_create_date, string Original_name, string Original_type) {
-            return this.Update(Original_id, city, create_date, name, type, Original_id, Original_city, Original_create_date, Original_name, Original_type);
+        public virtual int Update(string city, string create_date, string name, string type, string signup_type, int Original_id, string Original_city, string Original_create_date, string Original_name, string Original_type, string Original_signup_type) {
+            return this.Update(Original_id, city, create_date, name, type, signup_type, Original_id, Original_city, Original_create_date, Original_name, Original_type, Original_signup_type);
         }
     }
     
@@ -6493,10 +6615,11 @@ SELECT id, create_date, login, write_date, partner_id FROM res_users WHERE (id =
             tableMapping.ColumnMappings.Add("state", "state");
             tableMapping.ColumnMappings.Add("partner_id", "partner_id");
             tableMapping.ColumnMappings.Add("create_uid", "create_uid");
+            tableMapping.ColumnMappings.Add("user_id", "user_id");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[sale_order] WHERE (([id] = @Original_id) AND ((@IsNull_amount_tax = 1 AND [amount_tax] IS NULL) OR ([amount_tax] = @Original_amount_tax)) AND ((@IsNull_amount_total = 1 AND [amount_total] IS NULL) OR ([amount_total] = @Original_amount_total)) AND ((@IsNull_date_order = 1 AND [date_order] IS NULL) OR ([date_order] = @Original_date_order)) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_procurement_group_id = 1 AND [procurement_group_id] IS NULL) OR ([procurement_group_id] = @Original_procurement_group_id)) AND ((@IsNull_state = 1 AND [state] IS NULL) OR ([state] = @Original_state)) AND ((@IsNull_partner_id = 1 AND [partner_id] IS NULL) OR ([partner_id] = @Original_partner_id)) AND ((@IsNull_create_uid = 1 AND [create_uid] IS NULL) OR ([create_uid] = @Original_create_uid)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[sale_order] WHERE (([id] = @Original_id) AND ((@IsNull_amount_tax = 1 AND [amount_tax] IS NULL) OR ([amount_tax] = @Original_amount_tax)) AND ((@IsNull_amount_total = 1 AND [amount_total] IS NULL) OR ([amount_total] = @Original_amount_total)) AND ((@IsNull_date_order = 1 AND [date_order] IS NULL) OR ([date_order] = @Original_date_order)) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_procurement_group_id = 1 AND [procurement_group_id] IS NULL) OR ([procurement_group_id] = @Original_procurement_group_id)) AND ((@IsNull_state = 1 AND [state] IS NULL) OR ([state] = @Original_state)) AND ((@IsNull_partner_id = 1 AND [partner_id] IS NULL) OR ([partner_id] = @Original_partner_id)) AND ((@IsNull_create_uid = 1 AND [create_uid] IS NULL) OR ([create_uid] = @Original_create_uid)) AND ((@IsNull_user_id = 1 AND [user_id] IS NULL) OR ([user_id] = @Original_user_id)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_amount_tax", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "amount_tax", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -6515,10 +6638,12 @@ SELECT id, create_date, login, write_date, partner_id FROM res_users WHERE (id =
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_partner_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "partner_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_create_uid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "create_uid", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_create_uid", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "create_uid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_user_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "user_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_user_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "user_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[sale_order] ([id], [amount_tax], [amount_total], [date_order], [name], [procurement_group_id], [state], [partner_id], [create_uid]) VALUES (@id, @amount_tax, @amount_total, @date_order, @name, @procurement_group_id, @state, @partner_id, @create_uid);
-SELECT id, amount_tax, amount_total, date_order, name, procurement_group_id, state, partner_id, create_uid FROM sale_order WHERE (id = @id)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[sale_order] ([id], [amount_tax], [amount_total], [date_order], [name], [procurement_group_id], [state], [partner_id], [create_uid], [user_id]) VALUES (@id, @amount_tax, @amount_total, @date_order, @name, @procurement_group_id, @state, @partner_id, @create_uid, @user_id);
+SELECT id, amount_tax, amount_total, date_order, name, procurement_group_id, state, partner_id, create_uid, user_id FROM sale_order WHERE (id = @id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amount_tax", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "amount_tax", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6529,10 +6654,11 @@ SELECT id, amount_tax, amount_total, date_order, name, procurement_group_id, sta
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@state", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "state", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@partner_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "partner_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@create_uid", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "create_uid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@user_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "user_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[sale_order] SET [id] = @id, [amount_tax] = @amount_tax, [amount_total] = @amount_total, [date_order] = @date_order, [name] = @name, [procurement_group_id] = @procurement_group_id, [state] = @state, [partner_id] = @partner_id, [create_uid] = @create_uid WHERE (([id] = @Original_id) AND ((@IsNull_amount_tax = 1 AND [amount_tax] IS NULL) OR ([amount_tax] = @Original_amount_tax)) AND ((@IsNull_amount_total = 1 AND [amount_total] IS NULL) OR ([amount_total] = @Original_amount_total)) AND ((@IsNull_date_order = 1 AND [date_order] IS NULL) OR ([date_order] = @Original_date_order)) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_procurement_group_id = 1 AND [procurement_group_id] IS NULL) OR ([procurement_group_id] = @Original_procurement_group_id)) AND ((@IsNull_state = 1 AND [state] IS NULL) OR ([state] = @Original_state)) AND ((@IsNull_partner_id = 1 AND [partner_id] IS NULL) OR ([partner_id] = @Original_partner_id)) AND ((@IsNull_create_uid = 1 AND [create_uid] IS NULL) OR ([create_uid] = @Original_create_uid)));
-SELECT id, amount_tax, amount_total, date_order, name, procurement_group_id, state, partner_id, create_uid FROM sale_order WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[sale_order] SET [id] = @id, [amount_tax] = @amount_tax, [amount_total] = @amount_total, [date_order] = @date_order, [name] = @name, [procurement_group_id] = @procurement_group_id, [state] = @state, [partner_id] = @partner_id, [create_uid] = @create_uid, [user_id] = @user_id WHERE (([id] = @Original_id) AND ((@IsNull_amount_tax = 1 AND [amount_tax] IS NULL) OR ([amount_tax] = @Original_amount_tax)) AND ((@IsNull_amount_total = 1 AND [amount_total] IS NULL) OR ([amount_total] = @Original_amount_total)) AND ((@IsNull_date_order = 1 AND [date_order] IS NULL) OR ([date_order] = @Original_date_order)) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_procurement_group_id = 1 AND [procurement_group_id] IS NULL) OR ([procurement_group_id] = @Original_procurement_group_id)) AND ((@IsNull_state = 1 AND [state] IS NULL) OR ([state] = @Original_state)) AND ((@IsNull_partner_id = 1 AND [partner_id] IS NULL) OR ([partner_id] = @Original_partner_id)) AND ((@IsNull_create_uid = 1 AND [create_uid] IS NULL) OR ([create_uid] = @Original_create_uid)) AND ((@IsNull_user_id = 1 AND [user_id] IS NULL) OR ([user_id] = @Original_user_id)));
+SELECT id, amount_tax, amount_total, date_order, name, procurement_group_id, state, partner_id, create_uid, user_id FROM sale_order WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amount_tax", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "amount_tax", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6543,6 +6669,7 @@ SELECT id, amount_tax, amount_total, date_order, name, procurement_group_id, sta
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@state", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "state", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@partner_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "partner_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@create_uid", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "create_uid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@user_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "user_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_amount_tax", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "amount_tax", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_amount_tax", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "amount_tax", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -6560,6 +6687,8 @@ SELECT id, amount_tax, amount_total, date_order, name, procurement_group_id, sta
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_partner_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "partner_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_create_uid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "create_uid", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_create_uid", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "create_uid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_user_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "user_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_user_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "user_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6576,7 +6705,7 @@ SELECT id, amount_tax, amount_total, date_order, name, procurement_group_id, sta
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id, amount_tax, amount_total, date_order, name, procurement_group_id, stat" +
-                "e, partner_id, create_uid FROM dbo.sale_order";
+                "e, partner_id, create_uid, user_id FROM dbo.sale_order";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6637,7 +6766,7 @@ SELECT id, amount_tax, amount_total, date_order, name, procurement_group_id, sta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, global::System.Nullable<int> Original_amount_tax, global::System.Nullable<int> Original_amount_total, string Original_date_order, string Original_name, global::System.Nullable<int> Original_procurement_group_id, string Original_state, string Original_partner_id, string Original_create_uid) {
+        public virtual int Delete(int Original_id, global::System.Nullable<int> Original_amount_tax, global::System.Nullable<int> Original_amount_total, string Original_date_order, string Original_name, global::System.Nullable<int> Original_procurement_group_id, string Original_state, string Original_partner_id, string Original_create_uid, string Original_user_id) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
             if ((Original_amount_tax.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -6703,6 +6832,14 @@ SELECT id, amount_tax, amount_total, date_order, name, procurement_group_id, sta
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_create_uid));
             }
+            if ((Original_user_id == null)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_user_id));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6723,7 +6860,7 @@ SELECT id, amount_tax, amount_total, date_order, name, procurement_group_id, sta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int id, global::System.Nullable<int> amount_tax, global::System.Nullable<int> amount_total, string date_order, string name, global::System.Nullable<int> procurement_group_id, string state, string partner_id, string create_uid) {
+        public virtual int Insert(int id, global::System.Nullable<int> amount_tax, global::System.Nullable<int> amount_total, string date_order, string name, global::System.Nullable<int> procurement_group_id, string state, string partner_id, string create_uid, string user_id) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id));
             if ((amount_tax.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((int)(amount_tax.Value));
@@ -6773,6 +6910,12 @@ SELECT id, amount_tax, amount_total, date_order, name, procurement_group_id, sta
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = ((string)(create_uid));
             }
+            if ((user_id == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(user_id));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6803,6 +6946,7 @@ SELECT id, amount_tax, amount_total, date_order, name, procurement_group_id, sta
                     string state, 
                     string partner_id, 
                     string create_uid, 
+                    string user_id, 
                     int Original_id, 
                     global::System.Nullable<int> Original_amount_tax, 
                     global::System.Nullable<int> Original_amount_total, 
@@ -6811,7 +6955,8 @@ SELECT id, amount_tax, amount_total, date_order, name, procurement_group_id, sta
                     global::System.Nullable<int> Original_procurement_group_id, 
                     string Original_state, 
                     string Original_partner_id, 
-                    string Original_create_uid) {
+                    string Original_create_uid, 
+                    string Original_user_id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(id));
             if ((amount_tax.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(amount_tax.Value));
@@ -6861,70 +7006,84 @@ SELECT id, amount_tax, amount_total, date_order, name, procurement_group_id, sta
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(create_uid));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_id));
-            if ((Original_amount_tax.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_amount_tax.Value));
+            if ((user_id == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(user_id));
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_id));
+            if ((Original_amount_tax.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_amount_tax.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             if ((Original_amount_total.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_amount_total.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_amount_total.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             if ((Original_date_order == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_date_order));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_date_order));
             }
             if ((Original_name == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_name));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_name));
             }
             if ((Original_procurement_group_id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_procurement_group_id.Value));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_procurement_group_id.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             if ((Original_state == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_state));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_state));
             }
             if ((Original_partner_id == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_partner_id));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_partner_id));
             }
             if ((Original_create_uid == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_create_uid));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_create_uid));
+            }
+            if ((Original_user_id == null)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_user_id));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6955,6 +7114,7 @@ SELECT id, amount_tax, amount_total, date_order, name, procurement_group_id, sta
                     string state, 
                     string partner_id, 
                     string create_uid, 
+                    string user_id, 
                     int Original_id, 
                     global::System.Nullable<int> Original_amount_tax, 
                     global::System.Nullable<int> Original_amount_total, 
@@ -6963,8 +7123,9 @@ SELECT id, amount_tax, amount_total, date_order, name, procurement_group_id, sta
                     global::System.Nullable<int> Original_procurement_group_id, 
                     string Original_state, 
                     string Original_partner_id, 
-                    string Original_create_uid) {
-            return this.Update(Original_id, amount_tax, amount_total, date_order, name, procurement_group_id, state, partner_id, create_uid, Original_id, Original_amount_tax, Original_amount_total, Original_date_order, Original_name, Original_procurement_group_id, Original_state, Original_partner_id, Original_create_uid);
+                    string Original_create_uid, 
+                    string Original_user_id) {
+            return this.Update(Original_id, amount_tax, amount_total, date_order, name, procurement_group_id, state, partner_id, create_uid, user_id, Original_id, Original_amount_tax, Original_amount_total, Original_date_order, Original_name, Original_procurement_group_id, Original_state, Original_partner_id, Original_create_uid, Original_user_id);
         }
     }
     
