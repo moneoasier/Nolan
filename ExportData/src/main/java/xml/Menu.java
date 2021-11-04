@@ -28,8 +28,11 @@ import nolan.User;
 public class Menu {
 
 	static List<Option> options = new ArrayList<>();
+	static List<Export> exports = new ArrayList<>();
 	static Data data = new Data();
+	static Exports ex= new Exports();
 	static File file = new File("options.xml");
+	static File fileLog=new File("log.xml");
 	static List<Producto> products;
 	static List<Categoria> categories;
 	static List<Partner> partners;
@@ -37,10 +40,10 @@ public class Menu {
 	static List<Employee> employees;
 	static List<Order> orders;
 	static List<OrderLine> orderlines;
-	final static ApplicationContext exportContext = new AnnotationConfigApplicationContext(ExportConfig.class);
-	final static ManagementDAO dout = exportContext.getBean(ManagementDAO.class);
-	final static ApplicationContext importContext = new AnnotationConfigApplicationContext(ImportConfig.class);
-	final static ManagementDAO dao = importContext.getBean(ManagementDAO.class);
+	static ApplicationContext exportContext = new AnnotationConfigApplicationContext(ExportConfig.class);
+	static ManagementDAO dout = exportContext.getBean(ManagementDAO.class);
+	static ApplicationContext importContext = new AnnotationConfigApplicationContext(ImportConfig.class);
+	static ManagementDAO dao = importContext.getBean(ManagementDAO.class);
 
 	public static void main(String[] args) {
 
@@ -58,6 +61,10 @@ public class Menu {
 			if (choice.equalsIgnoreCase("yes")) {
 				readXML();
 			}
+		}
+		
+		if(fileLog.isFile()) {
+			readLog();
 		}
 
 		while (!choice.equals("10")) {
@@ -81,7 +88,7 @@ public class Menu {
 	}
 
 	public static void menuStart() {
-		String ops = "\n";
+		String ops = "\n|";
 		if (options.size() > 0) {
 			for (Option o : options) {
 				ops += o.getChoice() + " | ";
@@ -109,6 +116,7 @@ public class Menu {
 	public static void insertChoice(String option) {
 
 		Option o = new Option();
+		Export e= new Export();
 		switch (option) {
 
 		case "1":
@@ -116,6 +124,9 @@ public class Menu {
 				o.setChoice("PRODUCTS");
 				o.setTipo("Producto");
 				options.add(o);
+				
+				e.setName("PRODUCTS");
+				exports.add(e);
 			}
 
 			break;
@@ -127,6 +138,9 @@ public class Menu {
 				o.setChoice("CATEGORIES");
 				o.setTipo("Categoria");
 				options.add(o);
+				
+				e.setName("CATEGORIES");
+				exports.add(e);
 			}
 			break;
 
@@ -136,7 +150,9 @@ public class Menu {
 				o.setChoice("EMPLOYEES");
 				o.setTipo("Employee");
 				options.add(o);
-
+				
+				e.setName("EMPLOYEES");
+				exports.add(e);
 			}
 			break;
 
@@ -146,6 +162,9 @@ public class Menu {
 				o.setChoice("USERS");
 				o.setTipo("User");
 				options.add(o);
+				
+				e.setName("USERS");
+				exports.add(e);
 
 			}
 			break;
@@ -162,6 +181,9 @@ public class Menu {
 				o2.setChoice("SALES ORDERLINES");
 				o2.setTipo("OrderLine");
 				options.add(o2);
+				
+				e.setName("SALES");
+				exports.add(e);
 
 			}
 			break;
@@ -172,6 +194,9 @@ public class Menu {
 				o.setChoice("PARTNERS");
 				o.setTipo("Partner");
 				options.add(o);
+				
+				e.setName("PARTNERS");
+				exports.add(e);
 
 			}
 			break;
@@ -183,6 +208,10 @@ public class Menu {
 				o1.setChoice("PRODUCTS");
 				o1.setTipo("Producto");
 				options.add(o1);
+				
+				Export e1 = new Export();
+				e1.setName("PRODUCTS");
+				exports.add(e1);
 			}
 
 			if (checkList("CATEGORIES")) {
@@ -190,6 +219,10 @@ public class Menu {
 				o2.setChoice("CATEGORIES");
 				o2.setTipo("Categoria");
 				options.add(o2);
+				
+				Export e2 = new Export();
+				e2.setName("CATEGORIES");
+				exports.add(e2);
 			}
 
 			if (checkList("EMPLOYEES")) {
@@ -197,6 +230,10 @@ public class Menu {
 				o3.setChoice("EMPLOYEES");
 				o3.setTipo("Employee");
 				options.add(o3);
+				
+				Export e3 = new Export();
+				e3.setName("EMPLOYEES");
+				exports.add(e3);
 			}
 
 			if (checkList("USERS")) {
@@ -204,6 +241,10 @@ public class Menu {
 				o4.setChoice("USERS");
 				o4.setTipo("User");
 				options.add(o4);
+				
+				Export e4 = new Export();
+				e4.setName("USERS");
+				exports.add(e4);
 			}
 
 			if (checkList("SALES ORDERS") && checkList("SALES ORDERLINES")) {
@@ -216,6 +257,10 @@ public class Menu {
 				o6.setChoice("SALES ORDERLINES");
 				o6.setTipo("OrderLine");
 				options.add(o6);
+				
+				Export e5 = new Export();
+				e5.setName("SALES");
+				exports.add(e5);
 			}
 
 			if (checkList("PARTNERS")) {
@@ -223,11 +268,19 @@ public class Menu {
 				o7.setChoice("PARTNERS");
 				o7.setTipo("Partner");
 				options.add(o7);
+				
+				Export e6 = new Export();
+				e6.setName("PARTNERS");
+				exports.add(e6);
 			}
 
 			data.writeXML(options);
+			ex.writelogXML(exports);
 			readAll();
 			insertAll();
+			if(fileLog.isFile()) {
+				readLog();
+			}
 			System.out.println("ALL DATA HAS BEEN UPDATED IN SQL SERVER");
 
 			break;
@@ -237,6 +290,10 @@ public class Menu {
 				readDataSelected();
 				insertDataSelected();
 				data.writeXML(options);
+				ex.writelogXML(exports);
+				if(fileLog.isFile()) {
+					readLog();
+				}
 			} else {
 				System.out.println("There are no export options selected");
 			}
@@ -292,7 +349,30 @@ public class Menu {
 			data = (Data) unmar.unmarshal(file);
 			options = data.getOptions();
 
+			for(Option o: options) {
+				Export e= new Export();
+				e.setName(o.getChoice());
+				exports.add(e);
+			}
 			System.out.println("DATA CHARGED");
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static void readLog() {
+		
+		JAXBContext context;
+		File f=new File("log.xml");
+		exports.clear();
+		try {
+			context = JAXBContext.newInstance(Exports.class);
+			Unmarshaller unmar = context.createUnmarshaller();
+			ex= (Exports) unmar.unmarshal(f);
+			
+			exports=ex.getExports();	
+			
 		} catch (JAXBException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -300,33 +380,31 @@ public class Menu {
 	}
 
 	public static void readDataSelected() {
+		
+			if (checkList("PRODUCTS")) {
+				products = dao.getProducts();
+			}
 
-		if (checkList("PRODUCTS")) {
-			products = dao.getProducts();
-		}
+			if (checkList("CATEGORIES")) {
+				categories = dao.getCategories();
+			}
 
-		if (checkList("CATEGORIES")) {
-			categories = dao.getCategories();
-		}
+			if (checkList("EMPLOYEES")) {
+				employees = dao.getEmployees();
+			}
 
-		if (checkList("EMPLOYEES")) {
-			employees = dao.getEmployees();
-		}
+			if (checkList("USERS")) {
+				users = dao.getUsers();
+			}
 
-		if (checkList("USERS")) {
-			users = dao.getUsers();
-		}
+			if (checkList("SALES ORDERS") && checkList("SALES ORDERLINES")) {
+				orders = dao.getOrders();
+				orderlines = dao.getOrderlines();
+			}
 
-		if (checkList("SALES ORDERS") && checkList("SALES ORDERLINES")) {
-			orders = dao.getOrders();
-			orderlines = dao.getOrderlines();
-		}
-
-		if (checkList("PARTNERS")) {
-			partners = dao.getPartners();
-		}
-
-		data.writeXML(options);
+			if (checkList("PARTNERS")) {
+				partners = dao.getPartners();
+			}
 
 	}
 
@@ -347,6 +425,7 @@ public class Menu {
 		if (checkList("PRODUCTS")) {
 			for (Producto p : products) {
 				dout.update(p);
+				
 			}
 		}
 
@@ -383,8 +462,6 @@ public class Menu {
 			}
 		}
 
-		data.writeXML(options);
-
 		System.out.println("THE DATA HAS BEEN UPDATED IN SQL SERVER");
 
 	}
@@ -414,4 +491,5 @@ public class Menu {
 		}
 
 	}
+	
 }

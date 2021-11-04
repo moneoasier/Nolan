@@ -32,7 +32,9 @@ import javax.persistence.Table;
 
 		private String type;
 
-
+		@Column(name="signup_type")
+		private String signupType;
+		
 		public Partner() {
 		}
 
@@ -76,11 +78,18 @@ import javax.persistence.Table;
 			this.type = type;
 		}
 
-		
+
+		public String getSignupType() {
+			return signupType;
+		}
+
+		public void setSignupType(String signupType) {
+			this.signupType = signupType;
+		}
 
 		@Override
 		public int hashCode() {
-			return Objects.hash(city, createDate, id, name, type);
+			return Objects.hash(city, createDate, id, name, signupType, type);
 		}
 
 		@Override
@@ -93,19 +102,15 @@ import javax.persistence.Table;
 				return false;
 			Partner other = (Partner) obj;
 			return Objects.equals(city, other.city) && Objects.equals(createDate, other.createDate)
-					&& Objects.equals(id, other.id)
-					&& Objects.equals(name, other.name) 
-					&& Objects.equals(type, other.type);
+					&& Objects.equals(id, other.id) && Objects.equals(name, other.name)
+					&& Objects.equals(signupType, other.signupType) && Objects.equals(type, other.type);
 		}
 
 		@Override
 		public String toString() {
-			return "Partner [id=" + id + ", city=" + city + ", createDate=" + createDate + ", date=" + ", name="
-					+ name + ", type=" + type + "]";
+			return "Partner [id=" + id + ", city=" + city + ", createDate=" + createDate + ", name=" + name + ", type="
+					+ type + ", signupType=" + signupType + "]";
 		}
-
-	
-		
 		
 
 	}

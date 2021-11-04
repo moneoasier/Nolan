@@ -36,6 +36,4 @@ public class Option {
 		return choice;
 	}
 	
-	
-	
 }
