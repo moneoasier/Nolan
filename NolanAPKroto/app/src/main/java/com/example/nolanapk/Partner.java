@@ -23,6 +23,16 @@ public class Partner {
         this.company = company;
     }
 
+    public Partner(String name, String street, String zip, String city, String email, String phone, boolean company) {
+        this.name = name;
+        this.street = street;
+        this.zip = zip;
+        this.city = city;
+        this.email = email;
+        this.phone = phone;
+        this.company = company;
+    }
+
     public int getId() { return id; }
 
     public void setId(int id) { this.id = id; }

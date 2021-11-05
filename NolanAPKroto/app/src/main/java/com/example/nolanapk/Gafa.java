@@ -4,11 +4,18 @@ import java.util.Objects;
 public class Gafa {
 
     private String id;
+    private int pro_id;
     private String nombre;
-    private double precio;
     private int stock;
     private String category;
-    private int cantidad;
+    private int cantidad = 1;
+
+    private double precio;
+    private double iva;
+    private double precioCantidad;
+    private double ivaCantidad;
+    private double precioTotal;
+    private double precioIva;
 
     /**
      * Constructor
@@ -19,6 +26,15 @@ public class Gafa {
         this.precio = precio;
         this.stock = stock;
         this.category=category;
+        this.setPrecios();
+    }
+
+    public void setPrecios(){
+        this.iva = this.precio*0.21;
+        this.precioCantidad = this.precio * this.cantidad;
+        this.ivaCantidad = this.iva * this.cantidad;
+        this.precioTotal = this.precioCantidad + this.ivaCantidad;
+        this.precioIva = this.precio + this.iva;
     }
 
     /**
@@ -64,11 +80,29 @@ public class Gafa {
         this.category = category;
     }
 
-    public int getCantidad() { return cantidad;
-    }
+    public int getCantidad() { return cantidad; }
 
-    public void setCantidad(int cantidad) { this.cantidad = cantidad;
-    }
+    public void setCantidad(int cantidad) { this.cantidad = cantidad; }
+
+    public double getIva() { return iva; }
+
+    public void setIva(double iva) { this.iva = iva; }
+
+    public double getPrecioCantidad() { return precioCantidad; }
+
+    public void setPrecioCantidad(double precioCantidad) { this.precioCantidad = precioCantidad; }
+
+    public double getIvaCantidad() { return ivaCantidad; }
+
+    public void setIvaCantidad(double ivaCantidad) { this.ivaCantidad = ivaCantidad; }
+
+    public double getPrecioTotal() { return precioTotal; }
+
+    public void setPrecioTotal(double precioTotal) { this.precioTotal = precioTotal; }
+
+    public double getPrecioIva() { return precioIva; }
+
+    public void setPrecioIva(double precioIva) { this.precioIva = precioIva; }
 
     /**
      * Metodos ToString/Equals

@@ -83,19 +83,14 @@ public class Purchase extends AppCompatActivity {
     }
 
     public void tramitar(View v){
-        Connexion.insertOrder(Connexion.sale_ID,Connexion.sale_Name,Login.user_id,Connexion.partners.get(spinp.getSelectedItemPosition()).getId(),precio1,precioiva,precio2);
+        Connexion.insertOrder(Login.user_id,Connexion.partners.get(spinp.getSelectedItemPosition()).getId(),precio1,precioiva,precio2);
 
     }
 
-    /*public void DetailsOnClick(View v){
-        Intent b = new Intent(Purchase.this, Detalles.class);
-
-        String valor= v.getTag().toString();
-        b.putExtra("gafa",findGafa(valor));
+    public void bezeroberri(View v){
+        Intent b = new Intent(Purchase.this, Bezeroa.class);
         startActivity(b);
+
+
     }
-
-    /*public void DelCompraOnClick(String code){
-
-    }*/
 }

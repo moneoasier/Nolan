@@ -58,10 +58,16 @@ public class Detalles extends AppCompatActivity {
             Gafa gafax = new Gafa(elements[0],elements[1],Double.parseDouble(elements[2]),Integer.parseInt(elements[3]),elements[4]);
             gafax.setCantidad(Integer.parseInt(c));
             Inventario.compra.add(gafax);
+            Toast.makeText(Detalles.this,"Product Added",Toast.LENGTH_LONG).show();
             //Log.d("Gafa",Inventario.compra.get(Inventario.compra.size()-1).toString());
         }
 
 
+    }
+
+    public void btnBuy(View v){
+        Intent b = new Intent(Detalles.this, Purchase.class);
+        startActivity(b);
     }
 
 }
