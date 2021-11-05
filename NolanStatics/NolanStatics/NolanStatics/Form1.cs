@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -18,12 +12,8 @@ namespace NolanStatics
 
         public Form1()
         {
-
             InitializeComponent();
-
-            
         }
-
 
         private void btnExit(object sender, EventArgs e)
         {
@@ -67,7 +57,7 @@ namespace NolanStatics
 
             sal_lan.DataSource = this.nolanDBDataSet.sale_order.GroupBy(b => b.user_id).ToDictionary(g => g.Key, g => g.Count());
 
-            sal_lan.Series[0].YValueMembers = "Value";
+            //sal_lan.Series[0].YValueMembers = "Value";
             sal_lan.Series[0].XValueMember = "Key";
             sal_lan.DataBind();
     

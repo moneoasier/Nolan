@@ -37,3 +37,7 @@ C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.
 C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.csproj.CopyComplete
 C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.exe
 C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.pdb
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\bin\Debug\AgendaDLL.pdb
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\bin\Debug\AgendaDLL.dll.config
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.Form1.resources
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.Login.resources

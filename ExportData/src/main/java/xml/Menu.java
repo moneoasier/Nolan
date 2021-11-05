@@ -15,6 +15,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import config.ExportConfig;
 import config.ImportConfig;
+import nolan.AppUser;
 import nolan.Categoria;
 import nolan.Employee;
 import nolan.ManagementDAO;
@@ -40,6 +41,7 @@ public class Menu {
 	static List<Employee> employees;
 	static List<Order> orders;
 	static List<OrderLine> orderlines;
+	static List<AppUser> appUsers;
 	static ApplicationContext exportContext = new AnnotationConfigApplicationContext(ExportConfig.class);
 	static ManagementDAO dout = exportContext.getBean(ManagementDAO.class);
 	static ApplicationContext importContext = new AnnotationConfigApplicationContext(ImportConfig.class);
@@ -88,7 +90,7 @@ public class Menu {
 	}
 
 	public static void menuStart() {
-		String ops = "\n|";
+		String ops = "\n| ";
 		if (options.size() > 0) {
 			for (Option o : options) {
 				ops += o.getChoice() + " | ";
@@ -395,6 +397,7 @@ public class Menu {
 
 			if (checkList("USERS")) {
 				users = dao.getUsers();
+				appUsers=dao.getAppUsers();
 			}
 
 			if (checkList("SALES ORDERS") && checkList("SALES ORDERLINES")) {
@@ -414,6 +417,7 @@ public class Menu {
 		categories = dao.getCategories();
 		partners = dao.getPartners();
 		users = dao.getUsers();
+		appUsers=dao.getAppUsers();
 		employees = dao.getEmployees();
 		orders = dao.getOrders();
 		orderlines = dao.getOrderlines();
@@ -445,6 +449,10 @@ public class Menu {
 			for (User u : users) {
 				dout.update(u);
 			}
+			
+			for(AppUser au:appUsers) {
+				dout.update(au);
+			}
 		}
 
 		if (checkList("SALES ORDERS") && checkList("SALES ORDERLINES")) {
@@ -471,21 +479,31 @@ public class Menu {
 		for (Categoria c : categories) {
 			dout.update(c);
 		}
+		
 		for (Producto p : products) {
 			dout.update(p);
 		}
+		
 		for (Partner p : partners) {
 			dout.update(p);
 		}
+		
 		for (User u : users) {
 			dout.update(u);
 		}
+		
+		for (AppUser au:appUsers) {
+			dout.update(au);
+		}
+		
 		for (Employee e : employees) {
 			dout.update(e);
 		}
+		
 		for (Order o : orders) {
 			dout.update(o);
 		}
+		
 		for (OrderLine ol : orderlines) {
 			dout.update(ol);
 		}

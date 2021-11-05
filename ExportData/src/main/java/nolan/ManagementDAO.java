@@ -140,4 +140,21 @@ public class ManagementDAO {
         return;
     }
     
+    @SuppressWarnings("unchecked")
+    public List<AppUser> getAppUsers() {
+        return entityManager.createQuery("from AppUser").getResultList();
+    }
+    public AppUser getAppUsers(String email) {
+        return entityManager.find(AppUser.class, email);
+    }
+    public void create(AppUser appu) {
+        entityManager.persist(appu);
+        return;
+    }
+    
+    public void update(AppUser appu) {
+        entityManager.merge(appu);
+        return;
+    }
+    
 }

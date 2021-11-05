@@ -34,6 +34,10 @@ public class Employee implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="create_uid")
 	private User resUser;
+	
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User resUser2;
 
 	public Employee() {
 	}
@@ -85,10 +89,26 @@ public class Employee implements Serializable {
 	public void setWorkEmail(String workEmail) {
 		this.workEmail = workEmail;
 	}
+	
+	public User getResUser() {
+		return resUser;
+	}
+
+	public void setResUser(User resUser) {
+		this.resUser = resUser;
+	}
+
+	public User getResUser2() {
+		return resUser2;
+	}
+
+	public void setResUser2(User resUser2) {
+		this.resUser2 = resUser2;
+	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(barcode, departmentId, gender, workEmail);
+		return Objects.hash(barcode, departmentId, gender, id, name, resUser, resUser2, workEmail);
 	}
 
 	@Override
@@ -101,14 +121,16 @@ public class Employee implements Serializable {
 			return false;
 		Employee other = (Employee) obj;
 		return Objects.equals(barcode, other.barcode) && Objects.equals(departmentId, other.departmentId)
-				&& Objects.equals(gender, other.gender) && 
-				Objects.equals(workEmail, other.workEmail);
+				&& Objects.equals(gender, other.gender) && Objects.equals(id, other.id)
+				&& Objects.equals(name, other.name) && Objects.equals(resUser, other.resUser)
+				&& Objects.equals(resUser2, other.resUser2) && Objects.equals(workEmail, other.workEmail);
 	}
 
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", barcode=" + barcode + ", departmentId=" + departmentId + ", gender=" + gender
-				+ ", name=" + name + ", workEmail=" + workEmail + "]";
+				+ ", name=" + name + ", workEmail=" + workEmail + ", resUser=" + resUser + ", resUser2=" + resUser2
+				+ "]";
 	}
 	
 	
