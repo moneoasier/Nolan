@@ -220,6 +220,7 @@ public class Connexion {
     }
 
     public static void insertPartner(Partner p) {
+
         Thread thread8 = new Thread(new Runnable() {
 
             @Override

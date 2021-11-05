@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -23,6 +24,7 @@ public class Purchase extends AppCompatActivity {
     Double precio1 = 0.00;
     Double precioiva;
     Double precio2;
+    Button btneliminar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,22 +53,29 @@ public class Purchase extends AppCompatActivity {
                 txt = new TextView(getBaseContext());
                 txt.setText(cadena[i]);
                 txt.setTextColor(Color.WHITE);
+                btneliminar= new Button(getBaseContext());
 
                 switch(i) {
                     case 0:
+                        row.addView(txt);
                         //txt.setOnClickListener(DetailsOnClick());
                         break;
                     case 1:
+                        row.addView(txt);
                         break;
                     case 2:
+                        row.addView(txt);
                         precio1+=Double.parseDouble(cadena[i]);
                         break;
                     case 3:
-                        //OnClick Eliminar
+
+                        btneliminar.setText(cadena[i]);
+                        row.addView(btneliminar);
+
                         break;
                 }
 
-                row.addView(txt);
+
                 pstotal.setText(precio1.toString());
                 precioiva = precio1*0.21;
                 double precioIvaRed=Math.round(precioiva*100.0)/100.0;

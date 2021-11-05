@@ -47,14 +47,14 @@ public class Bezeroa extends AppCompatActivity {
 
 
         if (check(nametxt, cptxt, citytxt, addresstxt, emailtxt, phonetxt) && checkemail()) {
-
-            Partner p = new Partner(nametxt, addresstxt, cptxt, citytxt, emailtxt, phonetxt, companychbx);
+            Connexion.partner_ID++;
+            Partner p = new Partner(Connexion.partner_ID,nametxt, addresstxt, cptxt, citytxt, emailtxt, phonetxt, companychbx);
             Connexion.partners.add(p);
             Connexion.insertPartner(p);
 
             Toast.makeText(Bezeroa.this, "Bezeroa sortu da.", Toast.LENGTH_SHORT).show();
 
-            Intent b = new Intent(Bezeroa.this, Inventario.class);
+            Intent b = new Intent(Bezeroa.this, Purchase.class);
             startActivity(b);
 
         }
