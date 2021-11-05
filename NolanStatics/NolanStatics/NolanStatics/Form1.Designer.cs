@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelSalm = new System.Windows.Forms.Label();
@@ -54,6 +54,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.sal_lan = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel7 = new System.Windows.Forms.Panel();
             this.sal_eros = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -66,7 +67,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.nolanDataSet = new NolanStatics.NolanDataSet();
             this.nolanDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sal_lan = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -76,6 +76,7 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sal_lan)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sal_eros)).BeginInit();
             this.panel5.SuspendLayout();
@@ -84,7 +85,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nolanDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nolanDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sal_lan)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -288,6 +288,23 @@
             this.panel6.Size = new System.Drawing.Size(444, 384);
             this.panel6.TabIndex = 9;
             // 
+            // sal_lan
+            // 
+            this.sal_lan.BackColor = System.Drawing.Color.DimGray;
+            chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.Area3DStyle.IsRightAngleAxes = false;
+            chartArea1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            chartArea1.Name = "ChartArea1";
+            this.sal_lan.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            legend1.Name = "Legend1";
+            this.sal_lan.Legends.Add(legend1);
+            this.sal_lan.Location = new System.Drawing.Point(85, 42);
+            this.sal_lan.Name = "sal_lan";
+            this.sal_lan.Size = new System.Drawing.Size(300, 300);
+            this.sal_lan.TabIndex = 0;
+            this.sal_lan.Text = "chart1";
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -417,23 +434,6 @@
             this.nolanDataSetBindingSource.DataSource = this.nolanDataSet;
             this.nolanDataSetBindingSource.Position = 0;
             // 
-            // sal_lan
-            // 
-            this.sal_lan.BackColor = System.Drawing.Color.DimGray;
-            chartArea1.Area3DStyle.Enable3D = true;
-            chartArea1.Area3DStyle.IsRightAngleAxes = false;
-            chartArea1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            chartArea1.Name = "ChartArea1";
-            this.sal_lan.ChartAreas.Add(chartArea1);
-            legend1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            legend1.Name = "Legend1";
-            this.sal_lan.Legends.Add(legend1);
-            this.sal_lan.Location = new System.Drawing.Point(85, 42);
-            this.sal_lan.Name = "sal_lan";
-            this.sal_lan.Size = new System.Drawing.Size(300, 300);
-            this.sal_lan.TabIndex = 0;
-            this.sal_lan.Text = "chart1";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,6 +468,7 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sal_lan)).EndInit();
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sal_eros)).EndInit();
             this.panel5.ResumeLayout(false);
@@ -478,7 +479,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nolanDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nolanDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sal_lan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

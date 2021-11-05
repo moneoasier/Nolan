@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NolanStatics.NolanDataSetTableAdapters;
+using System;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
@@ -32,14 +33,14 @@ namespace NolanStatics
             countProd();
             countSalm();
             dataChart1();
-           // dataChart2();
+            //dataChart2();
             
         
             
         }
         public void dataChart1()
         {
-            NolanDataSetTableAdapters.sale_orderTableAdapter sale_orderTableAdapter = new NolanDataSetTableAdapters.sale_orderTableAdapter();
+            sale_orderTableAdapter sale_orderTableAdapter = new sale_orderTableAdapter();
 
             sale_orderTableAdapter.Fill(this.nolanDBDataSet.sale_order);
 
@@ -49,19 +50,22 @@ namespace NolanStatics
             sal_eros.Series[0].XValueMember = "Key";
             sal_eros.DataBind();
         }
-        public void dataChart2()
+        /*public void dataChart2()
         {
-            NolanDataSetTableAdapters.sale_orderTableAdapter sale_orderTableAdapter = new NolanDataSetTableAdapters.sale_orderTableAdapter();
+            sale_userTableAdapter sale_userTableAdapter = new sale_userTableAdapter();
 
-            sale_orderTableAdapter.Fill(this.nolanDBDataSet.sale_order);
+            sale_userTableAdapter.Fill(nolanDBDataSet.sale_user);
+            sal_lan.DataSource = sale_userTableAdapter.GetDataBy().Select();
+            //var result1 = nolanDBDataSet.sale_order.GroupBy(b => b.user_id).ToDictionary(g => g.Key, g => g.Count());
+             //var result2 = nolanDBDataSet.hr_employee.Join(nolanDBDataSet.hr_employee, user => user.user_id, userfk => userfk.user_id, (user, userfk) =>
+                 //new {User=user, Userfk=userfk }).Where(rela=>rela.User.user_id.Contains( "Key")).ToList();this.nolanDBDataSet.sale_order.GroupBy(b => b.partner_id).ToDictionary(g => g.Key, g => g.Count())
 
-            sal_lan.DataSource = this.nolanDBDataSet.sale_order.GroupBy(b => b.user_id).ToDictionary(g => g.Key, g => g.Count());
-
-            //sal_lan.Series[0].YValueMembers = "Value";
-            sal_lan.Series[0].XValueMember = "Key";
+            sal_lan.Series[0].YValueMembers = "name";
+            sal_lan.Series[0].XValueMember = "Salmentak";
             sal_lan.DataBind();
     
-        }
+        }*/
+
         public void countKat()
         {
             conexionbd conexion = new conexionbd();
@@ -200,7 +204,10 @@ namespace NolanStatics
             conexionbd conexion = new conexionbd();
             conexion.abrir();
 
-            string sententzia = "Select user_id ,count(user_id) as 'salmentak' from dbo.sale_order group by user_id;";
+            string sententzia = "SELECT hr_employee.name, COUNT(sale_order.user_id) "+
+                                 "FROM sale_order INNER JOIN "+
+                                 "hr_employee ON sale_order.user_id = hr_employee.user_id "+
+                                 "GROUP BY hr_employee.name; "; 
 
             try
             {

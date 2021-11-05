@@ -64,6 +64,9 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="NolanDataSet.cs">
+      <DependentUpon>NolanDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="NolanDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
