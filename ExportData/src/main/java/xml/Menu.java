@@ -355,6 +355,7 @@ public class Menu {
 				Export e= new Export();
 				e.setName(o.getChoice());
 				exports.add(e);
+				
 			}
 			System.out.println("DATA CHARGED");
 		} catch (JAXBException e) {
@@ -383,29 +384,29 @@ public class Menu {
 
 	public static void readDataSelected() {
 		
-			if (checkList("PRODUCTS")) {
+			if (!checkList("PRODUCTS")) {
 				products = dao.getProducts();
 			}
 
-			if (checkList("CATEGORIES")) {
+			if (!checkList("CATEGORIES")) {
 				categories = dao.getCategories();
 			}
 
-			if (checkList("EMPLOYEES")) {
+			if (!checkList("EMPLOYEES")) {
 				employees = dao.getEmployees();
 			}
 
-			if (checkList("USERS")) {
+			if (!checkList("USERS")) {
 				users = dao.getUsers();
 				appUsers=dao.getAppUsers();
 			}
 
-			if (checkList("SALES ORDERS") && checkList("SALES ORDERLINES")) {
+			if (!checkList("SALES ORDERS") && !checkList("SALES ORDERLINES")) {
 				orders = dao.getOrders();
 				orderlines = dao.getOrderlines();
 			}
 
-			if (checkList("PARTNERS")) {
+			if (!checkList("PARTNERS")) {
 				partners = dao.getPartners();
 			}
 
@@ -426,26 +427,26 @@ public class Menu {
 
 	public static void insertDataSelected() {
 
-		if (checkList("PRODUCTS")) {
+		if (!checkList("PRODUCTS")) {
 			for (Producto p : products) {
 				dout.update(p);
 				
 			}
 		}
 
-		if (checkList("CATEGORIES")) {
+		if (!checkList("CATEGORIES")) {
 			for (Categoria c : categories) {
 				dout.update(c);
 			}
 		}
 
-		if (checkList("EMPLOYEES")) {
+		if (!checkList("EMPLOYEES")) {
 			for (Employee e : employees) {
 				dout.update(e);
 			}
 		}
 
-		if (checkList("USERS")) {
+		if (!checkList("USERS")) {
 			for (User u : users) {
 				dout.update(u);
 			}
@@ -455,7 +456,7 @@ public class Menu {
 			}
 		}
 
-		if (checkList("SALES ORDERS") && checkList("SALES ORDERLINES")) {
+		if (!checkList("SALES ORDERS") && !checkList("SALES ORDERLINES")) {
 			for (Order o : orders) {
 				dout.update(o);
 			}
@@ -464,7 +465,7 @@ public class Menu {
 			}
 		}
 
-		if (checkList("PARTNERS")) {
+		if (!checkList("PARTNERS")) {
 			for (Partner p : partners) {
 				dout.update(p);
 			}

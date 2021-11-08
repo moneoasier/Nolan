@@ -14,6 +14,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.net.ConnectException;
+import java.util.ArrayList;
+
 public class Purchase extends AppCompatActivity {
 
     public Spinner spinp;
@@ -25,8 +28,7 @@ public class Purchase extends AppCompatActivity {
     Double precio1 = 0.00;
     Double precioiva;
     Double precio2;
-    Button btneliminar;
-
+    public ArrayList<TableRow> rows;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,73 +44,19 @@ public class Purchase extends AppCompatActivity {
         piva = (TextView) findViewById(R.id.txt_iva);
         ptotal = (TextView) findViewById(R.id.txt_total);
 
-        tabla = (TableLayout) findViewById(R.id.tableLayout);
+        Tabla tabla = new Tabla(this, (TableLayout)findViewById(R.id.tabla));
+        for(int i = 0; i < Connexion.compra.size(); i++)
+        {
+            ArrayList<String> elementos = new ArrayList<>();
+            elementos.add(Connexion.compra.get(i).getId());
+            elementos.add(Integer.toString(Connexion.compra.get(i).getCantidad()));
+            elementos.add(Double.toString(Connexion.compra.get(i).getPrecio()*Connexion.compra.get(i).getCantidad()));
 
-        for (int j = 0; j < Connexion.compra.size(); j++) {
-
-            TableRow row = new TableRow(getBaseContext());
-            String[] cadena = {Connexion.compra.get(j).getId(), Integer.toString(Connexion.compra.get(j).getCantidad()), Double.toString(Connexion.compra.get(j).getPrecio()*Connexion.compra.get(j).getCantidad()), "x"};
-
-            for (int i = 0; i < cadena.length; i++) {
-
-                txt = new TextView(getBaseContext());
-                txt.setText(cadena[i]);
-                txt.setTextColor(Color.WHITE);
-                btneliminar= new Button(getBaseContext());
-
-                switch(i) {
-                    case 0:
-                        row.addView(txt);
-                        //txt.setOnClickListener(DetailsOnClick());
-                        break;
-                    case 1:
-                        row.addView(txt);
-                        break;
-                    case 2:
-                        row.addView(txt);
-                        precio1+=Double.parseDouble(cadena[i]);
-                        break;
-                    case 3:
-
-                        btneliminar.setLayoutParams(new TableRow.LayoutParams(50,TableRow.LayoutParams.WRAP_CONTENT));
-                        btneliminar.setText(cadena[i]);
-                        btneliminar.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                for (Gafa i : Connexion.compra){
-                                    if (i.getId().equals(cadena[0])){
-                                        Connexion.compra.remove(i);
-                                    }
-
-                                }
-
-                                Intent b = new Intent(Purchase.this, Inventario.class);
-                                startActivity(b);
-
-                            }
-                        });
-                        row.addView(btneliminar);
-
-                        break;
-                }
-
-
-                pstotal.setText(precio1.toString());
-                precioiva = precio1*0.21;
-                double precioIvaRed=Math.round(precioiva*100.0)/100.0;
-                piva.setText(Double.toString(precioIvaRed));
-                precio2 = precio1+precioiva;
-                ptotal.setText(Double.toString(Math.round(precio2*100.0)/100.0));
-
-            }
-
-            tabla.addView(row);
+            tabla.agregarFilaTabla(elementos);
         }
 
 
     }
-
-
 
     public void tramitar(View v){
         Connexion.insertOrder(Login.user_id,Connexion.partners.get(spinp.getSelectedItemPosition()).getId(),precio1,precioiva,precio2);
@@ -121,7 +69,6 @@ public class Purchase extends AppCompatActivity {
 
 
     }
-
 
 
 }
