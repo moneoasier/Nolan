@@ -16,6 +16,7 @@ public class Connexion {
     private static Connection connection;
     private static ArrayList<User> users=new ArrayList<>();
     public static ArrayList<Partner> partners=new ArrayList<>();
+    public static ArrayList<Gafa> compra=new ArrayList<>();
     //private static ArrayList<User> users=new ArrayList<>();
 
     private final String user = "admin";
@@ -193,7 +194,7 @@ public class Connexion {
                         Statement st;
                         ResultSet rd;
 
-                        for (Gafa g: Inventario.compra) {
+                        for (Gafa g: Connexion.compra) {
                             Log.d("QueOstiasEs.5",sale_ID+"   "+g.getId()+" / "+g.getNombre()+" / "+g.getPrecio()+" / "+g.getPrecioCantidad()+" / "+g.getIvaCantidad()+" / "+g.getPrecioTotal()+" / "+g.getNombre()+" / "+g.getCantidad());
                             st = connection.createStatement();
                             rd = st.executeQuery("insert into sale_order_line(order_id,name,\"sequence\",invoice_status,price_unit,price_subtotal,price_tax,price_total,price_reduce,price_reduce_taxinc,price_reduce_taxexcl,discount,product_id,product_uom_qty,product_uom,qty_delivered_method,qty_delivered,qty_delivered_manual,qty_to_invoice,qty_invoiced,untaxed_amount_invoiced,untaxed_amount_to_invoice,salesman_id,currency_id,company_id,order_partner_id,state,customer_lead,create_uid,create_date,write_uid,write_date)"

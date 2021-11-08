@@ -10,6 +10,7 @@ import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -43,10 +44,10 @@ public class Purchase extends AppCompatActivity {
 
         tabla = (TableLayout) findViewById(R.id.tableLayout);
 
-        for (int j = 0; j < Inventario.compra.size(); j++) {
+        for (int j = 0; j < Connexion.compra.size(); j++) {
 
             TableRow row = new TableRow(getBaseContext());
-            String[] cadena = {Inventario.compra.get(j).getId(), Integer.toString(Inventario.compra.get(j).getCantidad()), Double.toString(Inventario.compra.get(j).getPrecio()*Inventario.compra.get(j).getCantidad()), "x"};
+            String[] cadena = {Connexion.compra.get(j).getId(), Integer.toString(Connexion.compra.get(j).getCantidad()), Double.toString(Connexion.compra.get(j).getPrecio()*Connexion.compra.get(j).getCantidad()), "x"};
 
             for (int i = 0; i < cadena.length; i++) {
 
@@ -69,7 +70,23 @@ public class Purchase extends AppCompatActivity {
                         break;
                     case 3:
 
+                        btneliminar.setLayoutParams(new TableRow.LayoutParams(50,TableRow.LayoutParams.WRAP_CONTENT));
                         btneliminar.setText(cadena[i]);
+                        btneliminar.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                for (Gafa i : Connexion.compra){
+                                    if (i.getId().equals(cadena[0])){
+                                        Connexion.compra.remove(i);
+                                    }
+
+                                }
+
+                                Intent b = new Intent(Purchase.this, Inventario.class);
+                                startActivity(b);
+
+                            }
+                        });
                         row.addView(btneliminar);
 
                         break;
@@ -91,6 +108,8 @@ public class Purchase extends AppCompatActivity {
 
     }
 
+
+
     public void tramitar(View v){
         Connexion.insertOrder(Login.user_id,Connexion.partners.get(spinp.getSelectedItemPosition()).getId(),precio1,precioiva,precio2);
 
@@ -102,4 +121,7 @@ public class Purchase extends AppCompatActivity {
 
 
     }
+
+
+
 }
