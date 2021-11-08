@@ -41,3 +41,9 @@ C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanSta
 C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\bin\Debug\AgendaDLL.dll.config
 C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.Form1.resources
 C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.Login.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Debug\EntityFramework.dll
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Debug\EntityFramework.SqlServer.dll
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Debug\EntityFramework.xml
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Debug\EntityFramework.SqlServer.xml
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.Kontrola.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.Login.resources
