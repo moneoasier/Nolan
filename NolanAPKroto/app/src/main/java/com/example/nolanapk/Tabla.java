@@ -77,6 +77,7 @@ public class Tabla {
                    if(Connexion.compra.get(i).getId().equals(elementos.get(0))){
                        eliminarFila(i+1);
                        Connexion.compra.remove(i);
+                       Purchase.calculateTotal();
                        break;
                    }
                }
@@ -97,7 +98,6 @@ public class Tabla {
     {
         tabla.removeViewAt(indicefilaeliminar);
         FILAS--;
-
     }
 
     /**

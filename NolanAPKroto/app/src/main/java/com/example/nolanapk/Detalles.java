@@ -26,48 +26,74 @@ public class Detalles extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detalles);
 
-        id=findViewById(R.id.code);
-        txt=findViewById(R.id.text);
-        code= getIntent().getStringExtra("gafa");
-        elements=code.split(",");
-        quant= findViewById(R.id.Qty_txt);
+        id = findViewById(R.id.code);
+        txt = findViewById(R.id.text);
+        code = getIntent().getStringExtra("gafa");
+        elements = code.split(",");
+        quant = findViewById(R.id.Qty_txt);
         picture = findViewById(R.id.img);
 
         fillData();
     }
+
     /**
      * Metodo honek produktuen informazioa ipintzen du: argazkia, izena, Stock-ean dagoen kantitatea eta prezioa
      */
     @SuppressLint("SetTextI18n")
-    public void fillData(){
+    public void fillData() {
 
-        id.setText(elements[0]+" - "+elements[4]);
-        txt.setText(elements[1]+"\n\n"+"Stock: "+elements[3]+
-                " - Price: "+elements[2]+" €");
+        id.setText(elements[0] + " - " + elements[4]);
+        txt.setText(elements[1] + "\n\n" + "Stock: " + elements[3] +
+                " - Price: " + elements[2] + " €");
 
-        int img_res = getResources().getIdentifier("@drawable/"+elements[0].toLowerCase(), null, getPackageName());
+        int img_res = getResources().getIdentifier("@drawable/" + elements[0].toLowerCase(), null, getPackageName());
         picture.setImageResource(img_res);
 
     }
 
     public void addProduct(View v) {
         String c = quant.getText().toString();
-        if(c.isEmpty()||c.equals("0")){
-            Toast.makeText(Detalles.this,"Insert Quantity",Toast.LENGTH_SHORT).show();
-        }else{
-            Gafa gafax = new Gafa(elements[0],elements[1],Double.parseDouble(elements[2]),Integer.parseInt(elements[3]),elements[4]);
-            gafax.setCantidad(Integer.parseInt(c));
-            Connexion.compra.add(gafax);
-            Toast.makeText(Detalles.this,"Product Added",Toast.LENGTH_LONG).show();
+        if (c.isEmpty() || c.equals("0")) {
+            Toast.makeText(Detalles.this, "Insert Quantity", Toast.LENGTH_SHORT).show();
+        } else if (!checkquanty()) {
+            Toast.makeText(Detalles.this, "Ez dago stock nahikorik", Toast.LENGTH_SHORT).show();
+
+        } else {
+            if (!inCompra()) {
+                Gafa gafax = new Gafa(elements[0], elements[1], Double.parseDouble(elements[2]), Integer.parseInt(elements[3]), elements[4]);
+                gafax.setCantidad(Integer.parseInt(c));
+                gafax.setPrecios();
+                Connexion.compra.add(gafax);
+            }
+
+            Toast.makeText(Detalles.this, "Product Added", Toast.LENGTH_LONG).show();
             //Log.d("Gafa",Inventario.compra.get(Inventario.compra.size()-1).toString());
         }
 
 
     }
 
-    public void btnBuy(View v){
+    public boolean inCompra() {
+        for (Gafa g : Connexion.compra) {
+            if (g.getId().equals(elements[0])) {
+                g.setCantidad(g.getCantidad() + Integer.parseInt(quant.getText().toString()));
+                g.setPrecios();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void btnBuy(View v) {
         Intent b = new Intent(Detalles.this, Purchase.class);
         startActivity(b);
+    }
+
+    public boolean checkquanty() {
+        if (Integer.parseInt(quant.getText().toString()) > Integer.parseInt(elements[3].toString())) {
+            return false;
+        }
+        return true;
     }
 
 }

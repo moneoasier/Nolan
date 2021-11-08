@@ -10,12 +10,12 @@ public class Gafa {
     private String category;
     private int cantidad = 1;
 
-    private double precio;
-    private double iva;
-    private double precioCantidad;
-    private double ivaCantidad;
-    private double precioTotal;
-    private double precioIva;
+    private double precio; // precio producto
+    private double iva; // iva de un solo producto
+    private double precioCantidad; // precio por la cantidad sin iva
+    private double ivaCantidad; // el iva de la cantidad
+    private double precioTotal; // precio total con iva
+    private double precioIva; // precio total de un producto con iva
 
     /**
      * Constructor
@@ -26,13 +26,14 @@ public class Gafa {
         this.precio = precio;
         this.stock = stock;
         this.category=category;
-        this.setPrecios();
+
     }
 
     public void setPrecios(){
+
         this.iva = this.precio*0.21;
-        this.precioCantidad = this.precio * this.cantidad;
-        this.ivaCantidad = this.iva * this.cantidad;
+        this.precioCantidad = this.precio * (double)cantidad;
+        this.ivaCantidad = this.iva * (double)cantidad;
         this.precioTotal = this.precioCantidad + this.ivaCantidad;
         this.precioIva = this.precio + this.iva;
     }
