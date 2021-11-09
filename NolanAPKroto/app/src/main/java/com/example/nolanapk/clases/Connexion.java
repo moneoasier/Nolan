@@ -1,7 +1,10 @@
-package com.example.nolanapk;
+package com.example.nolanapk.clases;
 
 
 import android.util.Log;
+
+import com.example.nolanapk.activities.Inventario;
+import com.example.nolanapk.activities.Login;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

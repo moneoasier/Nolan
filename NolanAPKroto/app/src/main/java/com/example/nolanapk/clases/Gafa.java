@@ -1,4 +1,4 @@
-package com.example.nolanapk;
+package com.example.nolanapk.clases;
 import java.util.Objects;
 
 public class Gafa {

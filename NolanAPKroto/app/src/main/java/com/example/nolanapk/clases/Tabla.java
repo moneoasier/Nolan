@@ -1,4 +1,4 @@
-package com.example.nolanapk;
+package com.example.nolanapk.clases;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -11,7 +11,9 @@ import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.nolanapk.activities.Purchase;
+import com.example.nolanapk.R;
 
 import java.util.ArrayList;
 
@@ -73,7 +75,7 @@ public class Tabla {
             @SuppressLint("ResourceType")
             @Override
             public void onClick(View v) {
-               for(int i=0;i<Connexion.compra.size();i++){
+               for(int i = 0; i< Connexion.compra.size(); i++){
                    if(Connexion.compra.get(i).getId().equals(elementos.get(0))){
                        eliminarFila(i+1);
                        Connexion.compra.remove(i);

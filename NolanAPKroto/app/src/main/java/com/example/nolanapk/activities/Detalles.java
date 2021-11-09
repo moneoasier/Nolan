@@ -1,9 +1,8 @@
-package com.example.nolanapk;
+package com.example.nolanapk.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -11,6 +10,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.nolanapk.R;
+import com.example.nolanapk.clases.Connexion;
+import com.example.nolanapk.clases.Gafa;
 
 public class Detalles extends AppCompatActivity {
 

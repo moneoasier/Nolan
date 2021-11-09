@@ -1,4 +1,4 @@
-package com.example.nolanapk;
+package com.example.nolanapk.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.nolanapk.R;
+import com.example.nolanapk.clases.Connexion;
+import com.example.nolanapk.clases.Partner;
 
 public class Bezeroa extends AppCompatActivity {
     EditText name;

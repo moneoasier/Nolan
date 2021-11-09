@@ -1,4 +1,4 @@
-package com.example.nolanapk;
+package com.example.nolanapk.activities;
 
 
 import android.annotation.SuppressLint;
@@ -12,11 +12,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
+import com.example.nolanapk.R;
+import com.example.nolanapk.clases.Gafa;
+
 import java.util.ArrayList;
 
 public class Inventario extends AppCompatActivity {
@@ -139,8 +137,6 @@ public class Inventario extends AppCompatActivity {
     //gafas.csv fitxategiaren datuak irakurri eta ArrayList batean gordetzen ditu
 
     public void readData() {
-
-        Login.con.connect("gafas");
         calculatePages(allGafas);
         pages.setText(currentPage +" / "+ totalPages);
     }

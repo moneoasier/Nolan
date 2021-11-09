@@ -1,4 +1,4 @@
-package com.example.nolanapk;
+package com.example.nolanapk.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.nolanapk.R;
+import com.example.nolanapk.clases.Connexion;
+import com.example.nolanapk.clases.User;
 
 public class Login extends AppCompatActivity {
 
@@ -56,6 +60,7 @@ public class Login extends AppCompatActivity {
                         Intent b = new Intent(Login.this, Inventario.class);
                         startActivity(b);
                         Login.con.connect("partners");
+                        Login.con.connect("gafas");
                     }
                 } else {
                     Toast.makeText(Login.this, "Conexion failed", Toast.LENGTH_SHORT).show();

@@ -1,4 +1,4 @@
-package com.example.nolanapk;
+package com.example.nolanapk.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -11,6 +11,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.nolanapk.R;
+import com.example.nolanapk.clases.Connexion;
+import com.example.nolanapk.clases.Gafa;
+import com.example.nolanapk.clases.Partner;
+import com.example.nolanapk.clases.Tabla;
 
 import java.util.ArrayList;
 
@@ -80,16 +86,16 @@ public class Purchase extends AppCompatActivity {
         if(Connexion.compra.size()>0){
             for (Gafa g:
                     Connexion.compra) {
-                totaliva+= g.getPrecioCantidad();
+                total+= g.getPrecioCantidad();
                 iva+=g.getIvaCantidad();
-                total+=g.getPrecioTotal();
+                totaliva+=g.getPrecioTotal();
 
             }
         }
 
-        ptotal.setText(Double.toString(Math.round(total*100.0)/100.0));
+        ptotal.setText(Double.toString(Math.round(totaliva*100.0)/100.0));
         piva.setText(Double.toString(Math.round(iva*100.0)/100.0));
-        pstotal.setText(Double.toString(Math.round(totaliva*100.0)/100.0));
+        pstotal.setText(Double.toString(Math.round(total*100.0)/100.0));
     }
 
 
