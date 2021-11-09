@@ -14,7 +14,7 @@ public class Login extends AppCompatActivity {
     EditText user;
     String userTxt;
     String contraTxt;
-    Connexion con;
+    public static Connexion con;
     boolean connectOk;
     public static int user_id;
 
@@ -55,6 +55,7 @@ public class Login extends AppCompatActivity {
                     if (correctUser()) {
                         Intent b = new Intent(Login.this, Inventario.class);
                         startActivity(b);
+                        Login.con.connect("partners");
                     }
                 } else {
                     Toast.makeText(Login.this, "Conexion failed", Toast.LENGTH_SHORT).show();

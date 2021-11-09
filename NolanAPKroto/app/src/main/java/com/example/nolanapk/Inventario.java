@@ -140,8 +140,7 @@ public class Inventario extends AppCompatActivity {
 
     public void readData() {
 
-        Connexion con = new Connexion();
-        con.connect("gafas");
+        Login.con.connect("gafas");
         calculatePages(allGafas);
         pages.setText(currentPage +" / "+ totalPages);
     }

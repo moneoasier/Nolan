@@ -23,20 +23,19 @@ public class Purchase extends AppCompatActivity {
     static Double total;
     static Double iva;
     static Double totaliva;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.purchase);
-
-        //Boton Nuevo Cliente --> NewPartner
         spinp =findViewById(R.id.spin_partner);
         ArrayAdapter<Partner> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Connexion.partners);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinp.setAdapter(adapter);
 
-        pstotal = (TextView) findViewById(R.id.txt_Subtotal);
-        piva = (TextView) findViewById(R.id.txt_iva);
-        ptotal = (TextView) findViewById(R.id.txt_total);
+        pstotal = findViewById(R.id.txt_Subtotal);
+        piva = findViewById(R.id.txt_iva);
+        ptotal = findViewById(R.id.txt_total);
 
         Tabla tabla = new Tabla(this, (TableLayout)findViewById(R.id.tabla));
         for(int i = 0; i < Connexion.compra.size(); i++)
@@ -55,9 +54,8 @@ public class Purchase extends AppCompatActivity {
 
     public void tramitar(View v){
         if(Connexion.compra.size()>0) {
-            Connexion.insertOrder(Login.user_id, Connexion.partners.get(spinp.getSelectedItemPosition()).getId(), total, iva, totaliva);
+            Login.con.insertOrder(Login.user_id, Connexion.partners.get(spinp.getSelectedItemPosition()).getId(), total, iva, totaliva);
             Toast.makeText(Purchase.this,"Purchase done!",Toast.LENGTH_SHORT).show();
-            Connexion.compra.clear();
             Intent b = new Intent(Purchase.this, Inventario.class);
             startActivity(b);
 

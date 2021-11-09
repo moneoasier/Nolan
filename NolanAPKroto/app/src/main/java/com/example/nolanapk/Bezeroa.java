@@ -18,7 +18,6 @@ public class Bezeroa extends AppCompatActivity {
     EditText phone;
     CheckBox company;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,10 +46,9 @@ public class Bezeroa extends AppCompatActivity {
 
 
         if (check(nametxt, cptxt, citytxt, addresstxt, emailtxt, phonetxt) && checkemail()) {
-            Connexion.partner_ID++;
             Partner p = new Partner(Connexion.partner_ID,nametxt, addresstxt, cptxt, citytxt, emailtxt, phonetxt, companychbx);
             Connexion.partners.add(p);
-            Connexion.insertPartner(p);
+            Login.con.insertPartner(p);
 
             Toast.makeText(Bezeroa.this, "Bezeroa sortu da.", Toast.LENGTH_SHORT).show();
 
