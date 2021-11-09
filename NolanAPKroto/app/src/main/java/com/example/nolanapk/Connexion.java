@@ -232,8 +232,8 @@ public class Connexion {
                     ResultSet rd;
 
                     st = connection.createStatement();
-                    rd = st.executeQuery("insert into res_partner(id,name,street,zip,city,email,phone,is_company)"
-                            + "values ("+partner_ID+",'" + p.getName() + "','" + p.getStreet() + "','" + p.getZip() + "','" + p.getCity() + "','" + p.getEmail() + "','" + p.getPhone() + "'," + p.isCompany()+ ");");
+                    rd = st.executeQuery("insert into res_partner(id,name,street,zip,city,email,phone,is_company,create_date,display_name,lang,active,type,color,partner_share,commercial_partner_id,create_uid,write_uid,write_date,signup_type)"
+                            + "values ("+partner_ID+",'"+p.getName()+"','"+ p.getStreet()+"','"+ p.getZip()+"','"+ p.getCity()+"','"+p.getEmail()+"','"+ p.getPhone()+"',"+p.isCompany()+",now(),'"+p.getName()+"','es-ES',true,'contact',0,true,"+partner_ID+","+Login.user_id+","+Login.user_id+",now(),'signup');");
 
 
                 } catch (SQLException throwables) {

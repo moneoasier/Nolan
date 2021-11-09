@@ -56,6 +56,11 @@ public class Purchase extends AppCompatActivity {
     public void tramitar(View v){
         if(Connexion.compra.size()>0) {
             Connexion.insertOrder(Login.user_id, Connexion.partners.get(spinp.getSelectedItemPosition()).getId(), total, iva, totaliva);
+            Toast.makeText(Purchase.this,"Purchase done!",Toast.LENGTH_SHORT).show();
+            Connexion.compra.clear();
+            Intent b = new Intent(Purchase.this, Inventario.class);
+            startActivity(b);
+
         } else {
             Toast.makeText(Purchase.this,"No items selected!",Toast.LENGTH_SHORT).show();
         }
