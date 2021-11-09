@@ -32,12 +32,10 @@ public class Connexion {
         String host = "192.168.65.2";
         int port = 5432;
         url = String.format(this.url, host, port, database);
-        connect();
-
        // System.out.println("connection status:" + status);
     }
 
-    public void connect() {
+    public void connect(String option) {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -45,10 +43,27 @@ public class Connexion {
                     Class.forName("org.postgresql.Driver");
                     connection = DriverManager.getConnection(url, user, pass);
                     status = true;
-                    //System.out.println("connected:" + status);
-                    selectUsers();
-                    selectPartner();
-                    selectID();
+                    switch (option){
+                        case "users":
+                            selectUsers();
+                            break;
+
+                        case "partners":
+                            selectPartner();
+                            break;
+
+                        case "id":
+                            selectID();
+                            break;
+
+                        case "gafas":
+                            selectGafa();
+                            break;
+
+                        default:
+                            break;
+                    }
+
                 } catch (Exception e) {
                     status = false;
                 }
@@ -118,32 +133,38 @@ public class Connexion {
         Thread.interrupted();
     }
 
-    /*public void selectGafa(){
-        Thread thread4 = new Thread(new Runnable() {
+    public void selectGafa(){
+       /* Thread thread4 = new Thread(new Runnable() {
 
             @Override
-            public void run() {
+            public void run() {*/
+
                 try {
 
                     Statement st;
                     ResultSet rd;
 
                     st=connection.createStatement();
-                    rd=st.executeQuery("select id,name,street,zip,city,email,phone,is_company from res_partner where signup_type like 'signup' order by id;");
+                    rd=st.executeQuery("select product_template.id as id,product_template.default_code as code, product_template.name as name, product_template.list_price as price, sum(quantity - reserved_quantity) as cantidad, product_category.name as category from stock_quant "
+                            + "inner join product_template on product_template.id = stock_quant.product_id "
+                            + "inner join product_category on product_category.id = product_template.categ_id "
+                            + "where location_id = 8 "
+                            + "group by product_template.name, product_template.list_price, product_id, product_template.default_code, product_category.name,product_template.id "
+                            + "order by product_template.default_code;");
 
                     while(rd.next()){
-                        partners.add(new Partner(rd.getInt("id"),rd.getString("name"),rd.getString("street"),rd.getString("zip"),rd.getString("city"),rd.getString("email"),rd.getString("phone"),rd.getBoolean("is_company")));
-                        //System.out.println("Añadido");
+                        Inventario.allGafas.add(new Gafa(rd.getString("code"),rd.getInt("id"),rd.getString("name"),rd.getDouble("price"),rd.getInt("cantidad"),rd.getString("category")));
+
                     }
 
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
-            }
+
+            /*}
         });
-        thread4.start();
-        Thread.interrupted();
-    }*/
+        thread4.start();*/
+    }
 
     public static void insertOrder(int u_id,int p_id,double p1, double p2, double p3){
 

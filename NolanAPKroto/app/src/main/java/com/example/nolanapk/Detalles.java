@@ -18,8 +18,8 @@ public class Detalles extends AppCompatActivity {
     TextView id;
     TextView txt;
     ImageView picture;
-    String[] elements;
     EditText quant;
+    Gafa gafa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,6 @@ public class Detalles extends AppCompatActivity {
         id = findViewById(R.id.code);
         txt = findViewById(R.id.text);
         code = getIntent().getStringExtra("gafa");
-        elements = code.split(",");
         quant = findViewById(R.id.Qty_txt);
         picture = findViewById(R.id.img);
 
@@ -41,14 +40,23 @@ public class Detalles extends AppCompatActivity {
      */
     @SuppressLint("SetTextI18n")
     public void fillData() {
+        findGafa();
+        id.setText(gafa.getId() + " - " + gafa.getCategory());
+        txt.setText(gafa.getNombre() + "\n\n" + "Stock: " + gafa.getStock() +
+                " - Price: " + gafa.getPrecio() + " €");
 
-        id.setText(elements[0] + " - " + elements[4]);
-        txt.setText(elements[1] + "\n\n" + "Stock: " + elements[3] +
-                " - Price: " + elements[2] + " €");
-
-        int img_res = getResources().getIdentifier("@drawable/" + elements[0].toLowerCase(), null, getPackageName());
+        int img_res = getResources().getIdentifier("@drawable/" + gafa.getId().toLowerCase(), null, getPackageName());
         picture.setImageResource(img_res);
 
+    }
+
+    public void findGafa(){
+        for(Gafa g:Inventario.allGafas){
+            if(g.getId().equals(code)){
+                gafa=g;
+                break;
+            }
+        }
     }
 
     public void addProduct(View v) {
@@ -60,10 +68,8 @@ public class Detalles extends AppCompatActivity {
 
         } else {
             if (!inCompra()) {
-                Gafa gafax = new Gafa(elements[0], elements[1], Double.parseDouble(elements[2]), Integer.parseInt(elements[3]), elements[4]);
-                gafax.setCantidad(Integer.parseInt(c));
-                gafax.setPrecios();
-                Connexion.compra.add(gafax);
+                gafa.setCantidad(Integer.parseInt(quant.getText().toString()));
+                Connexion.compra.add(gafa);
             }
 
             Toast.makeText(Detalles.this, "Product Added", Toast.LENGTH_LONG).show();
@@ -75,7 +81,7 @@ public class Detalles extends AppCompatActivity {
 
     public boolean inCompra() {
         for (Gafa g : Connexion.compra) {
-            if (g.getId().equals(elements[0])) {
+            if (g.getId().equals(gafa.getId())) {
                 g.setCantidad(g.getCantidad() + Integer.parseInt(quant.getText().toString()));
                 g.setPrecios();
                 return true;
@@ -90,7 +96,7 @@ public class Detalles extends AppCompatActivity {
     }
 
     public boolean checkquanty() {
-        if (Integer.parseInt(quant.getText().toString()) > Integer.parseInt(elements[3].toString())) {
+        if (Integer.parseInt(quant.getText().toString()) > gafa.getStock()) {
             return false;
         }
         return true;

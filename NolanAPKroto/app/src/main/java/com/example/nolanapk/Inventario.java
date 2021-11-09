@@ -39,7 +39,7 @@ public class Inventario extends AppCompatActivity {
 
     String selection="All";
 
-    ArrayList<Gafa> allGafas;
+    public static ArrayList<Gafa> allGafas=new ArrayList<>();
     ArrayList<Gafa> gafaFiltro;
 
 
@@ -59,12 +59,11 @@ public class Inventario extends AppCompatActivity {
         search=findViewById(R.id.search);
 
         spin=findViewById(R.id.filter);
-        allGafas=new ArrayList<>();
+
         gafaFiltro=new ArrayList<>();
         //Metodo hauei deitzen zaie aplikazioa abiaraztean
         readData();
         showData(start,allGafas);
-
 
     }
 
@@ -83,7 +82,7 @@ public class Inventario extends AppCompatActivity {
     public String findGafa(String name){
         for(Gafa g: allGafas){
             if(g.getId().toLowerCase().equals(name)){
-                return g.toString();
+                return g.getId();
             }
         }
         return null;
@@ -138,23 +137,11 @@ public class Inventario extends AppCompatActivity {
     }
 
     //gafas.csv fitxategiaren datuak irakurri eta ArrayList batean gordetzen ditu
-    @SuppressLint("SetTextI18n")
+
     public void readData() {
 
-        InputStream data = getResources().openRawResource(R.raw.gafas);
-        BufferedReader rd = new BufferedReader(new InputStreamReader(data, StandardCharsets.UTF_8));
-        String linea;
-        String[] gafa;
-
-        try {
-            while ((linea = rd.readLine()) != null) {
-                gafa = linea.split(",");
-                allGafas.add(new Gafa(gafa[0], gafa[1], Double.parseDouble(gafa[2]),Integer.parseInt(gafa[3]),gafa[4]));
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-
-        }
+        Connexion con = new Connexion();
+        con.connect("gafas");
         calculatePages(allGafas);
         pages.setText(currentPage +" / "+ totalPages);
     }

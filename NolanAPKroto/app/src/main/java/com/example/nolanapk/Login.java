@@ -24,9 +24,8 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         con = new Connexion();
+        con.connect("users");
         connectOk=con.isStatus();
-
-
     }
 
     /*
@@ -68,7 +67,6 @@ public class Login extends AppCompatActivity {
      * Metodo honetan CSV bat irakurriz Erabiltzailea eta Pasahitza ondo dagoen komprobatzen da
      */
     public boolean correctUser() {
-
         User u= Connexion.findUser(userTxt);
 
         if(u!=null){

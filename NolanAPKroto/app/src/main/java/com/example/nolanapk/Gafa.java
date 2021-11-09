@@ -20,8 +20,9 @@ public class Gafa {
     /**
      * Constructor
      */
-    public Gafa(String id, String nombre, double precio, int stock,String category) {
+    public Gafa(String id,int pro_id, String nombre, double precio, int stock,String category) {
         this.id = id;
+        this.pro_id=pro_id;
         this.nombre = nombre;
         this.precio = precio;
         this.stock = stock;
@@ -49,20 +50,20 @@ public class Gafa {
         this.id = id;
     }
 
+    public int getPro_id() {
+        return pro_id;
+    }
+
+    public void setPro_id(int pro_id) {
+        this.pro_id = pro_id;
+    }
+
     public String getNombre() {
         return nombre;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
     }
 
     public int getStock() {
@@ -81,55 +82,91 @@ public class Gafa {
         this.category = category;
     }
 
-    public int getCantidad() { return cantidad; }
+    public int getCantidad() {
+        return cantidad;
+    }
 
-    public void setCantidad(int cantidad) { this.cantidad = cantidad; }
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+        this.setPrecios();
+    }
 
-    public double getIva() { return iva; }
+    public double getPrecio() {
+        return precio;
+    }
 
-    public void setIva(double iva) { this.iva = iva; }
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
 
-    public double getPrecioCantidad() { return precioCantidad; }
+    public double getIva() {
+        return iva;
+    }
 
-    public void setPrecioCantidad(double precioCantidad) { this.precioCantidad = precioCantidad; }
+    public void setIva(double iva) {
+        this.iva = iva;
+    }
 
-    public double getIvaCantidad() { return ivaCantidad; }
+    public double getPrecioCantidad() {
+        return precioCantidad;
+    }
 
-    public void setIvaCantidad(double ivaCantidad) { this.ivaCantidad = ivaCantidad; }
+    public void setPrecioCantidad(double precioCantidad) {
+        this.precioCantidad = precioCantidad;
+    }
 
-    public double getPrecioTotal() { return precioTotal; }
+    public double getIvaCantidad() {
+        return ivaCantidad;
+    }
 
-    public void setPrecioTotal(double precioTotal) { this.precioTotal = precioTotal; }
+    public void setIvaCantidad(double ivaCantidad) {
+        this.ivaCantidad = ivaCantidad;
+    }
 
-    public double getPrecioIva() { return precioIva; }
+    public double getPrecioTotal() {
+        return precioTotal;
+    }
 
-    public void setPrecioIva(double precioIva) { this.precioIva = precioIva; }
+    public void setPrecioTotal(double precioTotal) {
+        this.precioTotal = precioTotal;
+    }
 
-    /**
-     * Metodos ToString/Equals
-     */
+    public double getPrecioIva() {
+        return precioIva;
+    }
+
+    public void setPrecioIva(double precioIva) {
+        this.precioIva = precioIva;
+    }
+
     @Override
-    public String toString() {
-        return id +","+nombre+","+precio+","+stock+","+category+","+cantidad;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Gafa gafa = (Gafa) o;
+        return pro_id == gafa.pro_id && stock == gafa.stock && cantidad == gafa.cantidad && Double.compare(gafa.precio, precio) == 0 && Double.compare(gafa.iva, iva) == 0 && Double.compare(gafa.precioCantidad, precioCantidad) == 0 && Double.compare(gafa.ivaCantidad, ivaCantidad) == 0 && Double.compare(gafa.precioTotal, precioTotal) == 0 && Double.compare(gafa.precioIva, precioIva) == 0 && Objects.equals(id, gafa.id) && Objects.equals(nombre, gafa.nombre) && Objects.equals(category, gafa.category);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(category, id, nombre, precio, stock);
+        return Objects.hash(id, pro_id, nombre, stock, category, cantidad, precio, iva, precioCantidad, ivaCantidad, precioTotal, precioIva);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Gafa other = (Gafa) obj;
-        return Objects.equals(category, other.category) && Objects.equals(id, other.id)
-                && Objects.equals(nombre, other.nombre)
-                && Double.doubleToLongBits(precio) == Double.doubleToLongBits(other.precio) && stock == other.stock;
+    public String toString() {
+        return "Gafa{" +
+                "id='" + id + '\'' +
+                ", pro_id=" + pro_id +
+                ", nombre='" + nombre + '\'' +
+                ", stock=" + stock +
+                ", category='" + category + '\'' +
+                ", cantidad=" + cantidad +
+                ", precio=" + precio +
+                ", iva=" + iva +
+                ", precioCantidad=" + precioCantidad +
+                ", ivaCantidad=" + ivaCantidad +
+                ", precioTotal=" + precioTotal +
+                ", precioIva=" + precioIva +
+                '}';
     }
-
 }
