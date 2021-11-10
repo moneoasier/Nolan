@@ -20,6 +20,7 @@ public class Connexion {
     private static ArrayList<User> users = new ArrayList<>();
     public static ArrayList<Partner> partners = new ArrayList<>();
     public static ArrayList<Gafa> compra = new ArrayList<>();
+    public static ArrayList<Sale> sales=new ArrayList<>();
     //private static ArrayList<User> users=new ArrayList<>();
 
     private final String user = "admin";
@@ -55,8 +56,8 @@ public class Connexion {
                             selectPartner();
                             break;
 
-                        case "id":
-                            //selectID();
+                        case "orders":
+                            selectOrders();
                             break;
 
                         case "gafas":
@@ -291,6 +292,34 @@ public class Connexion {
             }
         });
         thread8.start();
+        Thread.interrupted();
+    }
+
+    public void selectOrders(){
+        Thread thread= new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Statement st;
+                    ResultSet rd;
+
+                    st = connection.createStatement();
+                    rd = st.executeQuery("select sale_order.id,sale_order.name as ordername,state,effective_date,res_partner.name as partner,amount_total "+
+                                                "from sale_order inner join res_partner on partner_id = res_partner.id order by id;");
+
+                    while (rd.next()) {
+
+                        sales.add(new Sale(rd.getInt("id"),rd.getString("ordername"),rd.getString("partner")
+                                ,rd.getString("state"),rd.getDate("effective_date"),rd.getDouble("amount_total")));
+                    }
+
+
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+        });
+        thread.start();
         Thread.interrupted();
     }
 

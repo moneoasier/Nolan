@@ -33,6 +33,7 @@ public class Inventario extends AppCompatActivity {
     int currentPage=1;
     int start=1;
 
+    Button seeSales;
     Button search;
 
     String selection="All";
@@ -53,6 +54,7 @@ public class Inventario extends AppCompatActivity {
         b3 = findViewById(R.id.btn3);
         b4 = findViewById(R.id.btn4);
         pages=findViewById(R.id.npg);
+        seeSales= findViewById(R.id.btn_sales);
 
         search=findViewById(R.id.search);
 
@@ -76,6 +78,11 @@ public class Inventario extends AppCompatActivity {
         startActivity(b);
     }
 
+    public void goToSales(View v){
+        Intent b = new Intent(Inventario.this, Sales.class);
+        startActivity(b);
+
+    }
     //String bat hartzen du eta ArrayList allGafas-eko elementuekin konparatzen du, balio berdina duen elementua aurkitzean, elementu hori bueltatuko du
     public String findGafa(String name){
         for(Gafa g: allGafas){

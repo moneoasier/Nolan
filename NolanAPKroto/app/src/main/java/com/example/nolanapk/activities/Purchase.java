@@ -51,7 +51,7 @@ public class Purchase extends AppCompatActivity {
             elementos.add(Integer.toString(Connexion.compra.get(i).getCantidad()));
             elementos.add(Double.toString(Connexion.compra.get(i).getPrecioCantidad()));
 
-            tabla.agregarFilaTabla(elementos);
+            tabla.agregarFilaTabla(elementos,"x");
         }
 
        calculateTotal();

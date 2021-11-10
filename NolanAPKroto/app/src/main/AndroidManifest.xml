@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NolanAPK">
         <activity
+            android:name=".activities.Orders"
+            android:exported="false" />
+        <activity
             android:name=".activities.Sales"
             android:exported="false" />
         <activity
@@ -29,13 +32,13 @@
             android:exported="true" />
         <activity
             android:name=".activities.Inventario"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".activities.Bezeroa"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".activities.Purchase"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

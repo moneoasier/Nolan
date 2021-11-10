@@ -1,5 +1,6 @@
 package com.example.nolanapk.clases;
 
+import java.util.Date;
 import java.util.Objects;
 
 public class Sale {
@@ -7,10 +8,10 @@ public class Sale {
     private String name;
     private String partnerName;
     private String state;
-    private String date; //effective_date
+    private Date date; //effective_date
     private double totalprice;
 
-    public Sale(int id, String name, String partnerName, String state, String date, double totalprice) {
+    public Sale(int id, String name, String partnerName, String state, Date date, double totalprice) {
         this.id = id;
         this.name = name;
         this.partnerName = partnerName;
@@ -51,11 +52,11 @@ public class Sale {
         this.state = state;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

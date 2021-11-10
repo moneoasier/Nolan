@@ -8,5 +8,10 @@
     <string name="todo">TODO</string>
     <string name="filter">FILTER</string>
     <string name="search">SEARCH</string>
+    <string name="sales">SALES</string>
+    <string name="total">TOTAL</string>
+    <string name="date">DATE</string>
+    <string name="partner">PARTNER</string>
+    <string name="name">NAME</string>
 
 </resources>

@@ -2,6 +2,8 @@ package com.example.nolanapk.clases;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -12,8 +14,12 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import com.example.nolanapk.activities.Inventario;
+import com.example.nolanapk.activities.Login;
+import com.example.nolanapk.activities.Orders;
 import com.example.nolanapk.activities.Purchase;
 import com.example.nolanapk.R;
+import com.example.nolanapk.activities.Sales;
 
 import java.util.ArrayList;
 
@@ -49,7 +55,7 @@ public class Tabla {
      * @param elementos Elementos de la fila
      */
 
-    public void agregarFilaTabla(ArrayList<String> elementos)
+    public void agregarFilaTabla(ArrayList<String> elementos, String btnStr)
     {
         TableRow.LayoutParams layoutCelda;
         TableRow.LayoutParams layoutFila = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
@@ -69,22 +75,32 @@ public class Tabla {
         }
         Button btn = new Button(actividad.getBaseContext());
         btn.setLayoutParams(new TableRow.LayoutParams(50,TableRow.LayoutParams.MATCH_PARENT));
-        btn.setText("x");
         btn.setBackgroundResource(R.drawable.tabla_celda);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("ResourceType")
-            @Override
-            public void onClick(View v) {
-               for(int i = 0; i< Connexion.compra.size(); i++){
-                   if(Connexion.compra.get(i).getId().equals(elementos.get(0))){
-                       eliminarFila(i+1);
-                       Connexion.compra.remove(i);
-                       Purchase.calculateTotal();
-                       break;
-                   }
-               }
-            }
-        });
+        btn.setText(btnStr);
+
+            btn.setOnClickListener(new View.OnClickListener() {
+                @SuppressLint("ResourceType")
+                @Override
+                public void onClick(View v) {
+
+                    if(btnStr.equals("x")) {
+                        for (int i = 0; i < Connexion.compra.size(); i++) {
+                            if (Connexion.compra.get(i).getId().equals(elementos.get(0))) {
+                                eliminarFila(i + 1);
+                                Connexion.compra.remove(i);
+                                Purchase.calculateTotal();
+                                break;
+                            }
+                        }
+
+                    }else {
+
+                        Intent intent = new Intent(v.getContext(), Orders.class);
+                        actividad.startActivityForResult(intent, 0);
+                    }
+                }
+            });
+
         fila.addView(btn);
 
         tabla.addView(fila);

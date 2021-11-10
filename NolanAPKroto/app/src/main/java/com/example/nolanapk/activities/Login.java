@@ -61,6 +61,7 @@ public class Login extends AppCompatActivity {
                         startActivity(b);
                         Login.con.connect("partners");
                         Login.con.connect("gafas");
+                        Login.con.connect("orders");
                     }
                 } else {
                     Toast.makeText(Login.this, "Conexion failed", Toast.LENGTH_SHORT).show();
