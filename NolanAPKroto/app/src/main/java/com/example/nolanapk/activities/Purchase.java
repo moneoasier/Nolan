@@ -49,7 +49,8 @@ public class Purchase extends AppCompatActivity {
             ArrayList<String> elementos = new ArrayList<>();
             elementos.add(Connexion.compra.get(i).getId());
             elementos.add(Integer.toString(Connexion.compra.get(i).getCantidad()));
-            elementos.add(Double.toString(Connexion.compra.get(i).getPrecioCantidad()));
+            elementos.add(Connexion.compra.get(i).getPrecioCantidad()+" €");
+            elementos.add("");
 
             tabla.agregarFilaTabla(elementos,"x");
         }

@@ -62,12 +62,14 @@ public class Tabla {
         TableRow fila = new TableRow(actividad);
         fila.setLayoutParams(layoutFila);
 
-        for(int i = 0; i< elementos.size(); i++)
+        for(int i = 0; i< elementos.size()-1; i++)
         {
             TextView texto = new TextView(actividad);
             texto.setText(String.valueOf(elementos.get(i)));
             texto.setGravity(Gravity.CENTER_HORIZONTAL);
+            texto.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
             texto.setBackgroundResource(R.drawable.tabla_celda);
+            texto.setTextSize(12);
             layoutCelda = new TableRow.LayoutParams(obtenerAnchoPixelesTexto(texto.getText().toString()), TableRow.LayoutParams.WRAP_CONTENT);
             texto.setLayoutParams(layoutCelda);
 
@@ -93,9 +95,10 @@ public class Tabla {
                             }
                         }
 
-                    }else {
+                    }else if(btnStr.equals("see")) {
 
                         Intent intent = new Intent(v.getContext(), Orders.class);
+                        intent.putExtra("saleId",elementos.get(elementos.size()-1));
                         actividad.startActivityForResult(intent, 0);
                     }
                 }

@@ -2,7 +2,6 @@ package com.example.nolanapk.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TableLayout;
 
@@ -20,14 +19,15 @@ public class Sales extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sales);
 
-        Tabla tabla = new Tabla(this, (TableLayout)findViewById(R.id.tableSales));
+        Tabla tabla = new Tabla(this, (TableLayout)findViewById(R.id.tableOrders));
         for(Sale s:Connexion.sales)
         {
             ArrayList<String> elementos = new ArrayList<>();
             elementos.add(s.getName());
             elementos.add(s.getPartnerName());
             elementos.add(String.valueOf(s.getDate()));
-            elementos.add(Double.toString(s.getTotalprice()));
+            elementos.add(s.getTotalprice()+" €");
+            elementos.add(Integer.toString(s.getId()));
 
             tabla.agregarFilaTabla(elementos,"see");
         }

@@ -21,6 +21,7 @@ public class Connexion {
     public static ArrayList<Partner> partners = new ArrayList<>();
     public static ArrayList<Gafa> compra = new ArrayList<>();
     public static ArrayList<Sale> sales=new ArrayList<>();
+    public static ArrayList<Article>articles = new ArrayList<>();
     //private static ArrayList<User> users=new ArrayList<>();
 
     private final String user = "admin";
@@ -58,6 +59,7 @@ public class Connexion {
 
                         case "orders":
                             selectOrders();
+                            selectArticles();
                             break;
 
                         case "gafas":
@@ -84,7 +86,7 @@ public class Connexion {
     }
 
     public void selectUsers() {
-        Thread thread2 = new Thread(new Runnable() {
+        Thread thread = new Thread(new Runnable() {
 
             @Override
             public void run() {
@@ -106,12 +108,12 @@ public class Connexion {
                 }
             }
         });
-        thread2.start();
+        thread.start();
         Thread.interrupted();
     }
 
     public void selectPartner() {
-        Thread thread3 = new Thread(new Runnable() {
+        Thread thread = new Thread(new Runnable() {
 
             @Override
             public void run() {
@@ -124,7 +126,8 @@ public class Connexion {
                     rd = st.executeQuery("select id,name,street,zip,city,email,phone,is_company from res_partner where signup_type like 'signup' order by id;");
 
                     while (rd.next()) {
-                        partners.add(new Partner(rd.getInt("id"), rd.getString("name"), rd.getString("street"), rd.getString("zip"), rd.getString("city"), rd.getString("email"), rd.getString("phone"), rd.getBoolean("is_company")));
+                        partners.add(new Partner(rd.getInt("id"), rd.getString("name"), rd.getString("street"), rd.getString("zip"),
+                                rd.getString("city"), rd.getString("email"), rd.getString("phone"), rd.getBoolean("is_company")));
                         //System.out.println("Añadido");
                     }
 
@@ -133,15 +136,11 @@ public class Connexion {
                 }
             }
         });
-        thread3.start();
+        thread.start();
         Thread.interrupted();
     }
 
     public void selectGafa() {
-       /* Thread thread4 = new Thread(new Runnable() {
-
-            @Override
-            public void run() {*/
 
         try {
 
@@ -149,7 +148,8 @@ public class Connexion {
             ResultSet rd;
 
             st = connection.createStatement();
-            rd = st.executeQuery("select product_template.id as id,product_template.default_code as code, product_template.name as name, product_template.list_price as price, sum(quantity - reserved_quantity) as cantidad, product_category.name as category from stock_quant "
+            rd = st.executeQuery("select product_template.id as id,product_template.default_code as code, product_template.name as name, product_template.list_price as price,"+
+                    "sum(quantity - reserved_quantity) as cantidad, product_category.name as category from stock_quant "
                     + "inner join product_template on product_template.id = stock_quant.product_id "
                     + "inner join product_category on product_category.id = product_template.categ_id "
                     + "where location_id = 8 "
@@ -165,9 +165,6 @@ public class Connexion {
             throwables.printStackTrace();
         }
 
-            /*}
-        });
-        thread4.start();*/
     }
 
     public void insertOrder(int u_id, int p_id, double p1, double p2, double p3) {
@@ -175,7 +172,7 @@ public class Connexion {
 
         final Semaphore available = new Semaphore(1, true);
 
-        Thread thread5 = new Thread(new Runnable() {
+        Thread thread = new Thread(new Runnable() {
 
             @Override
             public void run() {
@@ -197,10 +194,12 @@ public class Connexion {
                         sale_ID++;
 
                         Statement st2;
-                        ResultSet rd2;
+
                         st2 = connection.createStatement();
-                        rd2 = st2.executeQuery("insert into sale_order(id,name,state,date_order,user_id,partner_id,partner_invoice_id,partner_shipping_id,pricelist_id,currency_id,invoice_status,amount_untaxed,amount_tax,amount_total,currency_rate,company_id,team_id,picking_policy,warehouse_id,effective_date,create_date,write_date)"
-                                + "values (" + sale_ID + ",'S000" + sale_ID + "','draft',now()," + u_id + "," + p_id + "," + p_id + "," + p_id + ",1,1,'no'," + p1 + "," + p2 + "," + p3 + ",1,1,5,'direct',1,current_timestamp,now(),now());");
+                        st2.executeQuery("insert into sale_order(id,name,state,date_order,user_id,partner_id,partner_invoice_id,partner_shipping_id,pricelist_id,currency_id,"+
+                                "invoice_status,amount_untaxed,amount_tax,amount_total,currency_rate,company_id,team_id,picking_policy,warehouse_id,effective_date,create_date,write_date)"
+                                + "values (" + sale_ID + ",'S000" + sale_ID + "','draft',now()," + u_id + "," + p_id + "," + p_id + "," + p_id + ",1,1,'no'," + p1 + "," + p2 + "," + p3 +
+                                ",1,1,5,'direct',1,current_timestamp,now(),now());");
 
 
                     } catch (SQLException throwables) {
@@ -216,7 +215,7 @@ public class Connexion {
             }
         });
 
-        Thread thread6 = new Thread(new Runnable() {
+        Thread thread2 = new Thread(new Runnable() {
 
             @Override
             public void run() {
@@ -228,11 +227,17 @@ public class Connexion {
 
 
                             Statement st = connection.createStatement();
-                            String sql="insert into sale_order_line(order_id,name,\"sequence\",invoice_status,price_unit,price_subtotal,price_tax,price_total,price_reduce,price_reduce_taxinc,price_reduce_taxexcl,discount,product_id,product_uom_qty,product_uom,qty_delivered_method,qty_delivered,qty_delivered_manual,qty_to_invoice,qty_invoiced,untaxed_amount_invoiced,untaxed_amount_to_invoice,salesman_id,currency_id,company_id,order_partner_id,state,customer_lead,create_uid,create_date,write_uid,write_date) values ";
+                            String sql="insert into sale_order_line(order_id,name,\"sequence\",invoice_status,price_unit,price_subtotal,price_tax,price_total,price_reduce"+
+                                        ",price_reduce_taxinc,price_reduce_taxexcl,discount,product_id,product_uom_qty,product_uom,qty_delivered_method,qty_delivered,"+
+                                        "qty_delivered_manual,qty_to_invoice,qty_invoiced,untaxed_amount_invoiced,untaxed_amount_to_invoice,salesman_id,currency_id,company_id,"+
+                                        "order_partner_id,state,customer_lead,create_uid,create_date,write_uid,write_date) values ";
 
                                 for (Gafa g : Connexion.compra) {
 
-                                    sql+="(" + sale_ID + ",'[" + g.getId() + "]" + g.getNombre() + "',10,'no'," + g.getPrecio() + "," + g.getPrecioCantidad() + "," + g.getIvaCantidad() + "," + g.getPrecioTotal() + "," + g.getPrecio() + "," + g.getPrecioIva() + "," + g.getPrecio() + ",0,1," + g.getCantidad() + ",1,'stock_move',0,0," + g.getCantidad() + ",0,0," + g.getPrecio() + "," + u_id + ",1,1," + p_id + ",'draft',0," + u_id + ",now()," + u_id + ",now())";
+                                    sql+="(" + sale_ID + ",'[" + g.getId() + "]" + g.getNombre() + "',10,'no'," + g.getPrecio() + "," + g.getPrecioCantidad() +
+                                            "," + g.getIvaCantidad() + "," + g.getPrecioTotal() + "," + g.getPrecio() + "," + g.getPrecioIva() + "," + g.getPrecio() +
+                                            ",0,"+g.getPro_id()+"," + g.getCantidad() + ",1,'stock_move',0,0," + g.getCantidad() + ",0,0," + g.getPrecio() + "," + u_id +
+                                            ",1,1," + p_id + ",'draft',0," + u_id + ",now()," + u_id + ",now())";
 
                                     if(Connexion.compra.indexOf(g)+1==Connexion.compra.size()){
                                         sql+=";";
@@ -255,16 +260,16 @@ public class Connexion {
                 }
             }
         });
-        thread5.setPriority(10);
-        thread6.setPriority(1);
-        thread5.start();
-        thread6.start();
+        thread.setPriority(10);
+        thread2.setPriority(1);
+        thread.start();
+        thread2.start();
 
     }
 
     public void insertPartner(Partner p) {
 
-        Thread thread8 = new Thread(new Runnable() {
+        Thread thread = new Thread(new Runnable() {
 
             @Override
             public void run() {
@@ -291,7 +296,7 @@ public class Connexion {
                 }
             }
         });
-        thread8.start();
+        thread.start();
         Thread.interrupted();
     }
 
@@ -311,6 +316,33 @@ public class Connexion {
 
                         sales.add(new Sale(rd.getInt("id"),rd.getString("ordername"),rd.getString("partner")
                                 ,rd.getString("state"),rd.getDate("effective_date"),rd.getDouble("amount_total")));
+                    }
+
+
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+        });
+        thread.start();
+        Thread.interrupted();
+    }
+
+    public void selectArticles(){
+        Thread thread= new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Statement st;
+                    ResultSet rd;
+
+                    st = connection.createStatement();
+                    rd = st.executeQuery("select id,order_id,name,price_unit,product_uom_qty from sale_order_line order by id;");
+
+                    while (rd.next()) {
+
+                        articles.add(new Article(rd.getInt("id"),rd.getInt("order_id"),rd.getString("name"),rd.getDouble("price_unit")
+                        ,rd.getInt("product_uom_qty")));
                     }
 
 
