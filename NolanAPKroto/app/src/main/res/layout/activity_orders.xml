@@ -8,10 +8,10 @@
     tools:context=".activities.Orders">
 
     <TextView
-        android:id="@+id/SaleName"
-        android:layout_width="116dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="144dp"
+        android:id="@+id/saleName"
+        android:layout_width="278dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="66dp"
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
@@ -21,15 +21,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="31dp"
+        android:id="@+id/scrollView2"
+        android:layout_width="410dp"
+        android:layout_height="351dp"
+        android:layout_marginTop="240dp"
         app:layout_constrainedHeight="true"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_max="500dp"
         app:layout_constraintHeight_min="0dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SaleName">
+        app:layout_constraintTop_toTopOf="parent">
 
         <HorizontalScrollView
             android:id="@+id/scrollhorizontal"
@@ -54,7 +54,7 @@
 
                         <TextView
                             android:id="@+id/textView10"
-                            android:layout_width="60dp"
+                            android:layout_width="164dp"
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:text="@string/name"
@@ -63,7 +63,7 @@
 
                         <TextView
                             android:id="@+id/textView12"
-                            android:layout_width="50dp"
+                            android:layout_width="60dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:text="@string/quantity"
@@ -72,7 +72,7 @@
 
                         <TextView
                             android:id="@+id/textView13"
-                            android:layout_width="80dp"
+                            android:layout_width="106dp"
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:text="@string/total"
@@ -81,7 +81,7 @@
 
                         <TextView
                             android:id="@+id/textView14"
-                            android:layout_width="80dp"
+                            android:layout_width="79dp"
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:text="Erase"
@@ -94,5 +94,71 @@
             </LinearLayout>
         </HorizontalScrollView>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="84dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="27dp"
+        android:text="Partner: "
+        android:textColor="@color/blanco"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saleName" />
+
+    <Spinner
+        android:id="@+id/spin_partner"
+        android:layout_width="268dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toEndOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/saleName"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="30dp"
+        android:text="Date: "
+        android:textColor="@color/blanco"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/order_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="14dp"
+        android:textColor="@color/blanco"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/spin_partner" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="68dp"
+        android:text="Articles"
+        android:textColor="@color/blanco"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spin_partner" />
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="203dp"
+        android:textColor="@color/blanco"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textView19"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,7 +29,7 @@ public class Sales extends AppCompatActivity {
             elementos.add(s.getTotalprice()+" €");
             elementos.add(Integer.toString(s.getId()));
 
-            tabla.agregarFilaTabla(elementos,"see");
+            tabla.agregarFilaTabla(elementos,"info");
         }
     }
 

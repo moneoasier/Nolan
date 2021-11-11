@@ -337,7 +337,8 @@ public class Connexion {
                     ResultSet rd;
 
                     st = connection.createStatement();
-                    rd = st.executeQuery("select id,order_id,name,price_unit,product_uom_qty from sale_order_line order by id;");
+                    rd = st.executeQuery("select sale_order_line.id as id,order_id,product_template.name as name,price_unit,product_uom_qty "+
+                            "from sale_order_line inner join product_template on product_id = product_template.id order by sale_order_line.id;");
 
                     while (rd.next()) {
 
@@ -365,6 +366,20 @@ public class Connexion {
         return null;
     }
 
+    public void removeArticle(int article_id, int sale_id){
+
+                try {
+                    Statement st;
+
+                    st = connection.createStatement();
+                    st.executeQuery("select drop_product("+article_id+","+sale_id+");");
+
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+
+    }
 
     public boolean isStatus() {
         return status;

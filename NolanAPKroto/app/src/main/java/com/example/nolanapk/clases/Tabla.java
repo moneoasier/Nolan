@@ -7,9 +7,12 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -66,40 +69,73 @@ public class Tabla {
         {
             TextView texto = new TextView(actividad);
             texto.setText(String.valueOf(elementos.get(i)));
-            texto.setGravity(Gravity.CENTER_HORIZONTAL);
+            texto.setGravity(Gravity.CENTER);
             texto.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
             texto.setBackgroundResource(R.drawable.tabla_celda);
-            texto.setTextSize(12);
-            layoutCelda = new TableRow.LayoutParams(obtenerAnchoPixelesTexto(texto.getText().toString()), TableRow.LayoutParams.WRAP_CONTENT);
-            texto.setLayoutParams(layoutCelda);
+            switch(btnStr){
+                case "x|delete":
+                    texto.setTextSize(14);
+                    break;
 
+                case "info":
+                    texto.setTextSize(12);
+                    break;
+                    
+            }
+
+            layoutCelda = new TableRow.LayoutParams(50, TableRow.LayoutParams.MATCH_PARENT);
+            texto.setLayoutParams(layoutCelda);
             fila.addView(texto);
         }
         Button btn = new Button(actividad.getBaseContext());
         btn.setLayoutParams(new TableRow.LayoutParams(50,TableRow.LayoutParams.MATCH_PARENT));
         btn.setBackgroundResource(R.drawable.tabla_celda);
         btn.setText(btnStr);
-
+        FILAS++;
             btn.setOnClickListener(new View.OnClickListener() {
                 @SuppressLint("ResourceType")
                 @Override
                 public void onClick(View v) {
 
-                    if(btnStr.equals("x")) {
-                        for (int i = 0; i < Connexion.compra.size(); i++) {
-                            if (Connexion.compra.get(i).getId().equals(elementos.get(0))) {
-                                eliminarFila(i + 1);
-                                Connexion.compra.remove(i);
-                                Purchase.calculateTotal();
-                                break;
+                    switch (btnStr) {
+
+                        case "x":
+
+                            for (int i = 0; i < Connexion.compra.size(); i++) {
+                                if (Connexion.compra.get(i).getId().equals(elementos.get(0))) {
+                                    tabla.removeView(v);
+                                    FILAS--;
+                                    Connexion.compra.remove(i);
+                                    Purchase.calculateTotal();
+                                    break;
+                                }
                             }
-                        }
+                            break;
 
-                    }else if(btnStr.equals("see")) {
+                        case "info":
 
-                        Intent intent = new Intent(v.getContext(), Orders.class);
-                        intent.putExtra("saleId",elementos.get(elementos.size()-1));
-                        actividad.startActivityForResult(intent, 0);
+                            Intent intent = new Intent(v.getContext(), Orders.class);
+                            intent.putExtra("saleId", elementos.get(elementos.size() - 1));
+                            intent.putExtra("saleCode", elementos.get(0));
+                            actividad.startActivityForResult(intent, 0);
+
+                            break;
+
+                        case "delete":
+
+                            int fila=FILAS;
+                            for (int i = 0; i < Connexion.articles.size(); i++) {
+
+                                if (Connexion.articles.get(i).getId() == Integer.parseInt(elementos.get(elementos.size()-1))) {
+                                   tabla.removeViewAt(fila);
+                                   FILAS--;
+                                   Connexion.articles.remove(i);
+                                   Login.con.removeArticle(Connexion.articles.get(i).getId(),Connexion.articles.get(i).getSaleId());
+                                   break;
+                                }
+                            }
+
+                            break;
                     }
                 }
             });
@@ -109,17 +145,8 @@ public class Tabla {
         tabla.addView(fila);
         filas.add(fila);
 
-        FILAS++;
     }
 
-    /**
-     * Elimina una fila de la tabla
-     */
-    public void eliminarFila(int indicefilaeliminar)
-    {
-        tabla.removeViewAt(indicefilaeliminar);
-        FILAS--;
-    }
 
     /**
      * Devuelve las filas de la tabla, la cabecera se cuenta como fila

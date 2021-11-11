@@ -8,8 +8,9 @@
     <solid
         android:color="@color/white"/>
     <padding
-        android:left="10dp"
-        android:top="13dp"
-        android:right="10dp"
-        android:bottom="13dp" />
+        android:left="8dp"
+        android:top="10dp"
+        android:right="5dp"
+        android:bottom="10dp" />
+
 </shape>
