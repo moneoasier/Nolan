@@ -8,7 +8,7 @@ import android.widget.TableLayout;
 import com.example.nolanapk.R;
 import com.example.nolanapk.clases.Connexion;
 import com.example.nolanapk.clases.Sale;
-import com.example.nolanapk.clases.Tabla;
+import com.example.nolanapk.clases.TableView;
 
 import java.util.ArrayList;
 
@@ -19,7 +19,7 @@ public class Sales extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sales);
 
-        Tabla tabla = new Tabla(this, (TableLayout)findViewById(R.id.tableOrders));
+        TableView tabla = new TableView(this, (TableLayout)findViewById(R.id.tableOrders));
         for(Sale s:Connexion.sales)
         {
             ArrayList<String> elementos = new ArrayList<>();

@@ -7,6 +7,20 @@
     android:background="@drawable/fondonolan"
     tools:context=".activities.Orders">
 
+    <Button
+        android:id="@+id/btn_del"
+        android:layout_width="99dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="36dp"
+        android:backgroundTint="@color/blanco"
+        android:onClick="delSale"
+        android:text="DELETE"
+        android:textColor="@color/black"
+        app:iconTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spin_partner" />
+
     <TextView
         android:id="@+id/saleName"
         android:layout_width="278dp"
@@ -24,7 +38,7 @@
         android:id="@+id/scrollView2"
         android:layout_width="410dp"
         android:layout_height="351dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="350dp"
         app:layout_constrainedHeight="true"
         app:layout_constraintHeight_max="500dp"
         app:layout_constraintHeight_min="0dp"
@@ -54,7 +68,7 @@
 
                         <TextView
                             android:id="@+id/textView10"
-                            android:layout_width="164dp"
+                            android:layout_width="226dp"
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:text="@string/name"
@@ -72,7 +86,7 @@
 
                         <TextView
                             android:id="@+id/textView13"
-                            android:layout_width="106dp"
+                            android:layout_width="82dp"
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:text="@string/total"
@@ -81,7 +95,7 @@
 
                         <TextView
                             android:id="@+id/textView14"
-                            android:layout_width="79dp"
+                            android:layout_width="45dp"
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:text="Erase"
@@ -132,21 +146,23 @@
         android:id="@+id/order_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="154dp"
         android:textColor="@color/blanco"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/spin_partner" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="68dp"
+        android:layout_width="108dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="172dp"
         android:text="Articles"
+        android:textAlignment="center"
         android:textColor="@color/blanco"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spin_partner" />
 
@@ -154,11 +170,44 @@
         android:id="@+id/total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="203dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="264dp"
         android:textColor="@color/blanco"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/textView19"
+        app:layout_constraintStart_toEndOf="@+id/textView18"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="92dp"
+        android:text="Total:"
+        android:textColor="@color/blanco"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="36dp"
+        android:text="State: "
+        android:textColor="@color/blanco"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/txt_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="72dp"
+        android:textColor="@color/blanco"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/spin_partner" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

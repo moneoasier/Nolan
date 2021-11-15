@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nolanapk.R;
+import com.example.nolanapk.clases.Connexion;
 import com.example.nolanapk.clases.Gafa;
 
 import java.util.ArrayList;
@@ -59,7 +60,7 @@ public class Inventario extends AppCompatActivity {
         search=findViewById(R.id.search);
 
         spin=findViewById(R.id.filter);
-
+        Login.con.connect("orders");
         gafaFiltro=new ArrayList<>();
         //Metodo hauei deitzen zaie aplikazioa abiaraztean
         readData();

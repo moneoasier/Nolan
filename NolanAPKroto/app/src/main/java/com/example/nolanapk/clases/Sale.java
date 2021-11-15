@@ -88,7 +88,7 @@ public class Sale {
                 ", name='" + name + '\'' +
                 ", partnerName='" + partnerName + '\'' +
                 ", state='" + state + '\'' +
-                ", date='" + date + '\'' +
+                ", date=" + date +
                 ", totalprice=" + totalprice +
                 '}';
     }

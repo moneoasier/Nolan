@@ -308,14 +308,20 @@ public class Connexion {
                     Statement st;
                     ResultSet rd;
 
+                    if(sales.size()>0){
+                        Connexion.sales.clear();
+                    }
+
                     st = connection.createStatement();
-                    rd = st.executeQuery("select sale_order.id,sale_order.name as ordername,state,effective_date,res_partner.name as partner,amount_total "+
+                    rd = st.executeQuery("select sale_order.id,sale_order.name as ordername,state,effective_date,res_partner.name as partner,amount_total, sale_order.user_id "+
                                                 "from sale_order inner join res_partner on partner_id = res_partner.id order by id;");
 
                     while (rd.next()) {
+                       if(rd.getInt("user_id")==Login.user_id){
+                            sales.add(new Sale(rd.getInt("id"),rd.getString("ordername"),rd.getString("partner")
+                                    ,rd.getString("state"),rd.getDate("effective_date"),rd.getDouble("amount_total")));
+                        }
 
-                        sales.add(new Sale(rd.getInt("id"),rd.getString("ordername"),rd.getString("partner")
-                                ,rd.getString("state"),rd.getDate("effective_date"),rd.getDouble("amount_total")));
                     }
 
 
@@ -337,13 +343,14 @@ public class Connexion {
                     ResultSet rd;
 
                     st = connection.createStatement();
-                    rd = st.executeQuery("select sale_order_line.id as id,order_id,product_template.name as name,price_unit,product_uom_qty "+
+                    rd = st.executeQuery("select sale_order_line.id as id,order_id,product_template.name as name,price_unit,product_uom_qty, salesman_id "+
                             "from sale_order_line inner join product_template on product_id = product_template.id order by sale_order_line.id;");
 
                     while (rd.next()) {
-
-                        articles.add(new Article(rd.getInt("id"),rd.getInt("order_id"),rd.getString("name"),rd.getDouble("price_unit")
-                        ,rd.getInt("product_uom_qty")));
+                        if(rd.getInt("salesman_id")==Login.user_id) {
+                            articles.add(new Article(rd.getInt("id"), rd.getInt("order_id"), rd.getString("name"), rd.getDouble("price_unit")
+                                    , rd.getInt("product_uom_qty")));
+                        }
                     }
 
 
@@ -368,17 +375,78 @@ public class Connexion {
 
     public void removeArticle(int article_id, int sale_id){
 
+        try {
+            Statement st;
+
+            st = connection.createStatement();
+            st.executeQuery("select drop_product("+article_id+","+sale_id+");");
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+
+    }
+
+    public void removeSale(int orderId){
+        final Semaphore available = new Semaphore(1, true);
+
+        Thread thread = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+
                 try {
-                    Statement st;
+                    available.acquire();
 
-                    st = connection.createStatement();
-                    st.executeQuery("select drop_product("+article_id+","+sale_id+");");
+                    try {
 
-                } catch (SQLException throwables) {
-                    throwables.printStackTrace();
+                        Statement st = connection.createStatement();
+                        st.executeQuery("DELETE FROM sale_order_line WHERE order_id = "+orderId+";");
+
+
+                    } catch (SQLException throwables) {
+                        throwables.printStackTrace();
+                    } finally {
+                        available.release();
+                    }
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
 
+            }
+        });
 
+        Thread thread2 = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+
+                try {
+                    available.acquire();
+
+                    try {
+
+                        Statement st = connection.createStatement();
+                        st.executeQuery("DELETE FROM sale_order WHERE id = "+orderId+";");
+
+                    } catch (SQLException throwables) {
+                        throwables.printStackTrace();
+                    } finally {
+                        connect("sales");
+                        available.release();
+                    }
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.setPriority(10);
+        thread2.setPriority(1);
+        thread.start();
+        thread2.start();
     }
 
     public boolean isStatus() {

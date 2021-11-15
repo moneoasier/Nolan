@@ -125,7 +125,7 @@
         android:onClick="tramitar"
         android:text="Purchase"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_Subtotal" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_iva" />
 
     <Button
         android:id="@+id/button"
@@ -166,7 +166,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <TextView
-        android:id="@+id/txt_Subtotal"
+        android:id="@+id/txt_iva"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="57dp"
@@ -177,7 +177,7 @@
         app:layout_constraintTop_toBottomOf="@+id/scrollvertical" />
 
     <TextView
-        android:id="@+id/txt_iva"
+        android:id="@+id/txt_subtotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -198,7 +198,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/btn_Tramitar"
         app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/txt_iva" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_subtotal" />
 
     <TextView
         android:id="@+id/textView8"
@@ -211,7 +211,7 @@
         android:text="IVA"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_Tramitar"
-        app:layout_constraintStart_toEndOf="@+id/txt_iva"
+        app:layout_constraintStart_toEndOf="@+id/txt_subtotal"
         app:layout_constraintTop_toBottomOf="@+id/scrollvertical"
         app:layout_constraintVertical_bias="0.333" />
 

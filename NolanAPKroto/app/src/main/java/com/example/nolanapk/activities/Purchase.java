@@ -16,7 +16,7 @@ import com.example.nolanapk.R;
 import com.example.nolanapk.clases.Connexion;
 import com.example.nolanapk.clases.Gafa;
 import com.example.nolanapk.clases.Partner;
-import com.example.nolanapk.clases.Tabla;
+import com.example.nolanapk.clases.TableView;
 
 import java.util.ArrayList;
 
@@ -39,11 +39,11 @@ public class Purchase extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinp.setAdapter(adapter);
 
-        pstotal = findViewById(R.id.txt_Subtotal);
+        pstotal = findViewById(R.id.txt_subtotal);
         piva = findViewById(R.id.txt_iva);
         ptotal = findViewById(R.id.txt_total);
 
-        Tabla tabla = new Tabla(this, (TableLayout)findViewById(R.id.tabla));
+        TableView tabla = new TableView(this, (TableLayout)findViewById(R.id.tabla));
         for(int i = 0; i < Connexion.compra.size(); i++)
         {
             ArrayList<String> elementos = new ArrayList<>();
@@ -87,16 +87,16 @@ public class Purchase extends AppCompatActivity {
         if(Connexion.compra.size()>0){
             for (Gafa g:
                     Connexion.compra) {
-                total+= g.getPrecioCantidad();
-                iva+=g.getIvaCantidad();
-                totaliva+=g.getPrecioTotal();
+                total+= Math.round(g.getPrecioCantidad()*100.0)/100.0;
+                iva+=Math.round(g.getIvaCantidad()*100.0)/100.0;
+                totaliva+=Math.round(g.getPrecioTotal()*100.0)/100.0;
 
             }
         }
 
-        ptotal.setText(Double.toString(Math.round(totaliva*100.0)/100.0));
-        piva.setText(Double.toString(Math.round(iva*100.0)/100.0));
-        pstotal.setText(Double.toString(Math.round(total*100.0)/100.0));
+        ptotal.setText(Double.toString(totaliva));
+        piva.setText(Double.toString(iva));
+        pstotal.setText(Double.toString(total));
     }
 
 

@@ -1,22 +1,25 @@
 package com.example.nolanapk.activities;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.nolanapk.R;
 import com.example.nolanapk.clases.Article;
 import com.example.nolanapk.clases.Connexion;
 import com.example.nolanapk.clases.Partner;
 import com.example.nolanapk.clases.Sale;
-import com.example.nolanapk.clases.Tabla;
+import com.example.nolanapk.clases.TableEdit;
+import com.example.nolanapk.clases.TableView;
 
 import java.util.ArrayList;
 
@@ -27,6 +30,8 @@ public class Orders extends AppCompatActivity {
     Spinner spin;
     TextView date;
     TextView total;
+    TextView state;
+    Button del_sale;
     int id;
 
     @SuppressLint("SetTextI18n")
@@ -39,13 +44,17 @@ public class Orders extends AppCompatActivity {
 
         date = findViewById(R.id.order_date);
 
+        state=findViewById(R.id.txt_state);
+
+        del_sale=findViewById(R.id.btn_del);
+
         id = Integer.parseInt(getIntent().getStringExtra("saleId"));
 
         total = findViewById(R.id.total);
 
         TextView orderId = findViewById(R.id.saleName);
         orderId.setText("Sale: " + getIntent().getStringExtra("saleCode"));
-        Tabla tabla = new Tabla(this, (TableLayout) findViewById(R.id.tableOrders));
+        TableEdit tabla = new TableEdit(this, findViewById(R.id.tableOrders));
         fillSpinner();
         fillDate();
         filterArticles();
@@ -55,8 +64,7 @@ public class Orders extends AppCompatActivity {
             elementos.add(Integer.toString(s.getQuantity()));
             elementos.add(s.getUnitPrice() + " €");
             elementos.add(Integer.toString(s.getId()));
-
-            tabla.agregarFilaTabla(elementos, "delete");
+            tabla.agregarFilaTabla(elementos,this);
         }
 
     }
@@ -84,9 +92,17 @@ public class Orders extends AppCompatActivity {
                 Partner p = orderPartner(s.getPartnerName());
                 int spinnerPosition = adapter.getPosition(p);
                 spin.setSelection(spinnerPosition);
-                total.setText("Order total: " + s.getTotalprice() + " €");
+                state.setText(String.format("%s", s.getState().toUpperCase()));
+                total.setText(String.format("%s €", s.getTotalprice()));
             }
         }
+
+        if(state.getText().toString().equals("DRAFT")){
+            del_sale.setVisibility(View.VISIBLE);
+        } else {
+            del_sale.setVisibility(View.INVISIBLE);
+        }
+
     }
 
     public Partner orderPartner(String partner) {
@@ -96,5 +112,14 @@ public class Orders extends AppCompatActivity {
             }
         }
         return null;
+    }
+
+    public void delSale(View v){
+        int idBorrar=id;
+        Intent intent = new Intent(v.getContext(), Inventario.class);
+        startActivity(intent);
+        Login.con.removeSale(idBorrar);
+        Toast.makeText(this,"The sale has been deleted",Toast.LENGTH_SHORT).show();
+
     }
 }

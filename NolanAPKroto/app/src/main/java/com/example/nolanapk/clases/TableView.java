@@ -30,7 +30,7 @@ import java.util.ArrayList;
  * Created by francis on 14/10/14.
  * Esta clase representa una tabla
  */
-public class Tabla {
+public class TableView {
     // Variables de la clase
 
     private TableLayout tabla;          // Layout donde se pintará la tabla
@@ -44,7 +44,7 @@ public class Tabla {
      * @param actividad Actividad donde va a estar la tabla
      * @param tabla TableLayout donde se pintará la tabla
      */
-    public Tabla(Activity actividad, TableLayout tabla)
+    public TableView(Activity actividad, TableLayout tabla)
     {
         this.actividad = actividad;
         this.tabla = tabla;

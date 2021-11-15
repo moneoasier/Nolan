@@ -154,19 +154,6 @@ public class Gafa {
 
     @Override
     public String toString() {
-        return "Gafa{" +
-                "id='" + id + '\'' +
-                ", pro_id=" + pro_id +
-                ", nombre='" + nombre + '\'' +
-                ", stock=" + stock +
-                ", category='" + category + '\'' +
-                ", cantidad=" + cantidad +
-                ", precio=" + precio +
-                ", iva=" + iva +
-                ", precioCantidad=" + precioCantidad +
-                ", ivaCantidad=" + ivaCantidad +
-                ", precioTotal=" + precioTotal +
-                ", precioIva=" + precioIva +
-                '}';
+        return nombre;
     }
 }
