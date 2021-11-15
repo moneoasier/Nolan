@@ -20,10 +20,7 @@ Hau lortzeko, proiektuak 5 java fitxategi ditu:
       - gafasId.csv --> produktuen id-ak
       - record.txt --> gehitu diren produktuen erregistroa
 
-# Abiaraztea
-1. Cmd-a ireki
-3. cd + "jar fitxategia duen helbidea kopiatu eta itsatsi"
-2. java -jar Odoocsv-0.0.1-SNAPSHOT.jar
+
 # Klase diagrama
 ![ExportData](https://user-images.githubusercontent.com/75113996/141772719-6a00af88-e5d4-47b0-aae9-d962d3f28ddc.png)
 
