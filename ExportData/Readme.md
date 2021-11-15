@@ -22,7 +22,8 @@ Hau lortzeko, proiektuak 5 java fitxategi ditu:
 
 
 # Klase diagrama
-![ExportData](https://user-images.githubusercontent.com/75113996/141772719-6a00af88-e5d4-47b0-aae9-d962d3f28ddc.png)
+![ExportData](https://user-images.githubusercontent.com/75113996/141777931-7cfebf0d-6a8b-403b-ae58-3e63542eee80.png)
+
 
 # Iturriak
 https://springframework.guru/spring-framework-annotations/ <br>
