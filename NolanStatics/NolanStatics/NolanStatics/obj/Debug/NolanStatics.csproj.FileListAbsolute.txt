@@ -47,3 +47,14 @@ C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Debug\EntityFramewo
 C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Debug\EntityFramework.SqlServer.xml
 C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.Kontrola.resources
 C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.Login.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Debug\DLLs.dll
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Debug\DLLs.pdb
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Debug\DLLs.dll.config
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.ErosleakForm.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.IrabaziakForm.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.KategoriakForm.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.LangileakForm.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.ProdKopForm.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.SalmentakForm.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.SalmentaErosleForm.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Debug\NolanStatics.SalmentaLangileForm.resources

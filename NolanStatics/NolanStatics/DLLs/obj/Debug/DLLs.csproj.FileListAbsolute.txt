@@ -1,0 +1,26 @@
+C:\Klasea\Erronka\NolanStatics\NolanStatics\DLLs\bin\Debug\DLLs.dll.config
+C:\Klasea\Erronka\NolanStatics\NolanStatics\DLLs\bin\Debug\DLLs.dll
+C:\Klasea\Erronka\NolanStatics\NolanStatics\DLLs\bin\Debug\DLLs.pdb
+C:\Klasea\Erronka\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.ErosleakDLL.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.IrabaziakDLL.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.KategoriakDLL.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.LangileakDLL.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.ProdKopDLL.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.SalmentaDLL.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.csproj.GenerateResource.cache
+C:\Klasea\Erronka\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.csproj.CoreCompileInputs.cache
+C:\Klasea\Erronka\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.dll
+C:\Klasea\Erronka\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.pdb
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\DLLs\bin\Debug\DLLs.dll.config
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\DLLs\bin\Debug\DLLs.dll
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\DLLs\bin\Debug\DLLs.pdb
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.ErosleakDLL.resources
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.IrabaziakDLL.resources
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.KategoriakDLL.resources
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.LangileakDLL.resources
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.ProdKopDLL.resources
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.SalmentaDLL.resources
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.csproj.GenerateResource.cache
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.csproj.CoreCompileInputs.cache
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.dll
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.pdb

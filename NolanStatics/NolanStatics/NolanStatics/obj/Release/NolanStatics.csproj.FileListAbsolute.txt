@@ -1,0 +1,54 @@
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Release\NolanStatics.exe.config
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Release\NolanStatics.exe
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Release\NolanStatics.pdb
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Release\DLLs.dll
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Release\EntityFramework.dll
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Release\EntityFramework.SqlServer.dll
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Release\DLLs.pdb
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Release\DLLs.dll.config
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Release\EntityFramework.xml
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Release\EntityFramework.SqlServer.xml
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.csprojAssemblyReference.cache
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.ErosleakForm.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.Form1.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.IrabaziakForm.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.KategoriakForm.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.LangileakForm.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.Login.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.ProdKopForm.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.Properties.Resources.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.SalmentaErosleForm.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.SalmentakForm.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.SalmentaLangileForm.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.csproj.GenerateResource.cache
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.csproj.CoreCompileInputs.cache
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.csproj.CopyComplete
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.exe
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.pdb
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\bin\Release\NolanStatics.exe.config
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\bin\Release\NolanStatics.exe
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\bin\Release\NolanStatics.pdb
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\bin\Release\DLLs.dll
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\bin\Release\EntityFramework.dll
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\bin\Release\DLLs.pdb
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\bin\Release\DLLs.dll.config
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\bin\Release\EntityFramework.xml
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.csprojAssemblyReference.cache
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.ErosleakForm.resources
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.Form1.resources
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.IrabaziakForm.resources
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.KategoriakForm.resources
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.LangileakForm.resources
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.Login.resources
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.ProdKopForm.resources
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.Properties.Resources.resources
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.SalmentaErosleForm.resources
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.SalmentakForm.resources
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.SalmentaLangileForm.resources
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.csproj.GenerateResource.cache
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.csproj.CoreCompileInputs.cache
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.csproj.CopyComplete
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.exe
+C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.pdb

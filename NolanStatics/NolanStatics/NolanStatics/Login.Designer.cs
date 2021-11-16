@@ -35,8 +35,8 @@ namespace NolanStatics
             this.txt_mail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.check_pass = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txt_pass = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,17 +100,6 @@ namespace NolanStatics
             this.check_pass.UseVisualStyleBackColor = true;
             this.check_pass.CheckedChanged += new System.EventHandler(this.check_pass_CheckedChanged);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(925, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(38, 37);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // txt_pass
             // 
             this.txt_pass.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -122,6 +111,17 @@ namespace NolanStatics
             this.txt_pass.TabIndex = 4;
             this.txt_pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_pass.UseSystemPasswordChar = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(928, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(38, 37);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Login
             // 

@@ -65,11 +65,35 @@
   <ItemGroup>
     <Compile Include="CheckEmail.cs" />
     <Compile Include="conexionbd.cs" />
+    <Compile Include="ErosleakForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErosleakForm.Designer.cs">
+      <DependentUpon>ErosleakForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IrabaziakForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IrabaziakForm.Designer.cs">
+      <DependentUpon>IrabaziakForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KategoriakForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KategoriakForm.Designer.cs">
+      <DependentUpon>KategoriakForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LangileakForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LangileakForm.Designer.cs">
+      <DependentUpon>LangileakForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -85,13 +109,52 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NolanDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ProdKopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdKopForm.Designer.cs">
+      <DependentUpon>ProdKopForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalmentaErosleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalmentaErosleForm.Designer.cs">
+      <DependentUpon>SalmentaErosleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalmentakForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalmentakForm.Designer.cs">
+      <DependentUpon>SalmentakForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalmentaLangileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalmentaLangileForm.Designer.cs">
+      <DependentUpon>SalmentaLangileForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ErosleakForm.resx">
+      <DependentUpon>ErosleakForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="IrabaziakForm.resx">
+      <DependentUpon>IrabaziakForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KategoriakForm.resx">
+      <DependentUpon>KategoriakForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LangileakForm.resx">
+      <DependentUpon>LangileakForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdKopForm.resx">
+      <DependentUpon>ProdKopForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -101,7 +164,17 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SalmentaErosleForm.resx">
+      <DependentUpon>SalmentaErosleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalmentakForm.resx">
+      <DependentUpon>SalmentakForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalmentaLangileForm.resx">
+      <DependentUpon>SalmentaLangileForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="NolanDataSet.xsc">
       <DependentUpon>NolanDataSet.xsd</DependentUpon>
     </None>
@@ -126,6 +199,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DLLs\DLLs.csproj">
+      <Project>{AB3A4F92-8B9C-47AB-85C4-B7C70B2C2057}</Project>
+      <Name>DLLs</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\langilesalmenta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salmentak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salmentak1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\langilesalmenta1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nolan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salmentak .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\producto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trabajadores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\langile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\irabaziak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kategoria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

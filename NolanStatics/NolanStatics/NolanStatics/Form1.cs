@@ -9,7 +9,7 @@ namespace NolanStatics
 {
     public partial class Form1 : Form
     {
-        NolanDataSet nolanDBDataSet = new NolanDataSet();
+        
 
         public Form1()
         {
@@ -25,7 +25,7 @@ namespace NolanStatics
         {
             // TODO: esta línea de código carga datos en la tabla 'nolanDataSet.res_users' Puede moverla o quitarla según sea necesario.
             // this.res_usersTableAdapter.Fill(this.nolanDataSet.res_users);
-            selectWorkers();
+
             countKat();
             countLang();
             countIrab();
@@ -33,13 +33,17 @@ namespace NolanStatics
             countProd();
             countSalm();
             dataChart1();
-            //dataChart2();
+            
             
         
             
         }
         public void dataChart1()
         {
+            
+           
+
+            /*
             sale_orderTableAdapter sale_orderTableAdapter = new sale_orderTableAdapter();
 
             sale_orderTableAdapter.Fill(this.nolanDBDataSet.sale_order);
@@ -49,22 +53,15 @@ namespace NolanStatics
             sal_eros.Series[0].YValueMembers = "Value";
             sal_eros.Series[0].XValueMember = "Key";
             sal_eros.DataBind();
+            
+    */
+           
+           
+
+
         }
-        /*public void dataChart2()
-        {
-            sale_userTableAdapter sale_userTableAdapter = new sale_userTableAdapter();
 
-            sale_userTableAdapter.Fill(nolanDBDataSet.sale_user);
-            sal_lan.DataSource = sale_userTableAdapter.GetDataBy().Select();
-            //var result1 = nolanDBDataSet.sale_order.GroupBy(b => b.user_id).ToDictionary(g => g.Key, g => g.Count());
-             //var result2 = nolanDBDataSet.hr_employee.Join(nolanDBDataSet.hr_employee, user => user.user_id, userfk => userfk.user_id, (user, userfk) =>
-                 //new {User=user, Userfk=userfk }).Where(rela=>rela.User.user_id.Contains( "Key")).ToList();this.nolanDBDataSet.sale_order.GroupBy(b => b.partner_id).ToDictionary(g => g.Key, g => g.Count())
 
-            sal_lan.Series[0].YValueMembers = "name";
-            sal_lan.Series[0].XValueMember = "Salmentak";
-            sal_lan.DataBind();
-    
-        }*/
 
         public void countKat()
         {
@@ -199,7 +196,7 @@ namespace NolanStatics
             }
         }
         
-        public void selectWorkers()
+       /* public void selectWorkers()
         {
             conexionbd conexion = new conexionbd();
             conexion.abrir();
@@ -227,8 +224,56 @@ namespace NolanStatics
                 Console.WriteLine("Error SQL");
             }
 
-        }
-        
+        }*/
 
+        private void Panel1_Click(object sender, EventArgs e)
+        {
+            SalmentakForm salmentakForm = new SalmentakForm();
+            salmentakForm.Show();
+        }
+
+        private void Panel4_Click(object sender, EventArgs e)
+        {
+            ProdKopForm prodKopForm = new ProdKopForm();
+            prodKopForm.Show();
+        }
+
+        private void Panel3_Click(object sender, EventArgs e)
+        {
+            ErosleakForm erosleakForm = new ErosleakForm();
+            erosleakForm.Show();
+        }
+
+        private void Panel2_Click(object sender, EventArgs e)
+        {
+            LangileakForm langileakForm = new LangileakForm();
+            langileakForm.Show();
+        }
+
+        private void Panel8_Click(object sender, EventArgs e)
+        {
+            KategoriakForm kategoriakForm = new KategoriakForm();
+            kategoriakForm.Show();
+        }
+
+        private void Panel5_Click(object sender, EventArgs e)
+        {
+            IrabaziakForm irabaziakForm = new IrabaziakForm();
+            irabaziakForm.Show();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            SalmentaErosleForm salmentaErosleForm = new SalmentaErosleForm();
+            salmentaErosleForm.Show();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            SalmentaLangileForm salmentaLangileForm = new SalmentaLangileForm();
+            salmentaLangileForm.Show();
+        }
+
+       
     }
 }
