@@ -6,15 +6,32 @@ public class Article {
     private int id;
     private int saleId; //order_id
     private String name;
+    private int gafaId;
     private double unitPrice;
     private int quantity;//product_uom_qty
 
-    public Article(int id, int saleId, String name, double unitPrice, int quantity) {
+    private double iva; // iva de un solo producto
+    private double precioCantidad; // precio por la cantidad sin iva
+    private double ivaCantidad; // el iva de la cantidad
+    private double precioTotal; // precio total con iva
+    private double precioIva;
+
+    public Article(int gafaId,int id, int saleId, String name, double unitPrice, int quantity) {
+        this.gafaId=gafaId;
         this.id = id;
         this.saleId = saleId;
         this.name = name;
         this.unitPrice = unitPrice;
         this.quantity = quantity;
+    }
+
+    public void setPrecios(){
+
+        this.iva = this.unitPrice*0.21;
+        this.precioCantidad = this.unitPrice * (double)quantity;
+        this.ivaCantidad = this.iva * (double)quantity;
+        this.precioTotal = this.precioCantidad + this.ivaCantidad;
+        this.precioIva = this.unitPrice + this.iva;
     }
 
     public int getId() {
@@ -55,6 +72,54 @@ public class Article {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public double getIva() {
+        return iva;
+    }
+
+    public void setIva(double iva) {
+        this.iva = iva;
+    }
+
+    public double getPrecioCantidad() {
+        return precioCantidad;
+    }
+
+    public void setPrecioCantidad(double precioCantidad) {
+        this.precioCantidad = precioCantidad;
+    }
+
+    public double getIvaCantidad() {
+        return ivaCantidad;
+    }
+
+    public void setIvaCantidad(double ivaCantidad) {
+        this.ivaCantidad = ivaCantidad;
+    }
+
+    public double getPrecioTotal() {
+        return precioTotal;
+    }
+
+    public void setPrecioTotal(double precioTotal) {
+        this.precioTotal = precioTotal;
+    }
+
+    public double getPrecioIva() {
+        return precioIva;
+    }
+
+    public void setPrecioIva(double precioIva) {
+        this.precioIva = precioIva;
+    }
+
+    public int getGafaId() {
+        return gafaId;
+    }
+
+    public void setGafaId(int gafaId) {
+        this.gafaId = gafaId;
     }
 
     @Override

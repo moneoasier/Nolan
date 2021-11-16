@@ -20,6 +20,7 @@ import android.widget.SpinnerAdapter;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.nolanapk.R;
 import com.example.nolanapk.activities.Inventario;
@@ -38,7 +39,7 @@ public class TableEdit {
     private int FILAS, COLUMNAS;
     private ArrayAdapter<Gafa> adapter;
     private int stock;
-
+    private Article updateArticle;
 
     /**
      * Constructor de la tabla
@@ -59,7 +60,7 @@ public class TableEdit {
      * @param elementos Elementos de la fila
      */
 
-    public void agregarFilaTabla(ArrayList<String> elementos, Context c)
+    public void agregarFilaTabla(ArrayList<String> elementos, Context c,ArrayList<Article> filterArticles)
     {
         TableRow.LayoutParams layoutCelda;
         TableRow.LayoutParams layoutFila = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
@@ -133,6 +134,46 @@ public class TableEdit {
 
         fila.addView(btn);
 
+        Button btn2 = new Button(actividad.getBaseContext());
+        btn2.setLayoutParams(new TableRow.LayoutParams(50,TableRow.LayoutParams.MATCH_PARENT));
+        btn2.setBackgroundResource(R.drawable.tabla_celda);
+        btn2.setText("!");
+        FILAS++;
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceType")
+            @Override
+            public void onClick(View v) {
+
+                if(elementos.get(0).equals(Inventario.allGafas.get(editableTxt.getSelectedItemPosition()).getNombre())){
+
+                    if(qtyIsDif(filterArticles,elementos.get(0),eTexto)){
+                        updateArticle=findArticle(filterArticles,elementos.get(0));
+                        updateArticle.setQuantity(Integer.parseInt(eTexto.getText().toString()));
+                        updateArticle.setPrecios();
+                        Login.con.updateProductQuantity(updateArticle);
+                        Toast.makeText(c,"Quantity updated",Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(c,"The quantity is the same",Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    updateArticle=findArticle(filterArticles,elementos.get(0));
+                    Gafa gafanueva=newArticle(Inventario.allGafas.get(editableTxt.getSelectedItemPosition()).getPro_id());
+                    updateArticle.setGafaId(gafanueva.getPro_id());
+                    updateArticle.setName(gafanueva.getNombre());
+                    updateArticle.setQuantity(Integer.parseInt(eTexto.getText().toString()));
+                    updateArticle.setUnitPrice(gafanueva.getPrecio());
+                    updateArticle.setPrecios();
+                    Login.con.updateProduct(updateArticle);
+                    Toast.makeText(c,"Product updated",Toast.LENGTH_SHORT).show();
+                }
+
+
+
+            }
+        });
+
+        fila.addView(btn2);
+
         tabla.addView(fila);
         filas.add(fila);
 
@@ -153,6 +194,34 @@ public class TableEdit {
 
     }
 
+    public boolean qtyIsDif(ArrayList<Article> articles, String articleName, EditText txt){
+        for(Article a:articles){
+            if(a.getName().equals(articleName)){
+               if(a.getQuantity()!=Integer.parseInt(txt.getText().toString())){
+                   return true;
+               }
+            }
+        }
+        return false;
+    }
+
+    public Article findArticle(ArrayList<Article> articles, String articleName){
+        for(Article a:articles){
+            if(a.getName().equals(articleName)){
+                return a;
+            }
+        }
+        return null;
+    }
+
+    public Gafa newArticle(int id){
+        for(Gafa g:Inventario.allGafas){
+            if(g.getPro_id()==id){
+                return g;
+            }
+        }
+        return null;
+    }
 
     /**
      * Devuelve las filas de la tabla, la cabecera se cuenta como fila

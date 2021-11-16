@@ -343,12 +343,12 @@ public class Connexion {
                     ResultSet rd;
 
                     st = connection.createStatement();
-                    rd = st.executeQuery("select sale_order_line.id as id,order_id,product_template.name as name,price_unit,product_uom_qty, salesman_id "+
+                    rd = st.executeQuery("select product_id, sale_order_line.id as id,order_id,product_template.name as name,price_unit,product_uom_qty, salesman_id "+
                             "from sale_order_line inner join product_template on product_id = product_template.id order by sale_order_line.id;");
 
                     while (rd.next()) {
                         if(rd.getInt("salesman_id")==Login.user_id) {
-                            articles.add(new Article(rd.getInt("id"), rd.getInt("order_id"), rd.getString("name"), rd.getDouble("price_unit")
+                            articles.add(new Article(rd.getInt("product_id"),rd.getInt("id"), rd.getInt("order_id"), rd.getString("name"), rd.getDouble("price_unit")
                                     , rd.getInt("product_uom_qty")));
                         }
                     }
@@ -468,6 +468,55 @@ public class Connexion {
             }
         });
             thread.start();
+    }
+
+    public void updateProductQuantity(Article a){
+        Thread thread = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                try {
+
+                    Statement st = connection.createStatement();
+                    //String sql = "UPDATE sale_order SET partner_id=" + p + ", partner_invoice_id=" + p + ", partner_shipping_id=" + p + " WHERE id=" + order;
+                    String sql2="UPDATE sale_order_line "+
+                            "SET price_subtotal= "+a.getPrecioCantidad()+",price_tax = "+a.getIvaCantidad()+",price_total="+a.getPrecioTotal()+",price_reduce_taxinc="+a.getPrecioIva()+
+                            ",product_uom_qty="+a.getQuantity()+", qty_to_invoice="+a.getQuantity()+
+                            " WHERE id=" + a.getId();
+                    //st.executeUpdate(sql);
+                    st.executeUpdate(sql2);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.start();
+    }
+
+    public void updateProduct(Article a){
+        Thread thread = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                try {
+
+                    Statement st = connection.createStatement();
+                    //String sql = "UPDATE sale_order SET partner_id=" + p + ", partner_invoice_id=" + p + ", partner_shipping_id=" + p + " WHERE id=" + order;
+                    String sql2="UPDATE sale_order_line "+
+                            "SET name='"+a.getName()+"',price_subtotal= "+a.getPrecioCantidad()+",price_tax = "+a.getIvaCantidad()+",price_total="+a.getPrecioTotal()+",price_reduce_taxinc="+a.getPrecioIva()+
+                            ",product_uom_qty="+a.getQuantity()+", qty_to_invoice="+a.getQuantity()+ ",price_unit="+a.getUnitPrice()+",price_reduce="+a.getUnitPrice()+",price_reduce_taxexcl="+a.getUnitPrice()+
+                            ",product_id="+a.getGafaId()+",untaxed_amount_to_invoice="+a.getUnitPrice()+
+                            " WHERE id=" + a.getId();
+                    //st.executeUpdate(sql);
+                    st.executeUpdate(sql2);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.start();
     }
 
     public boolean isStatus() {

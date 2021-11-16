@@ -43,7 +43,7 @@ public class Purchase extends AppCompatActivity {
         piva = findViewById(R.id.txt_iva);
         ptotal = findViewById(R.id.txt_total);
 
-        TableView tabla = new TableView(this, (TableLayout)findViewById(R.id.tabla));
+        TableView tabla = new TableView(this, findViewById(R.id.tabla));
         for(int i = 0; i < Connexion.compra.size(); i++)
         {
             ArrayList<String> elementos = new ArrayList<>();

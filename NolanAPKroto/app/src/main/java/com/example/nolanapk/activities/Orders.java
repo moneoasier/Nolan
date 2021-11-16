@@ -34,6 +34,7 @@ public class Orders extends AppCompatActivity {
     Button del_sale;
     Button update;
     String originalPartner;
+    TableEdit tabla;
     int id;
 
     @SuppressLint("SetTextI18n")
@@ -58,7 +59,7 @@ public class Orders extends AppCompatActivity {
 
         TextView orderId = findViewById(R.id.saleName);
         orderId.setText("Sale: " + getIntent().getStringExtra("saleCode"));
-        TableEdit tabla = new TableEdit(this, findViewById(R.id.tableOrders));
+        tabla = new TableEdit(this, findViewById(R.id.tableOrders));
         fillSpinner();
         fillDate();
         filterArticles();
@@ -68,7 +69,7 @@ public class Orders extends AppCompatActivity {
             elementos.add(Integer.toString(s.getQuantity()));
             elementos.add(s.getUnitPrice() + " €");
             elementos.add(Integer.toString(s.getId()));
-            tabla.agregarFilaTabla(elementos,this);
+            tabla.agregarFilaTabla(elementos,this,filteredArticles);
         }
 
     }
@@ -138,4 +139,5 @@ public class Orders extends AppCompatActivity {
             Toast.makeText(this,"Partner updated",Toast.LENGTH_SHORT).show();
         }
     }
+
 }

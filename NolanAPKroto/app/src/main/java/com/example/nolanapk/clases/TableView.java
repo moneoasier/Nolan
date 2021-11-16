@@ -73,7 +73,7 @@ public class TableView {
             texto.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
             texto.setBackgroundResource(R.drawable.tabla_celda);
             switch(btnStr){
-                case "x|delete":
+                case "x":
                     texto.setTextSize(14);
                     break;
 
@@ -103,7 +103,7 @@ public class TableView {
 
                             for (int i = 0; i < Connexion.compra.size(); i++) {
                                 if (Connexion.compra.get(i).getId().equals(elementos.get(0))) {
-                                    tabla.removeView(v);
+                                    tabla.removeViewAt(i+1);
                                     FILAS--;
                                     Connexion.compra.remove(i);
                                     Purchase.calculateTotal();
@@ -121,21 +121,6 @@ public class TableView {
 
                             break;
 
-                        case "delete":
-
-                            int fila=FILAS;
-                            for (int i = 0; i < Connexion.articles.size(); i++) {
-
-                                if (Connexion.articles.get(i).getId() == Integer.parseInt(elementos.get(elementos.size()-1))) {
-                                   tabla.removeViewAt(fila);
-                                   FILAS--;
-                                   Connexion.articles.remove(i);
-                                   Login.con.removeArticle(Connexion.articles.get(i).getId(),Connexion.articles.get(i).getSaleId());
-                                   break;
-                                }
-                            }
-
-                            break;
                     }
                 }
             });

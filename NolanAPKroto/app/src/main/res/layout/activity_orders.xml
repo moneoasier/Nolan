@@ -52,7 +52,7 @@
         android:id="@+id/scrollView2"
         android:layout_width="410dp"
         android:layout_height="351dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="348dp"
         app:layout_constrainedHeight="true"
         app:layout_constraintHeight_max="500dp"
         app:layout_constraintHeight_min="0dp"
@@ -82,7 +82,7 @@
 
                         <TextView
                             android:id="@+id/textView10"
-                            android:layout_width="226dp"
+                            android:layout_width="184dp"
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:text="@string/name"
@@ -91,7 +91,7 @@
 
                         <TextView
                             android:id="@+id/textView12"
-                            android:layout_width="60dp"
+                            android:layout_width="48dp"
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:text="@string/quantity"
@@ -109,10 +109,19 @@
 
                         <TextView
                             android:id="@+id/textView14"
-                            android:layout_width="45dp"
+                            android:layout_width="48dp"
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:text="Erase"
+                            android:textAlignment="center"
+                            android:textColor="@color/blanco" />
+
+                        <TextView
+                            android:id="@+id/textView22"
+                            android:layout_width="51dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="Update"
                             android:textAlignment="center"
                             android:textColor="@color/blanco" />
 
