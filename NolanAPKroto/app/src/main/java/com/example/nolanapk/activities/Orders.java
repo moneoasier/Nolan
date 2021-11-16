@@ -32,6 +32,8 @@ public class Orders extends AppCompatActivity {
     TextView total;
     TextView state;
     Button del_sale;
+    Button update;
+    String originalPartner;
     int id;
 
     @SuppressLint("SetTextI18n")
@@ -47,6 +49,8 @@ public class Orders extends AppCompatActivity {
         state=findViewById(R.id.txt_state);
 
         del_sale=findViewById(R.id.btn_del);
+
+        update=findViewById(R.id.btn_update);
 
         id = Integer.parseInt(getIntent().getStringExtra("saleId"));
 
@@ -89,7 +93,8 @@ public class Orders extends AppCompatActivity {
         for (Sale s : Connexion.sales) {
             if (id == s.getId()) {
                 date.setText(s.getDate().toString());
-                Partner p = orderPartner(s.getPartnerName());
+                originalPartner=s.getPartnerName();
+                Partner p = orderPartner(originalPartner);
                 int spinnerPosition = adapter.getPosition(p);
                 spin.setSelection(spinnerPosition);
                 state.setText(String.format("%s", s.getState().toUpperCase()));
@@ -121,5 +126,16 @@ public class Orders extends AppCompatActivity {
         Login.con.removeSale(idBorrar);
         Toast.makeText(this,"The sale has been deleted",Toast.LENGTH_SHORT).show();
 
+    }
+
+    public void update(View v){
+        changePartner();
+    }
+
+    public void changePartner(){
+        if(!originalPartner.equals(Connexion.partners.get(spin.getSelectedItemPosition()).getName())){
+            Login.con.updatePartner(Connexion.partners.get(spin.getSelectedItemPosition()).getId(),id);
+            Toast.makeText(this,"Partner updated",Toast.LENGTH_SHORT).show();
+        }
     }
 }

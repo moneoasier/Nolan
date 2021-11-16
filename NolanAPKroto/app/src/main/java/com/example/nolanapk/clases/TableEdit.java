@@ -7,11 +7,14 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.text.InputFilter;
+import android.text.InputType;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TableLayout;
@@ -24,6 +27,7 @@ import com.example.nolanapk.activities.Login;
 import com.example.nolanapk.activities.Orders;
 import com.example.nolanapk.activities.Purchase;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class TableEdit {
@@ -32,7 +36,8 @@ public class TableEdit {
     private Activity actividad;
     private Resources rs;
     private int FILAS, COLUMNAS;
-    private ArrayAdapter<Gafa> adapter;// Filas y columnas de nuestra tabla
+    private ArrayAdapter<Gafa> adapter;
+    private int stock;
 
 
     /**
@@ -61,6 +66,7 @@ public class TableEdit {
         TableRow fila = new TableRow(actividad);
         fila.setLayoutParams(layoutFila);
 
+        //Taularen lehenengo zutabea - Spinner
         Spinner editableTxt=new Spinner(actividad);
 
         editableTxt.setGravity(Gravity.CENTER);
@@ -72,18 +78,34 @@ public class TableEdit {
         editableTxt.setLayoutParams(layoutCelda);
         fila.addView(editableTxt);
 
-        for(int i = 1; i< elementos.size()-1; i++)
-        {
-            TextView texto= new TextView(actividad);
-            texto.setText(String.valueOf(elementos.get(i)));
-            texto.setGravity(Gravity.CENTER);
-            texto.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
-            texto.setBackgroundResource(R.drawable.tabla_celda);
+        //Taularen bigarren zutabea - EditText
+        EditText eTexto=new EditText(actividad);
+        eTexto.setText(String.valueOf(elementos.get(1)));
 
-            layoutCelda = new TableRow.LayoutParams(50, TableRow.LayoutParams.MATCH_PARENT);
-            texto.setLayoutParams(layoutCelda);
-            fila.addView(texto);
-        }
+        eTexto.setGravity(Gravity.CENTER);
+        eTexto.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
+        eTexto.setBackgroundResource(R.drawable.tabla_celda);
+        eTexto.setInputType(InputType.TYPE_CLASS_NUMBER);
+        eTexto.setFilters(new InputFilter[] {new InputFilterMinMax(1,stock)});
+        eTexto.setHint(elementos.get(1));
+
+        layoutCelda = new TableRow.LayoutParams(50, TableRow.LayoutParams.MATCH_PARENT);
+        eTexto.setLayoutParams(layoutCelda);
+        fila.addView(eTexto);
+
+        //Taularen hirugarren zutabea - TextView
+        TextView texto= new TextView(actividad);
+        texto.setText(String.valueOf(elementos.get(2)));
+
+        texto.setGravity(Gravity.CENTER);
+        texto.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
+        texto.setBackgroundResource(R.drawable.tabla_celda);
+
+        layoutCelda = new TableRow.LayoutParams(50, TableRow.LayoutParams.MATCH_PARENT);
+        texto.setLayoutParams(layoutCelda);
+        fila.addView(texto);
+
+        //Taularen laugarren zutabea - Button
         Button btn = new Button(actividad.getBaseContext());
         btn.setLayoutParams(new TableRow.LayoutParams(50,TableRow.LayoutParams.MATCH_PARENT));
         btn.setBackgroundResource(R.drawable.tabla_celda);
@@ -123,6 +145,7 @@ public class TableEdit {
 
         for (Gafa g: Inventario.allGafas) {
             if(g.getNombre().equals(name)){
+                stock= g.getStock();
                 int spinnerPosition = adapter.getPosition(g);
                 spin.setSelection(spinnerPosition);
             }

@@ -449,6 +449,27 @@ public class Connexion {
         thread2.start();
     }
 
+    public void updatePartner(int p, int order){
+        Thread thread = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                try {
+
+                    Statement st = connection.createStatement();
+                    String sql = "UPDATE sale_order SET partner_id=" + p + ", partner_invoice_id=" + p + ", partner_shipping_id=" + p + " WHERE id=" + order;
+                    String sql2="UPDATE sale_order_line SET order_partner_id="+p+" WHERE order_id=" + order;
+                    st.executeUpdate(sql);
+                    st.executeUpdate(sql2);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+            thread.start();
+    }
+
     public boolean isStatus() {
         return status;
     }
