@@ -91,7 +91,7 @@ public class ExportConfig {
     }
 
     @Bean
-    public ManagementDAO getPeliculaDao() {
+    public ManagementDAO getDataDao(){
     	return new ManagementDAO();
     }
     

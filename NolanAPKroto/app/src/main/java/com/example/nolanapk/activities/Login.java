@@ -59,8 +59,11 @@ public class Login extends AppCompatActivity {
                     if (correctUser()) {
                         Intent b = new Intent(Login.this, Inventario.class);
                         startActivity(b);
-                        Login.con.connect("partners");
-                        Login.con.connect("gafas");
+                        if(Inventario.allGafas.size()==0 || Connexion.partners.size()==0){
+                            Login.con.connect("partners");
+                            Login.con.connect("gafas");
+                        }
+
                     }
                 } else {
                     Toast.makeText(Login.this, "Conexion failed", Toast.LENGTH_SHORT).show();

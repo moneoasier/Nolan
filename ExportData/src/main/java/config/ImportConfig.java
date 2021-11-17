@@ -91,7 +91,7 @@ public class ImportConfig {
     }
 
     @Bean
-    public ManagementDAO getPeliculaDao() {
+    public ManagementDAO getDataDao() {
     	return new ManagementDAO();
     }
     

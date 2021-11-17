@@ -27,6 +27,7 @@ import com.example.nolanapk.activities.Inventario;
 import com.example.nolanapk.activities.Login;
 import com.example.nolanapk.activities.Orders;
 import com.example.nolanapk.activities.Purchase;
+import com.example.nolanapk.activities.Sales;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -125,9 +126,13 @@ public class TableEdit {
                         FILAS--;
                         Connexion.articles.remove(i);
                         Login.con.removeArticle(Connexion.articles.get(i).getId(),Connexion.articles.get(i).getSaleId());
+                        Toast.makeText(c,"Partner updated",Toast.LENGTH_SHORT).show();
                         break;
                     }
                 }
+
+                Intent intent = new Intent(v.getContext(), Inventario.class);
+                actividad.startActivityForResult(intent, 0);
 
             }
         });
@@ -153,13 +158,13 @@ public class TableEdit {
                         Login.con.updateProductQuantity(updateArticle);
                         Toast.makeText(c,"Quantity updated",Toast.LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(c,"The quantity is the same",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(c,"Nothing to update",Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     updateArticle=findArticle(filterArticles,elementos.get(0));
                     Gafa gafanueva=newArticle(Inventario.allGafas.get(editableTxt.getSelectedItemPosition()).getPro_id());
                     updateArticle.setGafaId(gafanueva.getPro_id());
-                    updateArticle.setName(gafanueva.getNombre());
+                    updateArticle.setName("["+gafanueva.getId()+"] "+gafanueva.getNombre());
                     updateArticle.setQuantity(Integer.parseInt(eTexto.getText().toString()));
                     updateArticle.setUnitPrice(gafanueva.getPrecio());
                     updateArticle.setPrecios();
@@ -167,7 +172,8 @@ public class TableEdit {
                     Toast.makeText(c,"Product updated",Toast.LENGTH_SHORT).show();
                 }
 
-
+                Intent intent = new Intent(v.getContext(), Inventario.class);
+                actividad.startActivityForResult(intent, 0);
 
             }
         });
@@ -223,46 +229,5 @@ public class TableEdit {
         return null;
     }
 
-    /**
-     * Devuelve las filas de la tabla, la cabecera se cuenta como fila
-     * @return Filas totales de la tabla
-     */
-    public int getFilas()
-    {
-        return FILAS;
-    }
-
-    /**
-     * Devuelve las columnas de la tabla
-     * @return Columnas totales de la tabla
-     */
-    public int getColumnas()
-    {
-        return COLUMNAS;
-    }
-
-    /**
-     * Devuelve el número de celdas de la tabla, la cabecera se cuenta como fila
-     * @return Número de celdas totales de la tabla
-     */
-    public int getCeldasTotales()
-    {
-        return FILAS * COLUMNAS;
-    }
-
-    /**
-     * Obtiene el ancho en píxeles de un texto en un String
-     * @param texto Texto
-     * @return Ancho en píxeles del texto
-     */
-    private int obtenerAnchoPixelesTexto(String texto)
-    {
-        Paint p = new Paint();
-        Rect bounds = new Rect();
-        p.setTextSize(50);
-
-        p.getTextBounds(texto, 0, texto.length(), bounds);
-        return bounds.width();
-    }
 }
 
