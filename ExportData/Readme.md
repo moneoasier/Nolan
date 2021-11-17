@@ -1,24 +1,27 @@
 # Nolan
 
 # Helburua
-Java proiektu honen helburua Odoo zerbitzari batetik datuak irakurtzea eta csv fitxategi batetan gordetzea da. 
-Hau lortzeko, proiektuak 5 java fitxategi ditu:
-1. ConexionApplication.java --> fitxategi exekutagarria da, hemen AppConfig clasea hartzen da eta barruan dagoen guztua abiarazten da.
-2. AppConfig.java --> java Klase honek spring paketeak irakurtzen ditu eta elementu guztiak egiaztatzen ditu.
-3. Gafa.java --> Gafa klasea definitzen du, Odoo datu basearen produktu bakoitzaren datuak klase honetako objektu batetan bihurtuko dira.
-4. GafaDAO.java --> Intefaze klase bat da, eta crud metodoak ditu barne, klase hau inplementatzen duten elementuek metodo hauek izan beharko dituzte eta erabiliko direnak definitu.
-5. GafaTXT.java --> GafaDAO interfazea inplementatzen du eta ekintza hauek exekutako ditu: 
-      - Odoo zerbitzariarekin konexioa egin
-      - initPreviousList() metodoari deitu --> Dauden datuen fitxategi bat irakurtzen du, elementu bakoitza ArrayList<String> batean gordetzen du.
-      - datuak irakurri, datu bakoitza Gafa objektu batean bihurtu, eta ArrayList<Gafa> batean gordetzen du. 
-      - erregistroBerria metodoari deitzen dio objektu bakoitzeko id-a pasatuz, eta ArrayList<String>-eko elementuekin konparatzen du dagoeneko hor dagoen jakiteko
-      - erregistroBerria false bada, writeTxt() metodoari deitzen dio, honek record.txt-an mezu bat gordetzen du produktu berri bat sortu dela adierazten.
-      - Destroy gertatu baino lehen, hau da, objektu hau deuseztatu baino lehen, bi fitxategi sortuko ditu produktuak gordetzeko, bat produktuen datu guztiekin, eta beste bat bakoitzaren id-arekin.
+Java proiektu honen helburua menu batetik aukeratzen dira exportatu nahi diren aukerak.
+Hau lortzeko, proiektuak 18 java fitxategi ditu:
 
-6. Laburtuz, java aplikazioa exekutatzean 3 fitxategi sortuko dira: 
-      - gafas.csv --> produktuen datu guztiekin
-      - gafasId.csv --> produktuen id-ak
-      - record.txt --> gehitu diren produktuen erregistroa
+Hiru paketetan sailkatu ditugu, XML paketea, config paketea eta nolan paketea.
+*Config paketea*
+1. ExportConfig.java --> Exportatzeko klasea da, hemen Hibernate sartzen da eta Context-a sortzen du.
+2. ImportConfig.java --> Importatzeko klasea da, hemen Hibernate sartzen da eta Context-a irakurtzen du.
+
+*Nolan paketea*
+3. Datu basetik taula bakoitzeko klase bat sortu da.
+
+*xml paketea*
+4. Menu.java --> Fitxategi nagusia da, hemen datuak idazten ditu eta irakurtzen ditu.
+5. Export.java --> log.xml-ko egitura zehaztatzen du. 
+6. Exports.java --> log.xml-ko egitura zehaztatzen du.
+7. Data.java --> options.xml-ko egitura zehaztatzen du.
+8. Option.java --> options.xml-ko egitura zehaztatzen du.
+
+9. Laburtuz, java aplikazioa exekutatzean 2 fitxategi sortuko dira: 
+      - options.xml --> aukeratutako eremuak agertuko dira.
+      - log.xml --> aukeratutako eremuak noiz exportatu diren.
 
 # Abiaraztea
      cd proiektua dagoen tokira
