@@ -4,7 +4,7 @@
 Java proiektu honen helburua menu batetik aukeratzen dira exportatu nahi diren aukerak.
 Hau lortzeko, proiektuak 18 java fitxategi ditu:
 
-Hiru paketetan sailkatu ditugu, XML paketea, config paketea eta nolan paketea.
+Hiru paketetan sailkatu ditugu, XML paketea, config paketea eta nolan paketea:
 
 *Config paketea*
 
