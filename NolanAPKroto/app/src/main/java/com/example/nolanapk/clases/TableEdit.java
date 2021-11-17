@@ -119,21 +119,23 @@ public class TableEdit {
             public void onClick(View v) {
 
                 int fila=FILAS;
-                for (int i = 0; i < Connexion.articles.size(); i++) {
 
-                    if (Connexion.articles.get(i).getId() == Integer.parseInt(elementos.get(elementos.size()-1))) {
-                        tabla.removeViewAt(fila);
-                        FILAS--;
-                        Connexion.articles.remove(i);
-                        Login.con.removeArticle(Connexion.articles.get(i).getId(),Connexion.articles.get(i).getSaleId());
-                        Toast.makeText(c,"Partner updated",Toast.LENGTH_SHORT).show();
-                        break;
+                if(isEditable()) {
+                    for (int i = 0; i < Connexion.articles.size(); i++) {
+
+                        if (Connexion.articles.get(i).getId() == Integer.parseInt(elementos.get(elementos.size() - 1))) {
+                            tabla.removeViewAt(fila);
+                            FILAS--;
+                            Connexion.articles.remove(i);
+                            Login.con.removeArticle(Connexion.articles.get(i).getId(), Connexion.articles.get(i).getSaleId());
+                            Toast.makeText(c, "Product erased", Toast.LENGTH_SHORT).show();
+                            break;
+                        }
                     }
+
+                    Intent intent = new Intent(v.getContext(), Inventario.class);
+                    actividad.startActivityForResult(intent, 0);
                 }
-
-                Intent intent = new Intent(v.getContext(), Inventario.class);
-                actividad.startActivityForResult(intent, 0);
-
             }
         });
 
@@ -148,33 +150,34 @@ public class TableEdit {
             @SuppressLint("ResourceType")
             @Override
             public void onClick(View v) {
+                if(isEditable()) {
+                    if (elementos.get(0).equals(Inventario.allGafas.get(editableTxt.getSelectedItemPosition()).getNombre())) {
 
-                if(elementos.get(0).equals(Inventario.allGafas.get(editableTxt.getSelectedItemPosition()).getNombre())){
-
-                    if(qtyIsDif(filterArticles,elementos.get(0),eTexto)){
-                        updateArticle=findArticle(filterArticles,elementos.get(0));
-                        updateArticle.setQuantity(Integer.parseInt(eTexto.getText().toString()));
-                        updateArticle.setPrecios();
-                        Login.con.updateProductQuantity(updateArticle);
-                        Toast.makeText(c,"Quantity updated",Toast.LENGTH_SHORT).show();
+                        if (qtyIsDif(filterArticles, elementos.get(0), eTexto)) {
+                            updateArticle = findArticle(filterArticles, elementos.get(0));
+                            updateArticle.setQuantity(Integer.parseInt(eTexto.getText().toString()));
+                            updateArticle.setPrecios();
+                            Login.con.updateProductQuantity(updateArticle);
+                            Toast.makeText(c, "Quantity updated", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(c, "Nothing to update", Toast.LENGTH_SHORT).show();
+                        }
                     } else {
-                        Toast.makeText(c,"Nothing to update",Toast.LENGTH_SHORT).show();
+                        updateArticle = findArticle(filterArticles, elementos.get(0));
+                        Gafa gafanueva = newArticle(Inventario.allGafas.get(editableTxt.getSelectedItemPosition()).getPro_id());
+                        updateArticle.setGafaId(gafanueva.getPro_id());
+                        updateArticle.setName("[" + gafanueva.getId() + "] " + gafanueva.getNombre());
+                        updateArticle.setQuantity(Integer.parseInt(eTexto.getText().toString()));
+                        updateArticle.setUnitPrice(gafanueva.getPrecio());
+                        updateArticle.setPrecios();
+                        Login.con.updateProduct(updateArticle);
+                        Toast.makeText(c, "Product updated", Toast.LENGTH_SHORT).show();
                     }
-                } else {
-                    updateArticle=findArticle(filterArticles,elementos.get(0));
-                    Gafa gafanueva=newArticle(Inventario.allGafas.get(editableTxt.getSelectedItemPosition()).getPro_id());
-                    updateArticle.setGafaId(gafanueva.getPro_id());
-                    updateArticle.setName("["+gafanueva.getId()+"] "+gafanueva.getNombre());
-                    updateArticle.setQuantity(Integer.parseInt(eTexto.getText().toString()));
-                    updateArticle.setUnitPrice(gafanueva.getPrecio());
-                    updateArticle.setPrecios();
-                    Login.con.updateProduct(updateArticle);
-                    Toast.makeText(c,"Product updated",Toast.LENGTH_SHORT).show();
+                    Connexion.sales.clear();
+                    Connexion.articles.clear();
+                    Intent intent = new Intent(v.getContext(), Inventario.class);
+                    actividad.startActivityForResult(intent, 0);
                 }
-
-                Intent intent = new Intent(v.getContext(), Inventario.class);
-                actividad.startActivityForResult(intent, 0);
-
             }
         });
 
@@ -229,5 +232,15 @@ public class TableEdit {
         return null;
     }
 
+    public static boolean isEditable(){
+        for (Sale s:Connexion.sales){
+            if(s.getId()==Orders.orderID){
+                if(s.getState().matches("draft")){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
 

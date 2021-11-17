@@ -384,31 +384,32 @@ public class Menu {
 
 	public static void readDataSelected() {
 		
-			if (!checkList("PRODUCTS")) {
-				products = dao.getProducts();
-			}
+		if (!checkList("CATEGORIES")) {
+			categories = dao.getCategories();
+		}
+		
+		if (!checkList("PRODUCTS")) {
+			products = dao.getProducts();
+		}
 
-			if (!checkList("CATEGORIES")) {
-				categories = dao.getCategories();
-			}
+		if (!checkList("EMPLOYEES")) {
+			employees = dao.getEmployees();
+		}
 
-			if (!checkList("EMPLOYEES")) {
-				employees = dao.getEmployees();
-			}
+		if (!checkList("USERS")) {
+			users = dao.getUsers();
+			appUsers=dao.getAppUsers();
+		}
+		
+		if (!checkList("PARTNERS")) {
+			partners = dao.getPartners();
+		}
 
-			if (!checkList("USERS")) {
-				users = dao.getUsers();
-				appUsers=dao.getAppUsers();
-			}
+		if (!checkList("SALES ORDERS") && !checkList("SALES ORDERLINES")) {
+			orders = dao.getOrders();
+			orderlines = dao.getOrderlines();
+		}
 
-			if (!checkList("SALES ORDERS") && !checkList("SALES ORDERLINES")) {
-				orders = dao.getOrders();
-				orderlines = dao.getOrderlines();
-			}
-
-			if (!checkList("PARTNERS")) {
-				partners = dao.getPartners();
-			}
 
 	}
 

@@ -288,13 +288,13 @@ public class Connexion {
                 }
 
                 st = connection.createStatement();
-                rd = st.executeQuery("select sale_order.id,sale_order.name as ordername,state,effective_date,res_partner.name as partner,amount_total, sale_order.user_id "+
+                rd = st.executeQuery("select sale_order.id,sale_order.name as ordername,state,date_order,res_partner.name as partner,amount_total, sale_order.user_id "+
                                             "from sale_order inner join res_partner on partner_id = res_partner.id order by id;");
 
                 while (rd.next()) {
                    if(rd.getInt("user_id")==Login.user_id){
                         sales.add(new Sale(rd.getInt("id"),rd.getString("ordername"),rd.getString("partner")
-                                ,rd.getString("state"),rd.getDate("effective_date"),rd.getDouble("amount_total")));
+                                ,rd.getString("state"),rd.getDate("date_order"),rd.getDouble("amount_total")));
                     }
 
                 }
@@ -467,8 +467,6 @@ public class Connexion {
             }
         });
         thread.start();
-        sales.clear();
-        articles.clear();
     }
 
     public boolean isStatus() {

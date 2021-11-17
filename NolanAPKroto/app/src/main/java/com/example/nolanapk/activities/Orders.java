@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,7 +18,6 @@ import com.example.nolanapk.clases.Connexion;
 import com.example.nolanapk.clases.Partner;
 import com.example.nolanapk.clases.Sale;
 import com.example.nolanapk.clases.TableEdit;
-import com.example.nolanapk.clases.TableView;
 
 import java.util.ArrayList;
 
@@ -35,7 +33,7 @@ public class Orders extends AppCompatActivity {
     Button update;
     String originalPartner;
     TableEdit tabla;
-    int id;
+    public static int orderID;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -53,7 +51,7 @@ public class Orders extends AppCompatActivity {
 
         update=findViewById(R.id.btn_update);
 
-        id = Integer.parseInt(getIntent().getStringExtra("saleId"));
+        orderID = Integer.parseInt(getIntent().getStringExtra("saleId"));
 
         total = findViewById(R.id.total);
 
@@ -78,7 +76,7 @@ public class Orders extends AppCompatActivity {
 
         filteredArticles.clear();
         for (Article a : Connexion.articles) {
-            if (a.getSaleId() == id) {
+            if (a.getSaleId() == orderID) {
                 filteredArticles.add(a);
             }
         }
@@ -92,7 +90,7 @@ public class Orders extends AppCompatActivity {
 
     public void fillDate() {
         for (Sale s : Connexion.sales) {
-            if (id == s.getId()) {
+            if (orderID == s.getId()) {
                 date.setText(s.getDate().toString());
                 originalPartner=s.getPartnerName();
                 Partner p = orderPartner(originalPartner);
@@ -121,11 +119,13 @@ public class Orders extends AppCompatActivity {
     }
 
     public void delSale(View v){
-        int idBorrar=id;
-        Intent intent = new Intent(v.getContext(), Inventario.class);
-        startActivity(intent);
-        Login.con.removeSale(idBorrar);
-        Toast.makeText(this,"The sale has been deleted",Toast.LENGTH_SHORT).show();
+        int idBorrar= orderID;
+        if(TableEdit.isEditable()) {
+            Intent intent = new Intent(this, Inventario.class);
+            startActivity(intent);
+            Login.con.removeSale(idBorrar);
+            Toast.makeText(this, "The sale has been deleted", Toast.LENGTH_SHORT).show();
+        }
 
     }
 
@@ -134,9 +134,14 @@ public class Orders extends AppCompatActivity {
     }
 
     public void changePartner(){
-        if(!originalPartner.equals(Connexion.partners.get(spin.getSelectedItemPosition()).getName())){
-            Login.con.updatePartner(Connexion.partners.get(spin.getSelectedItemPosition()).getId(),id);
-            Toast.makeText(this,"Partner updated",Toast.LENGTH_SHORT).show();
+        if(TableEdit.isEditable()) {
+            if (!originalPartner.equals(Connexion.partners.get(spin.getSelectedItemPosition()).getName())) {
+                Login.con.updatePartner(Connexion.partners.get(spin.getSelectedItemPosition()).getId(), orderID);
+                Toast.makeText(this, "Partner updated", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(this, Inventario.class);
+                startActivity(intent);
+            }
         }
     }
 
