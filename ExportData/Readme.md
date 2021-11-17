@@ -10,10 +10,12 @@ Hiru paketetan sailkatu ditugu, XML paketea, config paketea eta nolan paketea.
 
 1. ExportConfig.java --> Exportatzeko klasea da, hemen Hibernate sartzen da eta Context-a sortzen du.
 2. ImportConfig.java --> Importatzeko klasea da, hemen Hibernate sartzen da eta Context-a irakurtzen du.
-<br>*Nolan paketea*
+
+*Nolan paketea*
 
 3. Datu basetik taula bakoitzeko klase bat sortu da.
-<br>*Xml paketea*
+
+*Xml paketea*
 
 4. Menu.java --> Fitxategi nagusia da, hemen datuak idazten ditu eta irakurtzen ditu.
 5. Export.java --> log.xml-ko egitura zehaztatzen du. 
