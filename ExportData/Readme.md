@@ -4,15 +4,15 @@
 Java proiektu honen helburua menu batetik aukeratzen dira exportatu nahi diren aukerak.
 Hau lortzeko, proiektuak 18 java fitxategi ditu:
 
-Hiru paketetan sailkatu ditugu, XML paketea, config paketea eta nolan paketea.
-*Config paketea*
+Hiru paketetan sailkatu ditugu, XML paketea, config paketea eta nolan paketea.<br>
+*Config paketea*<br>
 1. ExportConfig.java --> Exportatzeko klasea da, hemen Hibernate sartzen da eta Context-a sortzen du.
 2. ImportConfig.java --> Importatzeko klasea da, hemen Hibernate sartzen da eta Context-a irakurtzen du.
 
-*Nolan paketea*
+*Nolan paketea*<br>
 3. Datu basetik taula bakoitzeko klase bat sortu da.
 
-*xml paketea*
+*Xml paketea*<br>
 4. Menu.java --> Fitxategi nagusia da, hemen datuak idazten ditu eta irakurtzen ditu.
 5. Export.java --> log.xml-ko egitura zehaztatzen du. 
 6. Exports.java --> log.xml-ko egitura zehaztatzen du.
