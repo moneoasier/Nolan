@@ -20,9 +20,11 @@ Hau lortzeko, proiektuak 5 java fitxategi ditu:
       - gafasId.csv --> produktuen id-ak
       - record.txt --> gehitu diren produktuen erregistroa
 
-
+# Abiaraztea
+     cd proiektua dagoen tokira
+     mvn spring-boot:run
 # Klase diagrama
-![ExportData](https://user-images.githubusercontent.com/75113996/141777931-7cfebf0d-6a8b-403b-ae58-3e63542eee80.png)
+![ExportData](https://user-images.githubusercontent.com/75113996/142150422-20d36f2c-920b-4748-828a-30a0196a3e97.png)
 
 
 # Iturriak
