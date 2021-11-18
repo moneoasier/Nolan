@@ -20,7 +20,10 @@ namespace NolanStatics
 
         {
             InitializeComponent();
-
+            label3Zenb.Text = numericUpDown1.Value.ToString();
+            numericUpDown1.Value = elNumero;
+            numericUpDown1.Maximum = 15;
+            numericUpDown1.Minimum = 1;
             fillChart();
 
         }
@@ -39,7 +42,7 @@ namespace NolanStatics
             sale_order_line1TableAdapter.Fill(this.nolanDBDataSet.sale_order_line1);
 
             chart1.DataSource = sale_order_line1TableAdapter.GetDataBy().Select().Take(elNumero);
-
+            label3Zenb.Text = numericUpDown1.Value.ToString();
             chart1.Series[0].YValueMembers = "Kopurua";
             chart1.Series[0].XValueMember = "name";
             chart1.DataBind();
