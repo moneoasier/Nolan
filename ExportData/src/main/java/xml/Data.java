@@ -34,6 +34,10 @@ public class Data {
 	public void setDate(Date date) {
 		this.date = date;
 	}
+	
+	/*
+	 * Lista bat hartzen du, eta barruan dituen datuak xml-an idazten ditu marshal bitartez
+	 */
 
 	public void writeXML(List<Option> options) {
 		

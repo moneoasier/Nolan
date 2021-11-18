@@ -26,6 +26,10 @@ public class Exports {
 		this.exports = exports;
 	}
 	
+	/*
+	 * Lista bat hartzen du, eta barruan dituen datuak xml-an idazten ditu marshal bitartez
+	 */
+
 	public void writelogXML(List<Export> newExports) {
 		
 		JAXBContext context;

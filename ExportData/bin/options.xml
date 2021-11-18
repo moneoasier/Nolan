@@ -1,24 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<options date="2021-11-08T08:18:52.470+01:00">
+<options date="2021-11-17T10:31:26.549+01:00">
     <option tipo="Producto">
         <choice>PRODUCTS</choice>
     </option>
-    <option tipo="Categoria">
-        <choice>CATEGORIES</choice>
-    </option>
     <option tipo="Employee">
         <choice>EMPLOYEES</choice>
-    </option>
-    <option tipo="User">
-        <choice>USERS</choice>
-    </option>
-    <option tipo="Order">
-        <choice>SALES ORDERS</choice>
-    </option>
-    <option tipo="OrderLine">
-        <choice>SALES ORDERLINES</choice>
-    </option>
-    <option tipo="Partner">
-        <choice>PARTNERS</choice>
     </option>
 </options>

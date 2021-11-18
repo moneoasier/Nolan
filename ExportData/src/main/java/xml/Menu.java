@@ -42,33 +42,46 @@ public class Menu {
 	static List<Order> orders;
 	static List<OrderLine> orderlines;
 	static List<AppUser> appUsers;
+	//Data esportatzeko konfigurazioa duen kontestua definitzen du
 	static ApplicationContext exportContext = new AnnotationConfigApplicationContext(ExportConfig.class);
 	static ManagementDAO dout = exportContext.getBean(ManagementDAO.class);
+	//Data Odootik hartzeko konfigurazioa duen kontestua definitzen du
 	static ApplicationContext importContext = new AnnotationConfigApplicationContext(ImportConfig.class);
 	static ManagementDAO dao = importContext.getBean(ManagementDAO.class);
 
 	public static void main(String[] args) {
-
+		
+		//Erabiltzaileak sartzen duena irakurtzeko Scanner-a
 		Scanner in = new Scanner(System.in);
 		String choice = "holi";
-
+		
+		
 		System.out.println("**DATA EXPORT PROGRAM**");
+		
+		//Gordetako datuak dituen xml-a sortuta dagoen konprobatzen du
 		if (file.isFile()) {
 
+			//Erabiltzaileari xml-an gordetako datuak kargatu nahi dituen galdetzen dio
 			while (!choice.toLowerCase().matches("yes|no")) {
 				System.out.println("\nThere is a configuration file saved, do you want to charge it(YES/NO)?");
 				choice = in.next();
 			}
-
+			
+			
 			if (choice.equalsIgnoreCase("yes")) {
+				//xml-a irakurtzeko metodoari deitzen dio
 				readXML();
 			}
 		}
 		
+		/*
+		 * Log xml fitxategia sortuta dagoen konprobatzen du eta readLog metodoari deitzen dio
+		 */
 		if(fileLog.isFile()) {
 			readLog();
 		}
 
+		//Menua erakusten du erabiltzaileak 10 sartu arte
 		while (!choice.equals("10")) {
 			choice = "0";
 			menuStart();
@@ -88,7 +101,11 @@ public class Menu {
 		((AnnotationConfigApplicationContext) importContext).close();
 		System.out.println("BYE");
 	}
-
+	
+	
+/*
+ * Menua erakusteko metodoa, erabiltzaileak aukeratutako datuak erakusten goian
+ */
 	public static void menuStart() {
 		String ops = "\n| ";
 		if (options.size() > 0) {
@@ -114,6 +131,10 @@ public class Menu {
 		System.out.println("*10-- EXIT");
 		System.out.println();
 	}
+	
+	/*
+	 * Erabiltzaileak aukera bat sartzean ekintza ezberdinak egiten ditu aukeraren arabera
+	 */
 
 	public static void insertChoice(String option) {
 
@@ -316,6 +337,11 @@ public class Menu {
 		}
 
 	}
+	
+	/*
+	 * Boolean bat bueltatzen du 
+	 * aukera bat listan badago false, bestela true
+	 */
 
 	public static boolean checkList(String option) {
 
@@ -339,7 +365,11 @@ public class Menu {
 		}
 		return valid;
 	}
-
+	
+	/*
+	 * JAXB bitartez Unmashaller bat sortzen du options lista betetzeko, eta logaren lista betetzen du gero datuak gordetzeko
+	 * */
+	
 	public static void readXML() {
 
 		JAXBContext context;
@@ -364,6 +394,9 @@ public class Menu {
 		}
 	}
 	
+	/*
+	 * JAXB bitartez unmarshaller bat sortzen du log-aren datuak irakurtzeko eta gero berriekin betetzeko
+	 */
 	public static void readLog() {
 		
 		JAXBContext context;
@@ -381,7 +414,10 @@ public class Menu {
 			e.printStackTrace();
 		}
 	}
-
+	
+	/*
+	 * Listan dauden datuak kargatzen ditu Odoo-tik
+	 */
 	public static void readDataSelected() {
 		
 		if (!checkList("CATEGORIES")) {
@@ -413,6 +449,9 @@ public class Menu {
 
 	}
 
+	/*
+	 * Odoo-ko datu guztiak sartzen ditu listara
+	 */
 	public static void readAll() {
 
 		products = dao.getProducts();
@@ -426,6 +465,9 @@ public class Menu {
 
 	}
 
+	/*
+	 * Odootik listara sartutako datuak SQLServer-eko datu basean sartzen ditu
+	 */
 	public static void insertDataSelected() {
 
 		if (!checkList("PRODUCTS")) {
@@ -475,6 +517,10 @@ public class Menu {
 		System.out.println("THE DATA HAS BEEN UPDATED IN SQL SERVER");
 
 	}
+	
+	/*
+	 * Odoo-tik hartutako datu guztiak SQLServer-en sartzen ditu
+	 */
 
 	public static void insertAll() {
 
