@@ -10,7 +10,6 @@ C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Release\EntityFrame
 C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\bin\Release\EntityFramework.SqlServer.xml
 C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.csprojAssemblyReference.cache
 C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.ErosleakForm.resources
-C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.Form1.resources
 C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.IrabaziakForm.resources
 C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.KategoriakForm.resources
 C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.LangileakForm.resources
@@ -82,3 +81,4 @@ C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanSta
 C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.exe
 C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.pdb
 C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.Menu.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.Menu.resources
