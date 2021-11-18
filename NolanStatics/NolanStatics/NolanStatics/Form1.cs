@@ -173,43 +173,6 @@ namespace NolanStatics
                 Console.WriteLine("Error SQL");
             }
         }
-        
-
-        private void Panel1_Click(object sender, EventArgs e)
-        {
-            SalmentakForm salmentakForm = new SalmentakForm();
-            salmentakForm.Show();
-        }
-
-        private void Panel4_Click(object sender, EventArgs e)
-        {
-            ProdKopForm prodKopForm = new ProdKopForm();
-            prodKopForm.Show();
-        }
-
-        private void Panel3_Click(object sender, EventArgs e)
-        {
-            ErosleakForm erosleakForm = new ErosleakForm();
-            erosleakForm.Show();
-        }
-
-        private void Panel2_Click(object sender, EventArgs e)
-        {
-            LangileakForm langileakForm = new LangileakForm();
-            langileakForm.Show();
-        }
-
-        private void Panel8_Click(object sender, EventArgs e)
-        {
-            KategoriakForm kategoriakForm = new KategoriakForm();
-            kategoriakForm.Show();
-        }
-
-        private void Panel5_Click(object sender, EventArgs e)
-        {
-            IrabaziakForm irabaziakForm = new IrabaziakForm();
-            irabaziakForm.Show();
-        }
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -233,6 +196,42 @@ namespace NolanStatics
         {
             Topsaltzaileprecio topsaltzaileprecio = new Topsaltzaileprecio();
             topsaltzaileprecio.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            SalmentakForm salmentakForm = new SalmentakForm();
+            salmentakForm.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            LangileakForm langileakForm = new LangileakForm();
+            langileakForm.Show();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            ProdKopForm prodKopForm = new ProdKopForm();
+            prodKopForm.Show();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            KategoriakForm kategoriakForm = new KategoriakForm();
+            kategoriakForm.Show();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            ErosleakForm erosleakForm = new ErosleakForm();
+            erosleakForm.Show();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            IrabaziakForm irabaziakForm = new IrabaziakForm();
+            irabaziakForm.Show();
         }
     }
 }

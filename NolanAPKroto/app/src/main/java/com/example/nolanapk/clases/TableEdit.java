@@ -1,22 +1,17 @@
 package com.example.nolanapk.clases;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Paint;
-import android.graphics.Rect;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -26,19 +21,15 @@ import com.example.nolanapk.R;
 import com.example.nolanapk.activities.Inventario;
 import com.example.nolanapk.activities.Login;
 import com.example.nolanapk.activities.Orders;
-import com.example.nolanapk.activities.Purchase;
-import com.example.nolanapk.activities.Sales;
+import com.google.type.Color;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class TableEdit {
-    private TableLayout tabla;          // Layout donde se pintará la tabla
-    private ArrayList<TableRow> filas;  // Array de las filas de la tabla
-    private Activity actividad;
-    private Resources rs;
-    private int FILAS, COLUMNAS;
-    private ArrayAdapter<Gafa> adapter;
+    private final TableLayout tabla;          // Layout donde se pintará la tabla
+    private final ArrayList<TableRow> filas;  // Array de las filas de la tabla
+    private final Activity actividad;
+    private int FILAS;
     private int stock;
     private Article updateArticle;
 
@@ -51,9 +42,9 @@ public class TableEdit {
     {
         this.actividad = actividad;
         this.tabla = tabla;
-        rs = this.actividad.getResources();
-        FILAS = COLUMNAS = 0;
-        filas = new ArrayList<TableRow>();
+        Resources rs = this.actividad.getResources();
+        FILAS = 0;
+        filas = new ArrayList<>();
     }
 
     /**
@@ -110,32 +101,26 @@ public class TableEdit {
         //Taularen laugarren zutabea - Button
         Button btn = new Button(actividad.getBaseContext());
         btn.setLayoutParams(new TableRow.LayoutParams(50,TableRow.LayoutParams.MATCH_PARENT));
-        btn.setBackgroundResource(R.drawable.tabla_celda);
         btn.setText("x");
         FILAS++;
-        btn.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("ResourceType")
-            @Override
-            public void onClick(View v) {
+        btn.setOnClickListener(v -> {
+            int fila1 =FILAS;
 
-                int fila=FILAS;
+            if(isEditable()) {
+                for (int i = 0; i < Connexion.articles.size(); i++) {
 
-                if(isEditable()) {
-                    for (int i = 0; i < Connexion.articles.size(); i++) {
-
-                        if (Connexion.articles.get(i).getId() == Integer.parseInt(elementos.get(elementos.size() - 1))) {
-                            tabla.removeViewAt(fila);
-                            FILAS--;
-                            Connexion.articles.remove(i);
-                            Login.con.removeArticle(Connexion.articles.get(i).getId(), Connexion.articles.get(i).getSaleId());
-                            Toast.makeText(c, "Product erased", Toast.LENGTH_SHORT).show();
-                            break;
-                        }
+                    if (Connexion.articles.get(i).getId() == Integer.parseInt(elementos.get(elementos.size() - 1))) {
+                        tabla.removeViewAt(fila1);
+                        FILAS--;
+                        Connexion.articles.remove(i);
+                        Login.con.removeArticle(Connexion.articles.get(i).getId(), Connexion.articles.get(i).getSaleId());
+                        Toast.makeText(c, "Product erased", Toast.LENGTH_SHORT).show();
+                        break;
                     }
-
-                    Intent intent = new Intent(v.getContext(), Inventario.class);
-                    actividad.startActivityForResult(intent, 0);
                 }
+
+                Intent intent = new Intent(v.getContext(), Inventario.class);
+                actividad.startActivityForResult(intent, 0);
             }
         });
 
@@ -146,38 +131,34 @@ public class TableEdit {
         btn2.setBackgroundResource(R.drawable.tabla_celda);
         btn2.setText("!");
         FILAS++;
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("ResourceType")
-            @Override
-            public void onClick(View v) {
-                if(isEditable()) {
-                    if (elementos.get(0).equals(Inventario.allGafas.get(editableTxt.getSelectedItemPosition()).getNombre())) {
+        btn2.setOnClickListener(v -> {
+            if(isEditable()) {
+                if (elementos.get(0).equals(Inventario.allGafas.get(editableTxt.getSelectedItemPosition()).getNombre())) {
 
-                        if (qtyIsDif(filterArticles, elementos.get(0), eTexto)) {
-                            updateArticle = findArticle(filterArticles, elementos.get(0));
-                            updateArticle.setQuantity(Integer.parseInt(eTexto.getText().toString()));
-                            updateArticle.setPrecios();
-                            Login.con.updateProductQuantity(updateArticle);
-                            Toast.makeText(c, "Quantity updated", Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(c, "Nothing to update", Toast.LENGTH_SHORT).show();
-                        }
-                    } else {
+                    if (qtyIsDif(filterArticles, elementos.get(0), eTexto)) {
                         updateArticle = findArticle(filterArticles, elementos.get(0));
-                        Gafa gafanueva = newArticle(Inventario.allGafas.get(editableTxt.getSelectedItemPosition()).getPro_id());
-                        updateArticle.setGafaId(gafanueva.getPro_id());
-                        updateArticle.setName("[" + gafanueva.getId() + "] " + gafanueva.getNombre());
                         updateArticle.setQuantity(Integer.parseInt(eTexto.getText().toString()));
-                        updateArticle.setUnitPrice(gafanueva.getPrecio());
                         updateArticle.setPrecios();
-                        Login.con.updateProduct(updateArticle);
-                        Toast.makeText(c, "Product updated", Toast.LENGTH_SHORT).show();
+                        Login.con.updateProductQuantity(updateArticle);
+                        Toast.makeText(c, "Quantity updated", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(c, "Nothing to update", Toast.LENGTH_SHORT).show();
                     }
-                    Connexion.sales.clear();
-                    Connexion.articles.clear();
-                    Intent intent = new Intent(v.getContext(), Inventario.class);
-                    actividad.startActivityForResult(intent, 0);
+                } else {
+                    updateArticle = findArticle(filterArticles, elementos.get(0));
+                    Gafa gafanueva = newArticle(Inventario.allGafas.get(editableTxt.getSelectedItemPosition()).getPro_id());
+                    updateArticle.setGafaId(gafanueva.getPro_id());
+                    updateArticle.setName("[" + gafanueva.getId() + "] " + gafanueva.getNombre());
+                    updateArticle.setQuantity(Integer.parseInt(eTexto.getText().toString()));
+                    updateArticle.setUnitPrice(gafanueva.getPrecio());
+                    updateArticle.setPrecios();
+                    Login.con.updateProduct(updateArticle);
+                    Toast.makeText(c, "Product updated", Toast.LENGTH_SHORT).show();
                 }
+                Connexion.sales.clear();
+                Connexion.articles.clear();
+                Intent intent = new Intent(v.getContext(), Inventario.class);
+                actividad.startActivityForResult(intent, 0);
             }
         });
 
@@ -189,7 +170,7 @@ public class TableEdit {
     }
 
     public void fillSpinner(Context c, Spinner spin, String name){
-        adapter = new ArrayAdapter<>(c, android.R.layout.simple_spinner_item, Inventario.allGafas);
+        ArrayAdapter<Gafa> adapter = new ArrayAdapter<>(c, android.R.layout.simple_spinner_item, Inventario.allGafas);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(adapter);
 
