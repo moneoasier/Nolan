@@ -79,6 +79,9 @@ public class Inventario extends AppCompatActivity {
         startActivity(b);
     }
 
+    /*
+        Klikatzean Sales activity-a irekitzen du
+     */
     public void goToSales(View v){
         Intent b = new Intent(Inventario.this, Sales.class);
         startActivity(b);
@@ -218,6 +221,7 @@ public class Inventario extends AppCompatActivity {
         pages.setText(currentPage +" / "+ totalPages);
     }
 
+    //Klikatzean Purchase activity-a irekitzen du
     public void btnBuy(View v){
         Intent b = new Intent(Inventario.this, Purchase.class);
         startActivity(b);

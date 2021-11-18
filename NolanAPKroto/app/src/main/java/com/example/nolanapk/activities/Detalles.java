@@ -39,7 +39,7 @@ public class Detalles extends AppCompatActivity {
     }
 
     /**
-     * Metodo honek produktuen informazioa ipintzen du: argazkia, izena, Stock-ean dagoen kantitatea eta prezioa
+     * Metodo honek produktuen informazioa erakusten du: argazkia, izena, Stock-ean dagoen kantitatea eta prezioa
      */
     @SuppressLint("SetTextI18n")
     public void fillData() {
@@ -53,6 +53,10 @@ public class Detalles extends AppCompatActivity {
 
     }
 
+    /*
+        Produktu bat bilatu
+     */
+
     public void findGafa(){
         for(Gafa g:Inventario.allGafas){
             if(g.getId().equals(code)){
@@ -62,6 +66,9 @@ public class Detalles extends AppCompatActivity {
         }
     }
 
+    /*
+        produktu bat salmentaren saskira gehitzen du
+     */
     public void addProduct(View v) {
         String c = quant.getText().toString();
         if (c.isEmpty() || c.equals("0")) {
@@ -82,6 +89,9 @@ public class Detalles extends AppCompatActivity {
 
     }
 
+    /*
+        Produktu bat saskian dagoen edo ez egiaztatzen du
+     */
     public boolean inCompra() {
         for (Gafa g : Connexion.compra) {
             if (g.getId().equals(gafa.getId())) {
@@ -93,11 +103,18 @@ public class Detalles extends AppCompatActivity {
         return false;
     }
 
+    /*
+        klikatzean Purchase irekitzen du
+     */
+
     public void btnBuy(View v) {
         Intent b = new Intent(Detalles.this, Purchase.class);
         startActivity(b);
     }
 
+    /*
+        Sartu den kantitatea stock-a baino handiagoa den ala ez egiaztatzen du
+     */
     public boolean checkquanty() {
         if (Integer.parseInt(quant.getText().toString()) > gafa.getStock()) {
             return false;

@@ -22,7 +22,6 @@ public class Connexion {
     public static ArrayList<Gafa> compra = new ArrayList<>();
     public static ArrayList<Sale> sales=new ArrayList<>();
     public static ArrayList<Article>articles = new ArrayList<>();
-    //private static ArrayList<User> users=new ArrayList<>();
 
     private final String user = "admin";
     private final String pass = "Admin123";
@@ -32,14 +31,19 @@ public class Connexion {
     private int sale_ID;
     public static int partner_ID;
 
+    /*
+        Datu basera konektatzeko datuak
+     */
     public Connexion() {
         String database = "Nolan";
         String host = "192.168.65.2";
         int port = 5432;
         url = String.format(this.url, host, port, database);
-        // System.out.println("connection status:" + status);
-    }
 
+    }
+    /*
+        Datu basera konektatzen da thread bat sortuz eta metodo desberdinei deitzen dio aukeraren arabera (Strin option)
+     */
     public void connect(String option) {
         Thread thread = new Thread(() -> {
             try {
@@ -82,6 +86,9 @@ public class Connexion {
         }
     }
 
+    /*
+        Thread bat sortzen du eta datu basetik users lista betetzen du
+     */
     public void selectUsers() {
         Thread thread = new Thread(() -> {
             try {
@@ -105,6 +112,7 @@ public class Connexion {
         Thread.interrupted();
     }
 
+    //    Thread bat sortzen du eta datu basetik partners lista betetzen du
     public void selectPartner() {
         Thread thread = new Thread(() -> {
             try {
@@ -129,6 +137,7 @@ public class Connexion {
         Thread.interrupted();
     }
 
+    //    Thread bat sortzen du eta datu basetik gafa lista betetzen du
     public void selectGafa() {
 
         try {
@@ -156,6 +165,7 @@ public class Connexion {
 
     }
 
+    //Bi hari sortzen dira aurrekontuak datu basean sartzeko, semaforo bat erabiliz ejekuzio ordena mantentzeko
     public void insertOrder(int u_id, int p_id, double p1, double p2, double p3) {
 
 
@@ -248,6 +258,7 @@ public class Connexion {
 
     }
 
+    //hari bat sortzen da bezero berria datu basean sartzeko
     public void insertPartner(Partner p) {
 
         Thread thread = new Thread(() -> {
@@ -277,6 +288,7 @@ public class Connexion {
         Thread.interrupted();
     }
 
+    //    Thread bat sortzen du eta datu basetik Orders lista betetzen du
     public void selectOrders(){
         Thread thread= new Thread(() -> {
             try {
@@ -308,6 +320,7 @@ public class Connexion {
         Thread.interrupted();
     }
 
+    //    Thread bat sortzen du eta datu basetik Articles lista betetzen du
     public void selectArticles(){
         Thread thread= new Thread(() -> {
             try {

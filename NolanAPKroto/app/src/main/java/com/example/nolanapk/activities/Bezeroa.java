@@ -36,7 +36,9 @@ public class Bezeroa extends AppCompatActivity {
         company = findViewById(R.id.companyck);
     }
 
-
+    /*
+        Submit botoia klikatzean listara gehitzen da eta Odoon aldatzen da ere
+     */
     public void submit(View v) {
 
         String nametxt = name.getText().toString();
@@ -62,6 +64,10 @@ public class Bezeroa extends AppCompatActivity {
         }
 
     }
+
+    /*
+        Datu guztiak ondo sartuta daude egiaztatzen du
+     */
 
     public boolean check(String nametxt, String cptxt, String citytxt, String addresstxt, String emailtxt, String phonetxt) {
 
@@ -113,6 +119,9 @@ public class Bezeroa extends AppCompatActivity {
 
     }
 
+    /*
+        Emaila baliogarria den egiaztatzen du
+     */
     public boolean checkemail() {
 
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";

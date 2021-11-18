@@ -73,7 +73,7 @@ public class Login extends AppCompatActivity {
     }
 
     /*
-     * Metodo honetan CSV bat irakurriz Erabiltzailea eta Pasahitza ondo dagoen komprobatzen da
+     * Metodo honetan Datu base bat irakurriz Erabiltzailea eta Pasahitza ondo dagoen komprobatzen da
      */
     public boolean correctUser() {
         User u= Connexion.findUser(userTxt);
