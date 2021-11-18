@@ -32,34 +32,12 @@ namespace NolanStatics
             countErosle();
             countProd();
             countSalm();
-            dataChart1();
             
             
         
             
         }
-        public void dataChart1()
-        {
-            
-           
-
-            /*
-            sale_orderTableAdapter sale_orderTableAdapter = new sale_orderTableAdapter();
-
-            sale_orderTableAdapter.Fill(this.nolanDBDataSet.sale_order);
-
-            sal_eros.DataSource = this.nolanDBDataSet.sale_order.GroupBy(b => b.partner_id).ToDictionary(g => g.Key, g => g.Count());
-
-            sal_eros.Series[0].YValueMembers = "Value";
-            sal_eros.Series[0].XValueMember = "Key";
-            sal_eros.DataBind();
-            
-    */
-           
-           
-
-
-        }
+        
 
 
 
@@ -196,35 +174,6 @@ namespace NolanStatics
             }
         }
         
-       /* public void selectWorkers()
-        {
-            conexionbd conexion = new conexionbd();
-            conexion.abrir();
-
-            string sententzia = "SELECT hr_employee.name, COUNT(sale_order.user_id) "+
-                                 "FROM sale_order INNER JOIN "+
-                                 "hr_employee ON sale_order.user_id = hr_employee.user_id "+
-                                 "GROUP BY hr_employee.name; "; 
-
-            try
-            {
-                SqlCommand comando = new SqlCommand(sententzia, conexion.conectarbd);
-                SqlDataReader lector = comando.ExecuteReader();
-                while (lector.Read())
-                {
-
-                    Series serie = sal_lan.Series.Add((lector.GetValue(0).ToString()));
-                    serie.Label = lector.GetValue(1).ToString();
-                    serie.Points.Add(int.Parse(lector.GetValue(1).ToString()));
-
-                }
-            }
-            catch
-            {
-                Console.WriteLine("Error SQL");
-            }
-
-        }*/
 
         private void Panel1_Click(object sender, EventArgs e)
         {
