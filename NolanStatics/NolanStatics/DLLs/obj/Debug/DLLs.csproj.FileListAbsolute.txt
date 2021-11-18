@@ -25,3 +25,17 @@ C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\
 C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.dll
 C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.pdb
 C:\Klasea\Erronka\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.csprojAssemblyReference.cache
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\DLLs\bin\Debug\DLLs.dll.config
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\DLLs\bin\Debug\DLLs.dll
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\DLLs\bin\Debug\DLLs.pdb
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.csproj.AssemblyReference.cache
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.ErosleakDLL.resources
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.IrabaziakDLL.resources
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.KategoriakDLL.resources
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.LangileakDLL.resources
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.ProdKopDLL.resources
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.SalmentaDLL.resources
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.csproj.GenerateResource.cache
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.csproj.CoreCompileInputs.cache
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.dll
+C:\Users\peralta.laura\Documents\GitHub\Nolan\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.pdb
