@@ -46,7 +46,7 @@ namespace NolanStatics
             this.btn_log.Cursor = System.Windows.Forms.Cursors.Default;
             this.btn_log.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_log.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_log.Location = new System.Drawing.Point(379, 452);
+            this.btn_log.Location = new System.Drawing.Point(388, 492);
             this.btn_log.Name = "btn_log";
             this.btn_log.Size = new System.Drawing.Size(238, 50);
             this.btn_log.TabIndex = 0;
@@ -57,9 +57,10 @@ namespace NolanStatics
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(431, 107);
+            this.label1.Location = new System.Drawing.Point(440, 147);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 24);
             this.label1.TabIndex = 1;
@@ -67,10 +68,10 @@ namespace NolanStatics
             // 
             // txt_mail
             // 
-            this.txt_mail.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_mail.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_mail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mail.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txt_mail.Location = new System.Drawing.Point(356, 166);
+            this.txt_mail.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txt_mail.Location = new System.Drawing.Point(365, 206);
             this.txt_mail.Name = "txt_mail";
             this.txt_mail.Size = new System.Drawing.Size(283, 26);
             this.txt_mail.TabIndex = 2;
@@ -79,9 +80,10 @@ namespace NolanStatics
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(445, 229);
+            this.label2.Location = new System.Drawing.Point(454, 269);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 24);
             this.label2.TabIndex = 3;
@@ -90,22 +92,23 @@ namespace NolanStatics
             // check_pass
             // 
             this.check_pass.AutoSize = true;
+            this.check_pass.BackColor = System.Drawing.Color.Transparent;
             this.check_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_pass.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.check_pass.Location = new System.Drawing.Point(425, 365);
+            this.check_pass.Location = new System.Drawing.Point(434, 405);
             this.check_pass.Name = "check_pass";
             this.check_pass.Size = new System.Drawing.Size(140, 24);
             this.check_pass.TabIndex = 5;
             this.check_pass.Text = "Show password";
-            this.check_pass.UseVisualStyleBackColor = true;
+            this.check_pass.UseVisualStyleBackColor = false;
             this.check_pass.CheckedChanged += new System.EventHandler(this.check_pass_CheckedChanged);
             // 
             // txt_pass
             // 
-            this.txt_pass.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_pass.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pass.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txt_pass.Location = new System.Drawing.Point(379, 281);
+            this.txt_pass.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txt_pass.Location = new System.Drawing.Point(388, 321);
             this.txt_pass.Name = "txt_pass";
             this.txt_pass.Size = new System.Drawing.Size(238, 26);
             this.txt_pass.TabIndex = 4;
@@ -114,11 +117,12 @@ namespace NolanStatics
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(928, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(891, 48);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(38, 37);
+            this.pictureBox1.Size = new System.Drawing.Size(75, 53);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -128,6 +132,7 @@ namespace NolanStatics
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1002, 622);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.check_pass);

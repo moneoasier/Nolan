@@ -37,22 +37,25 @@
             // 
             // chart1
             // 
-            this.chart1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            chartArea1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.chart1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
             chartArea1.Name = "ChartArea1";
+            chartArea1.ShadowColor = System.Drawing.Color.Transparent;
             this.chart1.ChartAreas.Add(chartArea1);
-            legend1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            legend1.BackColor = System.Drawing.Color.Transparent;
             legend1.ForeColor = System.Drawing.Color.White;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(267, 142);
+            this.chart1.Location = new System.Drawing.Point(19, 21);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.IsValueShownAsLabel = true;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
+            series1.ShadowColor = System.Drawing.Color.Transparent;
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(439, 329);
+            this.chart1.Size = new System.Drawing.Size(741, 493);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
@@ -60,10 +63,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.chart1);
             this.Name = "IrabaziakDLL";
-            this.Size = new System.Drawing.Size(962, 503);
+            this.Size = new System.Drawing.Size(787, 514);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 

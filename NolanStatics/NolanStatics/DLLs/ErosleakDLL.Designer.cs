@@ -53,7 +53,7 @@
             this.nameDataGridViewTextBoxColumn,
             this.cityDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.respartnerBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(282, 158);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(343, 150);
             this.dataGridView1.TabIndex = 0;
@@ -99,10 +99,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.dataGridView1);
             this.Name = "ErosleakDLL";
-            this.Size = new System.Drawing.Size(962, 503);
+            this.Size = new System.Drawing.Size(352, 156);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.respartnerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nolanDataSetBindingSource)).EndInit();

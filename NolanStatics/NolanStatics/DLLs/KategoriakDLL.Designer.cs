@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nolanDataSet = new DLLs.NolanDataSet();
-            this.productcategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.product_categoryTableAdapter = new DLLs.NolanDataSetTableAdapters.product_categoryTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productcategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nolanDataSet = new DLLs.NolanDataSet();
+            this.product_categoryTableAdapter = new DLLs.NolanDataSetTableAdapters.product_categoryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nolanDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productcategoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nolanDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -49,24 +49,10 @@
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.productcategoryBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(315, 139);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(243, 150);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // nolanDataSet
-            // 
-            this.nolanDataSet.DataSetName = "NolanDataSet";
-            this.nolanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productcategoryBindingSource
-            // 
-            this.productcategoryBindingSource.DataMember = "product_category";
-            this.productcategoryBindingSource.DataSource = this.nolanDataSet;
-            // 
-            // product_categoryTableAdapter
-            // 
-            this.product_categoryTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -80,17 +66,31 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
+            // productcategoryBindingSource
+            // 
+            this.productcategoryBindingSource.DataMember = "product_category";
+            this.productcategoryBindingSource.DataSource = this.nolanDataSet;
+            // 
+            // nolanDataSet
+            // 
+            this.nolanDataSet.DataSetName = "NolanDataSet";
+            this.nolanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // product_categoryTableAdapter
+            // 
+            this.product_categoryTableAdapter.ClearBeforeFill = true;
+            // 
             // KategoriakDLL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.dataGridView1);
             this.Name = "KategoriakDLL";
-            this.Size = new System.Drawing.Size(962, 503);
+            this.Size = new System.Drawing.Size(253, 159);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nolanDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productcategoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nolanDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

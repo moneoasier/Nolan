@@ -53,7 +53,7 @@
             this.idDataGridViewTextBoxColumn,
             this.useridDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.saleorderBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(256, 181);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(444, 150);
             this.dataGridView1.TabIndex = 0;
@@ -100,10 +100,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.dataGridView1);
             this.Name = "SalmentaDLL";
-            this.Size = new System.Drawing.Size(962, 503);
+            this.Size = new System.Drawing.Size(468, 165);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saleorderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nolanDataSet)).EndInit();

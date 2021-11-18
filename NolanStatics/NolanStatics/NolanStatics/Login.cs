@@ -32,9 +32,10 @@ namespace NolanStatics
                 {
                     this.Hide();
 
-                    Form1 frm = new Form1();
+                    Menu frm = new Menu();
 
                     frm.Show();
+                    this.Hide();
                 } 
                 else
                 {

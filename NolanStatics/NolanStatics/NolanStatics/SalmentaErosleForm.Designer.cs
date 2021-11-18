@@ -31,35 +31,27 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            this.panel7 = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalmentaErosleForm));
             this.sal_eros = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.panel7.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.sal_eros)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel7.Controls.Add(this.sal_eros);
-            this.panel7.Location = new System.Drawing.Point(237, 20);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(456, 384);
-            this.panel7.TabIndex = 11;
-            // 
             // sal_eros
             // 
-            this.sal_eros.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.sal_eros.BackColor = System.Drawing.Color.Transparent;
             chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
             chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
             chartArea1.Name = "ChartArea1";
+            chartArea1.ShadowColor = System.Drawing.Color.Transparent;
             this.sal_eros.ChartAreas.Add(chartArea1);
-            legend1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            legend1.BackColor = System.Drawing.Color.Transparent;
             legend1.ForeColor = System.Drawing.Color.White;
             legend1.Name = "Legend1";
             this.sal_eros.Legends.Add(legend1);
-            this.sal_eros.Location = new System.Drawing.Point(3, 3);
+            this.sal_eros.Location = new System.Drawing.Point(346, 192);
             this.sal_eros.Name = "sal_eros";
             this.sal_eros.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.ChartArea = "ChartArea1";
@@ -67,35 +59,56 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.sal_eros.Series.Add(series1);
-            this.sal_eros.Size = new System.Drawing.Size(450, 381);
+            this.sal_eros.Size = new System.Drawing.Size(489, 396);
             this.sal_eros.TabIndex = 4;
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.ForeColor = System.Drawing.Color.White;
-            title1.Name = "Title1";
-            title1.Text = "SALMENTA EROSLE BAKOITZEKO";
-            this.sal_eros.Titles.Add(title1);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Location = new System.Drawing.Point(947, 60);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(51, 49);
+            this.panel1.TabIndex = 5;
+            this.panel1.Click += new System.EventHandler(this.panel1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Italic);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(83, 131);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(395, 33);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Salmentak Erosle Bakoitzeko";
             // 
             // SalmentaErosleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(930, 425);
-            this.Controls.Add(this.panel7);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1126, 619);
+            this.ControlBox = false;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.sal_eros);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SalmentaErosleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SalmentaErosleForm";
-
-            this.panel7.ResumeLayout(false);
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.sal_eros)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.DataVisualization.Charting.Chart sal_eros;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }

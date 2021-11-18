@@ -1,6 +1,6 @@
 ﻿namespace NolanStatics
 {
-    partial class Form1
+    partial class Menu
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelSalm = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -79,24 +78,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(140, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(257, 46);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nolan Statics";
-            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.labelSalm);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.Salmentak);
-            this.panel1.Location = new System.Drawing.Point(545, 62);
+            this.panel1.Location = new System.Drawing.Point(209, 202);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(144, 71);
             this.panel1.TabIndex = 4;
@@ -136,11 +124,11 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.labelLang);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(545, 158);
+            this.panel2.Location = new System.Drawing.Point(752, 202);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(144, 71);
             this.panel2.TabIndex = 5;
@@ -180,11 +168,11 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.labelErosle);
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(892, 62);
+            this.panel3.Location = new System.Drawing.Point(33, 202);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(144, 71);
             this.panel3.TabIndex = 7;
@@ -224,11 +212,11 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.labelProd);
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(721, 62);
+            this.panel4.Location = new System.Drawing.Point(393, 202);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(144, 71);
             this.panel4.TabIndex = 6;
@@ -268,11 +256,11 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.Controls.Add(this.labelIrab);
             this.panel5.Controls.Add(this.pictureBox5);
             this.panel5.Controls.Add(this.label10);
-            this.panel5.Location = new System.Drawing.Point(892, 158);
+            this.panel5.Location = new System.Drawing.Point(576, 202);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(144, 71);
             this.panel5.TabIndex = 11;
@@ -312,11 +300,11 @@
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel8.BackColor = System.Drawing.Color.Transparent;
             this.panel8.Controls.Add(this.labelCat);
             this.panel8.Controls.Add(this.pictureBox6);
             this.panel8.Controls.Add(this.label12);
-            this.panel8.Location = new System.Drawing.Point(721, 158);
+            this.panel8.Location = new System.Drawing.Point(924, 202);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(144, 71);
             this.panel8.TabIndex = 12;
@@ -366,10 +354,10 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button4.BackColor = System.Drawing.Color.Transparent;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Image = global::NolanStatics.Properties.Resources.pertsona;
-            this.button4.Location = new System.Drawing.Point(801, 304);
+            this.button4.Location = new System.Drawing.Point(822, 329);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(204, 197);
             this.button4.TabIndex = 17;
@@ -378,10 +366,10 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = global::NolanStatics.Properties.Resources.product;
-            this.button3.Location = new System.Drawing.Point(298, 304);
+            this.button3.Location = new System.Drawing.Point(54, 329);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(204, 197);
             this.button3.TabIndex = 16;
@@ -390,21 +378,22 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(535, 304);
+            this.button2.Location = new System.Drawing.Point(296, 329);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(222, 197);
+            this.button2.Size = new System.Drawing.Size(204, 197);
             this.button2.TabIndex = 14;
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(56, 304);
+            this.button1.Location = new System.Drawing.Point(555, 329);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(204, 197);
             this.button1.TabIndex = 13;
@@ -413,23 +402,27 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = global::NolanStatics.Properties.Resources.nolan;
-            this.pictureBox7.Location = new System.Drawing.Point(56, 27);
+            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox7.Location = new System.Drawing.Point(993, 31);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(434, 247);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox7.TabIndex = 15;
+            this.pictureBox7.Size = new System.Drawing.Size(75, 53);
+            this.pictureBox7.TabIndex = 18;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
-            // Form1
+            // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1080, 650);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1096, 675);
+            this.ControlBox = false;
+            this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel8);
@@ -438,9 +431,8 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox7);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -466,12 +458,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nolanDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label Salmentak;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -500,9 +490,9 @@
         private System.Windows.Forms.BindingSource nolanDataSetBindingSource;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }
 

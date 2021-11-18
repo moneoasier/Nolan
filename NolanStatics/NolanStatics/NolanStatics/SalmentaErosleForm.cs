@@ -27,5 +27,9 @@ namespace NolanStatics
             sal_eros.DataBind();
         }
 
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

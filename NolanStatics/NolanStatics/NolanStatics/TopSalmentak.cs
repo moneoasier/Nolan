@@ -55,5 +55,10 @@ namespace NolanStatics
             chart1.Series[0].XValueMember = "name";
             chart1.DataBind();
         }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

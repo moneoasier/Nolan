@@ -35,11 +35,11 @@
             this.hremployeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hr_employeeTableAdapter = new DLLs.NolanDataSetTableAdapters.hr_employeeTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.hremployeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.work_email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hremployeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nolanDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appusersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hremployeeBindingSource)).BeginInit();
@@ -81,15 +81,10 @@
             this.work_email,
             this.user_id});
             this.dataGridView1.DataSource = this.hremployeeBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(216, 111);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(443, 150);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // hremployeeBindingSource1
-            // 
-            this.hremployeeBindingSource1.DataMember = "hr_employee";
-            this.hremployeeBindingSource1.DataSource = this.nolanDataSet;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -115,14 +110,19 @@
             this.user_id.HeaderText = "user_id";
             this.user_id.Name = "user_id";
             // 
+            // hremployeeBindingSource1
+            // 
+            this.hremployeeBindingSource1.DataMember = "hr_employee";
+            this.hremployeeBindingSource1.DataSource = this.nolanDataSet;
+            // 
             // LangileakDLL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.dataGridView1);
             this.Name = "LangileakDLL";
-            this.Size = new System.Drawing.Size(962, 503);
+            this.Size = new System.Drawing.Size(451, 157);
             ((System.ComponentModel.ISupportInitialize)(this.nolanDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appusersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hremployeeBindingSource)).EndInit();

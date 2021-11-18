@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nolanDataSet = new DLLs.NolanDataSet();
-            this.producttemplateBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.product_templateTableAdapter = new DLLs.NolanDataSetTableAdapters.product_templateTableAdapter();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.listpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.defaultcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.producttemplateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nolanDataSet = new DLLs.NolanDataSet();
+            this.product_templateTableAdapter = new DLLs.NolanDataSetTableAdapters.product_templateTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nolanDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.producttemplateBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nolanDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -55,24 +55,10 @@
             this.idDataGridViewTextBoxColumn,
             this.categidDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.producttemplateBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(135, 96);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(545, 150);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // nolanDataSet
-            // 
-            this.nolanDataSet.DataSetName = "NolanDataSet";
-            this.nolanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // producttemplateBindingSource
-            // 
-            this.producttemplateBindingSource.DataMember = "product_template";
-            this.producttemplateBindingSource.DataSource = this.nolanDataSet;
-            // 
-            // product_templateTableAdapter
-            // 
-            this.product_templateTableAdapter.ClearBeforeFill = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -104,17 +90,31 @@
             this.categidDataGridViewTextBoxColumn.HeaderText = "categ_id";
             this.categidDataGridViewTextBoxColumn.Name = "categidDataGridViewTextBoxColumn";
             // 
+            // producttemplateBindingSource
+            // 
+            this.producttemplateBindingSource.DataMember = "product_template";
+            this.producttemplateBindingSource.DataSource = this.nolanDataSet;
+            // 
+            // nolanDataSet
+            // 
+            this.nolanDataSet.DataSetName = "NolanDataSet";
+            this.nolanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // product_templateTableAdapter
+            // 
+            this.product_templateTableAdapter.ClearBeforeFill = true;
+            // 
             // ProdKopDLL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.dataGridView1);
             this.Name = "ProdKopDLL";
-            this.Size = new System.Drawing.Size(962, 503);
+            this.Size = new System.Drawing.Size(555, 159);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nolanDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.producttemplateBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nolanDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

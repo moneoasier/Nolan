@@ -7,11 +7,11 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace NolanStatics
 {
-    public partial class Form1 : Form
+    public partial class Menu : Form
     {
         
 
-        public Form1()
+        public Menu()
         {
             InitializeComponent();
         }
@@ -176,62 +176,86 @@ namespace NolanStatics
 
         private void Button1_Click(object sender, EventArgs e)
         {
+
             SalmentaErosleForm salmentaErosleForm = new SalmentaErosleForm();
             salmentaErosleForm.Show();
+           
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            
             SalmentaLangileForm salmentaLangileForm = new SalmentaLangileForm();
             salmentaLangileForm.Show();
+            
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
+           
             TopSalmentak topSalmentak = new TopSalmentak();
             topSalmentak.Show();
+            
         }
 
         private void Button4_Click(object sender, EventArgs e)
         {
+            
             Topsaltzaileprecio topsaltzaileprecio = new Topsaltzaileprecio();
             topsaltzaileprecio.Show();
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            
             SalmentakForm salmentakForm = new SalmentakForm();
             salmentakForm.Show();
+           
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            
             LangileakForm langileakForm = new LangileakForm();
             langileakForm.Show();
+     
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
+            
             ProdKopForm prodKopForm = new ProdKopForm();
             prodKopForm.Show();
+
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
+            
             KategoriakForm kategoriakForm = new KategoriakForm();
             kategoriakForm.Show();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+            
             ErosleakForm erosleakForm = new ErosleakForm();
             erosleakForm.Show();
+
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
+            
             IrabaziakForm irabaziakForm = new IrabaziakForm();
             irabaziakForm.Show();
+            
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
