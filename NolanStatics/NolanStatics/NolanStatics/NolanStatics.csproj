@@ -135,6 +135,18 @@
     <Compile Include="SalmentaLangileForm.Designer.cs">
       <DependentUpon>SalmentaLangileForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TopSalmentak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TopSalmentak.Designer.cs">
+      <DependentUpon>TopSalmentak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Topsaltzaileprecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Topsaltzaileprecio.Designer.cs">
+      <DependentUpon>Topsaltzaileprecio.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ErosleakForm.resx">
       <DependentUpon>ErosleakForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +186,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SalmentaLangileForm.resx">
       <DependentUpon>SalmentaLangileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopSalmentak.resx">
+      <DependentUpon>TopSalmentak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Topsaltzaileprecio.resx">
+      <DependentUpon>Topsaltzaileprecio.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="NolanDataSet.xsc">
       <DependentUpon>NolanDataSet.xsd</DependentUpon>
@@ -241,6 +259,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pertsona.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

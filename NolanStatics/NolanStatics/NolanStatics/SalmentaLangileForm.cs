@@ -43,5 +43,7 @@ namespace NolanStatics
                 Console.WriteLine("Error SQL");
             }
         }
+
+      
     }
 }

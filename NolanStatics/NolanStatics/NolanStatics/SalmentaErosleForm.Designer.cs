@@ -86,6 +86,7 @@
             this.Name = "SalmentaErosleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SalmentaErosleForm";
+
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sal_eros)).EndInit();
             this.ResumeLayout(false);

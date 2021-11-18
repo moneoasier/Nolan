@@ -274,6 +274,16 @@ namespace NolanStatics
             salmentaLangileForm.Show();
         }
 
-       
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            TopSalmentak topSalmentak = new TopSalmentak();
+            topSalmentak.Show();
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            Topsaltzaileprecio topsaltzaileprecio = new Topsaltzaileprecio();
+            topsaltzaileprecio.Show();
+        }
     }
 }

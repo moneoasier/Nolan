@@ -26,5 +26,6 @@ namespace NolanStatics
             sal_eros.Series[0].XValueMember = "name";
             sal_eros.DataBind();
         }
+
     }
 }

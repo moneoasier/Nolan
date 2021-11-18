@@ -698,6 +698,68 @@ ORDER BY contador DESC</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sale_order_line1TableAdapter" GeneratorDataComponentClassName="sale_order_line1TableAdapter" Name="sale_order_line1" UserDataComponentName="sale_order_line1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NolanConnectionString (Settings)" DbObjectName="Nolan.dbo.sale_order_line" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT name, COUNT(*) AS Kopurua
+FROM            sale_order_line
+GROUP BY name</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+              <Mapping SourceColumn="Kopurua" DataSetColumn="Kopurua" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="NolanConnectionString (Settings)" DbObjectName="Nolan.dbo.sale_order_line" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT name, COUNT(*) AS Kopurua
+FROM            sale_order_line
+GROUP BY name</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="hr_employee1TableAdapter" GeneratorDataComponentClassName="hr_employee1TableAdapter" Name="hr_employee1" UserDataComponentName="hr_employee1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NolanConnectionString (Settings)" DbObjectName="Nolan.dbo.hr_employee" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        hr_employee.name, SUM(sale_order.amount_total) AS totala
+FROM            sale_order INNER JOIN
+                         hr_employee ON sale_order.user_id = hr_employee.user_id
+GROUP BY hr_employee.name</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+              <Mapping SourceColumn="totala" DataSetColumn="totala" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="NolanConnectionString (Settings)" DbObjectName="Nolan.dbo.hr_employee" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        hr_employee.name, SUM(sale_order.amount_total) AS totala
+FROM            sale_order INNER JOIN
+                         hr_employee ON sale_order.user_id = hr_employee.user_id
+GROUP BY hr_employee.name</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1031,6 +1093,34 @@ ORDER BY contador DESC</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sale_order_line1" msprop:Generator_TableClassName="sale_order_line1DataTable" msprop:Generator_TableVarName="tablesale_order_line1" msprop:Generator_RowChangedName="sale_order_line1RowChanged" msprop:Generator_TablePropName="sale_order_line1" msprop:Generator_RowDeletingName="sale_order_line1RowDeleting" msprop:Generator_RowChangingName="sale_order_line1RowChanging" msprop:Generator_RowEvHandlerName="sale_order_line1RowChangeEventHandler" msprop:Generator_RowDeletedName="sale_order_line1RowDeleted" msprop:Generator_RowClassName="sale_order_line1Row" msprop:Generator_UserTableName="sale_order_line1" msprop:Generator_RowEvArgName="sale_order_line1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Kopurua" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnKopurua" msprop:Generator_ColumnPropNameInRow="Kopurua" msprop:Generator_ColumnPropNameInTable="KopuruaColumn" msprop:Generator_UserColumnName="Kopurua" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="hr_employee1" msprop:Generator_TableClassName="hr_employee1DataTable" msprop:Generator_TableVarName="tablehr_employee1" msprop:Generator_TablePropName="hr_employee1" msprop:Generator_RowDeletingName="hr_employee1RowDeleting" msprop:Generator_RowChangingName="hr_employee1RowChanging" msprop:Generator_RowEvHandlerName="hr_employee1RowChangeEventHandler" msprop:Generator_RowDeletedName="hr_employee1RowDeleted" msprop:Generator_UserTableName="hr_employee1" msprop:Generator_RowChangedName="hr_employee1RowChanged" msprop:Generator_RowEvArgName="hr_employee1RowChangeEvent" msprop:Generator_RowClassName="hr_employee1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="totala" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotala" msprop:Generator_ColumnPropNameInRow="totala" msprop:Generator_ColumnPropNameInTable="totalaColumn" msprop:Generator_UserColumnName="totala" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

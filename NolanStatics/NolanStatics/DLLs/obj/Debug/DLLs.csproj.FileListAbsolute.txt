@@ -24,3 +24,4 @@ C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\
 C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.csproj.CoreCompileInputs.cache
 C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.dll
 C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.pdb
+C:\Klasea\Erronka\NolanStatics\NolanStatics\DLLs\obj\Debug\DLLs.csprojAssemblyReference.cache

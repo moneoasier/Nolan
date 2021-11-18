@@ -37,7 +37,7 @@
             this.irabaziakDLL1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.irabaziakDLL1.Location = new System.Drawing.Point(12, -55);
             this.irabaziakDLL1.Name = "irabaziakDLL1";
-            this.irabaziakDLL1.Size = new System.Drawing.Size(1007, 506);
+            this.irabaziakDLL1.Size = new System.Drawing.Size(958, 506);
             this.irabaziakDLL1.TabIndex = 0;
             // 
             // label1

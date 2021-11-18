@@ -52,3 +52,5 @@ C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\
 C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.csproj.CopyComplete
 C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.exe
 C:\Users\hayar.abderrafia\Desktop\copia de la copia visual pruebas\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.pdb
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.TopSalmentak.resources
+C:\Klasea\Erronka\NolanStatics\NolanStatics\NolanStatics\obj\Release\NolanStatics.topsaltzaileprecio.resources

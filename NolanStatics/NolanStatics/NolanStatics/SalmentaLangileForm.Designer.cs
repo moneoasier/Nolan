@@ -49,6 +49,7 @@
             // sal_lan
             // 
             this.sal_lan.BackColor = System.Drawing.Color.DimGray;
+            chartArea1.Area3DStyle.Enable3D = true;
             chartArea1.Area3DStyle.IsRightAngleAxes = false;
             chartArea1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             chartArea1.Name = "ChartArea1";
