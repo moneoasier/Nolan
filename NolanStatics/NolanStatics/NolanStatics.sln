@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NolanStatics", "NolanStatic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLLs", "DLLs\DLLs.csproj", "{AB3A4F92-8B9C-47AB-85C4-B7C70B2C2057}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NolanStaticSetup", "NolanStaticSetup\NolanStaticSetup.vdproj", "{F21D10BB-406A-49D2-A9E4-4BC2C390D94B}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NolanStaticsetup", "NolanStaticsetup\NolanStaticsetup.vdproj", "{A3FAEAD0-D50B-4308-BB94-2C5A306B4094}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,8 +23,8 @@ Global
 		{AB3A4F92-8B9C-47AB-85C4-B7C70B2C2057}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB3A4F92-8B9C-47AB-85C4-B7C70B2C2057}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB3A4F92-8B9C-47AB-85C4-B7C70B2C2057}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F21D10BB-406A-49D2-A9E4-4BC2C390D94B}.Debug|Any CPU.ActiveCfg = Debug
-		{F21D10BB-406A-49D2-A9E4-4BC2C390D94B}.Release|Any CPU.ActiveCfg = Release
+		{A3FAEAD0-D50B-4308-BB94-2C5A306B4094}.Debug|Any CPU.ActiveCfg = Release
+		{A3FAEAD0-D50B-4308-BB94-2C5A306B4094}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
