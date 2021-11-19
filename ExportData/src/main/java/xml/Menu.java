@@ -471,10 +471,14 @@ public class Menu {
 	public static void insertDataSelected() {
 
 		if (!checkList("PRODUCTS")) {
+			categories = dao.getCategories();
+			for (Categoria c : categories) {
+				dout.update(c);
+			}
 			for (Producto p : products) {
 				dout.update(p);
-				
 			}
+			
 		}
 
 		if (!checkList("CATEGORIES")) {
@@ -484,12 +488,28 @@ public class Menu {
 		}
 
 		if (!checkList("EMPLOYEES")) {
+			
+			partners = dao.getPartners();
+			for (Partner p : partners) {
+				dout.update(p);
+			}
+			
+			users = dao.getUsers();
+			for (User u : users) {
+				dout.update(u);
+			}
+		
 			for (Employee e : employees) {
 				dout.update(e);
 			}
 		}
 
 		if (!checkList("USERS")) {
+			partners = dao.getPartners();
+			for (Partner p : partners) {
+				dout.update(p);
+			}
+			
 			for (User u : users) {
 				dout.update(u);
 			}
@@ -500,6 +520,14 @@ public class Menu {
 		}
 
 		if (!checkList("SALES ORDERS") && !checkList("SALES ORDERLINES")) {
+			readAll();
+			for (Partner p : partners) {
+				dout.update(p);
+			}
+			
+			for (User u : users) {
+				dout.update(u);
+			}
 			for (Order o : orders) {
 				dout.update(o);
 			}
@@ -544,7 +572,7 @@ public class Menu {
 			dout.update(au);
 		}
 		
-		for (Employee e : employees) {
+		for (Employee e : employees) {		
 			dout.update(e);
 		}
 		
