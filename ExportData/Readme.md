@@ -31,7 +31,7 @@ Hiru paketetan sailkatu ditugu, XML paketea, config paketea eta nolan paketea:
      cd proiektua dagoen tokira
      mvn spring-boot:run
 # Klase diagrama
-![Klase diagrama]https://github.com/moneoasier/Nolan/blob/main/ExportData.svg
+![Klase diagrama](https://github.com/moneoasier/Nolan/blob/main/ExportData.svg)
 
 # Iturriak
 https://www.jairogarciarincon.com/clase/interfaces-de-usuario-con-javafx/libretadirecciones-persistencia-de-datos-con-xml <br>
