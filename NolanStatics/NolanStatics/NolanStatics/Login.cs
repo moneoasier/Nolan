@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,15 +15,19 @@ namespace NolanStatics
 {
     public partial class Login : Form
     {
+   
         public Login()
         {
             InitializeComponent();
+            fillarray();
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+        
 
         private void btn_log_Click(object sender, EventArgs e)
         {
@@ -57,7 +62,35 @@ namespace NolanStatics
 
             return false;
         }
-        
+
+        private void fillarray() {
+
+            conexionbd conexion = new conexionbd();
+            conexion.abrir();
+            AutoCompleteStringCollection source = new AutoCompleteStringCollection();
+
+
+            string sententzia = "Select * from dbo.app_users";
+            try
+            {
+                SqlCommand comando = new SqlCommand(sententzia, conexion.conectarbd);
+                SqlDataReader lector = comando.ExecuteReader();
+                while (lector.Read())
+                {
+                    source.Add(lector.GetValue(0).ToString());
+
+                }
+                txt_mail.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                txt_mail.AutoCompleteCustomSource = source;
+            }
+            catch
+            {
+                Console.WriteLine("Error SQL");
+            }
+
+
+        }
+
         private bool userExists()
         {
             conexionbd conexion = new conexionbd();
@@ -78,9 +111,9 @@ namespace NolanStatics
                         {
                             exists = true;
                         }
-               
+                       
                     }
-   
+                    
                 }
             }
             catch

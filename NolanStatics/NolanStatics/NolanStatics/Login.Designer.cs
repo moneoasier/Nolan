@@ -68,6 +68,8 @@ namespace NolanStatics
             // 
             // txt_mail
             // 
+            this.txt_mail.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txt_mail.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txt_mail.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_mail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_mail.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
